@@ -23,7 +23,7 @@ export interface paymentData {
 export class PaymentService {
   constructor(private http: HttpClient) {}
 
-  username = 'pk_test_x5UvLsSCFFtostzDXkmc6xcbmGfPC9CwAsrBDufs';
+  username = 'pk_live_3oEm9EZqLmQ2b7LuCwrHa4eWTV7ySnGBKPY8hLkJ';
   password = '';
   auth = btoa(`${this.username}:${this.password}`);
 
