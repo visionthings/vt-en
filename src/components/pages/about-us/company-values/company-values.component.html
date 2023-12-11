@@ -1,0 +1,17 @@
+<section class="container">
+  <div class="bg-white rounded-lg py-10 shadow text-blue-800">
+    <h3 class="text-3xl text-center mb-10">قيم الشركة</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 container">
+      @for (value of values; track value.id) {
+      <div class="flex shadow-lg py-5 container">
+        <div>
+          <img [ngSrc]="value.icon" alt="Icon" width="40" height="40" />
+        </div>
+        <div class="container">
+          <p>{{ value.title }}</p>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

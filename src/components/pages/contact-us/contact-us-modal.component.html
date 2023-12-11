@@ -1,0 +1,17 @@
+<div class="p-5">
+  <div class="mb-5">
+    <p class="text-black text-lg">{{ data.message }}</p>
+  </div>
+  <div class="flex justify-center">
+    <button
+      class="bg-teal-500 hover:bg-cyan-500 px-10 py-3 rounded-md shadow-lg text-white"
+      [class.ring-teal-500]="clicking"
+      [class.ring-1]="clicking"
+      (mousedown)="handleClickingChange()"
+      (mouseup)="handleClickingChange()"
+      mat-dialog-close
+    >
+      اغلاق
+    </button>
+  </div>
+</div>
