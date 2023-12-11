@@ -17,19 +17,19 @@ export class PrivacyPolicyComponent {
   }[] = [
     {
       id: 1,
-      icon: '../../../assets/images/privacy_policy/info_1.png',
+      icon: 'assets/images/privacy_policy/info_1.png',
       title: $localize`المعلومات الشخصية`,
       desciption: $localize` تتضمن اسمك وعنوان بريدك الإلكتروني ورقم هاتفك وأي معلومات أخرى تقدمها لنا طوعًا عند الاتصال بنا أو تسجيل حساب أو تقديم طلب أو الاشتراك في نشرتنا الإخبارية.`,
     },
     {
       id: 2,
-      icon: '../../../assets/images/privacy_policy/info_2.png',
+      icon: 'assets/images/privacy_policy/info_2.png',
       title: $localize`المعلومات الفنية`,
       desciption: $localize`تتضمن عنوان IP الخاص بك، ونوع المتصفح، ونوع الجهاز، ونظام التشغيل، وغيرها من المعلومات التي نجمعها تلقائيًا عند وصولك إلى موقعنا على الويب من خلال ملفات تعريف الارتباط أو تقنيات التتبع الأخرى.`,
     },
     {
       id: 3,
-      icon: '../../../assets/images/privacy_policy/info_3.png',
+      icon: 'assets/images/privacy_policy/info_3.png',
       title: $localize`الاستخدام`,
       desciption: $localize`تتضمن سجل التصفح الخاص بك واستعلامات البحث والتفضيلات والمعلومات الأخرى التي نجمعها عندما تتفاعل مع موقعنا الإلكتروني أو منتجاتنا وخدماتنا.`,
     },
@@ -38,7 +38,7 @@ export class PrivacyPolicyComponent {
   policies = [
     {
       id: 1,
-      icon: '../../../assets/images/privacy_policy/1.png',
+      icon: 'assets/images/privacy_policy/1.png',
       title: $localize`كيف نستعمل معلوماتك؟`,
       description: $localize`قد نستخدم معلوماتك للأغراض التالية:`,
       points: [
@@ -52,7 +52,7 @@ export class PrivacyPolicyComponent {
     },
     {
       id: 2,
-      icon: '../../../assets/images/privacy_policy/2.png',
+      icon: 'assets/images/privacy_policy/2.png',
       title: $localize`كيف نشارك معلوماتك؟`,
       description: $localize`قد نشارك معلوماتك مع الأطراف التالية:`,
       points: [
@@ -64,7 +64,7 @@ export class PrivacyPolicyComponent {
     },
     {
       id: 3,
-      icon: '../../../assets/images/privacy_policy/3.png',
+      icon: 'assets/images/privacy_policy/3.png',
       title: $localize`كيف نحمي معلوماتك؟`,
       description: $localize``,
       points: [
@@ -73,7 +73,7 @@ export class PrivacyPolicyComponent {
     },
     {
       id: 4,
-      icon: '../../../assets/images/privacy_policy/4.png',
+      icon: 'assets/images/privacy_policy/4.png',
       title: $localize`كيف نستخدم ملفات تعريف الارتباط وتقنيات التتبع الأخرى؟`,
       description: $localize``,
       points: [
@@ -82,7 +82,7 @@ export class PrivacyPolicyComponent {
     },
     {
       id: 5,
-      icon: '../../../assets/images/privacy_policy/5.png',
+      icon: 'assets/images/privacy_policy/5.png',
       title: $localize`كيف نقوم بتحديث هذه السياسة؟`,
       description: $localize``,
       points: [

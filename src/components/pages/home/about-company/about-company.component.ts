@@ -14,34 +14,34 @@ export class AboutCompanyComponent {
     {
       id: 1,
       title: $localize`أكثر من 10 سنوات من الخبرة`,
-      image_url: '../../../../assets/images/about_company/1.png',
+      image_url: 'assets/images/about_company/1.png',
     },
     {
       id: 2,
       title: $localize`أكثر من 5 شركاء`,
-      image_url: '../../../../assets/images/about_company/2.png',
+      image_url: 'assets/images/about_company/2.png',
     },
     {
       id: 3,
       title: $localize`أكثر من 3 ضيافة`,
-      image_url: '../../../../assets/images/about_company/3.png',
+      image_url: 'assets/images/about_company/3.png',
     },
   ];
   statistics_second_row: { id: number; title: string; image_url: string }[] = [
     {
       id: 1,
       title: $localize`أكثر من 2 مكتب`,
-      image_url: '../../../../assets/images/about_company/4.png',
+      image_url: 'assets/images/about_company/4.png',
     },
     {
       id: 2,
       title: $localize`أكثر من 100 عميل سعيد`,
-      image_url: '../../../../assets/images/about_company/5.png',
+      image_url: 'assets/images/about_company/5.png',
     },
     {
       id: 3,
       title: $localize`أكثر من 50 مشروع`,
-      image_url: '../../../../assets/images/about_company/6.png',
+      image_url: 'assets/images/about_company/6.png',
     },
   ];
 }

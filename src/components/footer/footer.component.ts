@@ -76,25 +76,25 @@ export class FooterComponent {
     {
       id: 1,
       title: 'Facebook',
-      icon: '../../assets/images/social_media_icons/facebook.png',
+      icon: 'assets/images/social_media_icons/facebook.png',
       url: 'https://www.facebook.com',
     },
     {
       id: 2,
       title: 'Instagram',
-      icon: '../../assets/images/social_media_icons/instagram.png',
+      icon: 'assets/images/social_media_icons/instagram.png',
       url: 'https://www.instagram.com',
     },
     {
       id: 3,
       title: 'Linked In',
-      icon: '../../assets/images/social_media_icons/linkedin.png',
+      icon: 'assets/images/social_media_icons/linkedin.png',
       url: 'https://www.linkedin.com',
     },
     {
       id: 4,
       title: 'Snapchat',
-      icon: '../../assets/images/social_media_icons/snapchat.png',
+      icon: 'assets/images/social_media_icons/snapchat.png',
       url: 'https://www.snapchat.com',
     },
   ];

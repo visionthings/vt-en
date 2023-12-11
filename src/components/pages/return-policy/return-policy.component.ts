@@ -12,7 +12,7 @@ export class ReturnPolicyComponent {
   items = [
     {
       id: 1,
-      icon: '../../../assets/images/return_policy/1.png',
+      icon: 'assets/images/return_policy/1.png',
       title: $localize`تعليمات الكاميرات المباعة`,
       points: [
         $localize`يجب أن تكون الكاميرات المراقبة التي ترغب في استبدالها أو استرجاعها في حالتها الأصلية وغير مستخدمة أو معيبة أو مخالفة للمواصفات القياسية السعودية أو للمعلومات التي تم تزويدك بها عند الشراء.`,
@@ -22,7 +22,7 @@ export class ReturnPolicyComponent {
     },
     {
       id: 2,
-      icon: '../../../assets/images/return_policy/2.png',
+      icon: 'assets/images/return_policy/2.png',
       title: $localize`تعليمات الكاميرات المباعة`,
       points: [
         $localize`يمكنك اختيار استبدال الكاميرات المراقبة بمنتجات أخرى متوفرة في موقعنا بنفس القيمة أو أعلى، وفي هذه الحالة سيتم خصم الفرق من رصيدك أو طلبه منك عند التسليم.`,
