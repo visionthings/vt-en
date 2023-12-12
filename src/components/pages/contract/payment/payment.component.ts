@@ -75,7 +75,7 @@ export class PaymentComponent {
             }
           }
         } else {
-          this.responseMessage = `كوبون الخصم الذي ادخلته غير صحيح`;
+          this.responseMessage = $localize`كوبون الخصم الذي ادخلته غير صحيح`;
           this.discount = 0;
           if (typeof window !== 'undefined') {
             localStorage.setItem('discount', '0');

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { SmsService } from '../../services/sms.service';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
@@ -10,6 +12,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './footer.component.css',
 })
 export class FooterComponent {
+  constructor(private sms: SmsService) {}
   footerColumns: any[] = [
     {
       id: 1,
@@ -98,4 +101,29 @@ export class FooterComponent {
       url: 'https://www.snapchat.com',
     },
   ];
+  data: any = {
+    api_id: 'API94645066018',
+    api_password: 'tmGeSwL5SA',
+    sms_type: 'T',
+    encoding: 'U',
+    sender_id: 'Vision Things',
+    phonenumber: '0544542828',
+    textmessage: 'Testing POST method',
+    V1: 'Ahmed',
+    V2: '83747',
+  };
+
+  sendOTP() {
+    this.sms
+      .sendOTP(this.data)
+      .pipe(first())
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+  }
 }

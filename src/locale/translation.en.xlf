@@ -3,7 +3,7 @@
   <file source-language="ar-SA" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="5455036980513831902" datatype="html">
-        <source> إذا كنت ترغب في الحصول على خدمة من رؤية الأشياء، يمكنك الاتصال بنا أو عبر وسائل التواصل الخاصة بنا </source>
+        <source> إذا كنت ترغب في الحصول على خدمة من رؤية الأشياء، يمكنك الاتصال بنا أو عبر وسائل التواصل الخاصة بنا </source><target>If you would like to get a service from seeing things, you can contact us or through our communication channels</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.html</context>
           <context context-type="linenumber">53,54</context>
@@ -11,6 +11,7 @@
       </trans-unit>
       <trans-unit id="7582772216721712982" datatype="html">
         <source>روابط سريعة</source>
+        <target>Quick Links</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">16</context>
@@ -18,6 +19,7 @@
       </trans-unit>
       <trans-unit id="5896476729491647130" datatype="html">
         <source>الرئيسية</source>
+        <target>Home</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">20</context>
@@ -28,7 +30,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8862361855412486064" datatype="html">
-        <source>عن الشركة</source>
+        <source>عن الشركة</source><target>About Us</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -48,6 +50,7 @@
       </trans-unit>
       <trans-unit id="653540136051993466" datatype="html">
         <source>عقد الكاميرات</source>
+        <target>Cameras Contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">30</context>
@@ -59,6 +62,7 @@
       </trans-unit>
       <trans-unit id="5765740422227625934" datatype="html">
         <source>اتصل بنا</source>
+        <target>Contact Us</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">35</context>
@@ -78,6 +82,7 @@
       </trans-unit>
       <trans-unit id="4729827073900231549" datatype="html">
         <source>الأحكام والشروط</source>
+        <target>Terms & Conditions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">42</context>
@@ -93,6 +98,7 @@
       </trans-unit>
       <trans-unit id="5849649398676927414" datatype="html">
         <source>سياسة الخصوصية</source>
+        <target>Privacy Policy</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">49</context>
@@ -104,6 +110,7 @@
       </trans-unit>
       <trans-unit id="2555334503959301011" datatype="html">
         <source>سياسة الاستبدال والاسترجاع</source>
+        <target>Return & Exchange Policy</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">52</context>
@@ -115,6 +122,7 @@
       </trans-unit>
       <trans-unit id="3118713608724037924" datatype="html">
         <source>العنوان</source>
+        <target>Address</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">59</context>
@@ -130,6 +138,7 @@
       </trans-unit>
       <trans-unit id="7896198146301071892" datatype="html">
         <source>المملكة العربية السعودية - جدة - حي الزهراء</source>
+        <target>Saudi Arabia - Jeddah - Al Zahraa District</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">63</context>
@@ -137,6 +146,7 @@
       </trans-unit>
       <trans-unit id="7710810850057373664" datatype="html">
         <source>الرمز البريدي: 23522</source>
+        <target>Postal Code: 23522</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/footer/footer.component.ts</context>
           <context context-type="linenumber">66</context>
@@ -144,6 +154,7 @@
       </trans-unit>
       <trans-unit id="5987214455821631662" datatype="html">
         <source>ملفي الشخصي</source>
+        <target>Account</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">40,41</context>
@@ -151,6 +162,7 @@
       </trans-unit>
       <trans-unit id="2256867068587592734" datatype="html">
         <source>تسجيل الدخول</source>
+        <target>Sign In</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">46,47</context>
@@ -158,6 +170,7 @@
       </trans-unit>
       <trans-unit id="7126924983246997494" datatype="html">
         <source>تقابل مع فريقنا</source>
+        <target>Meet our team</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/about-header/about-header.component.html</context>
           <context context-type="linenumber">4,5</context>
@@ -165,6 +178,7 @@
       </trans-unit>
       <trans-unit id="5024188742393477479" datatype="html">
         <source> رؤية الأشياء هي شركة سعودية متخصصة في تقديم أفضل الحلول الأمنية . لدينا فريق من الفنيين ذوي الخبرة والمعتمدين الذين يمكنهم تركيب وصيانة نظام الأمان الخاص بك باحترافية وكفاءة. في رؤية الأشياء نحن نعتقد أن الأمن ليس ترفاً، بل ضرورة. ولهذا السبب نقدم مجموعة واسعة من المنتجات والخدمات التي تناسب احتياجاتك وميزانيتك المحددة. سواء كنت بحاجة إلى كاميرا مراقبة بسيطة أو نظام أمني معقد، فلدينا الحل المناسب لك. </source>
+        <target>Vision Things is a Saudi company specialized in providing the best security solutions. We have a team of experienced and certified technicians who can install and maintain your security system professionally and efficiently. In seeing things we believe that security is not a luxury, but a necessity. That's why we offer a wide range of products and services to suit your specific needs and budget. Whether you need a simple security camera or a complex security system, we have the solution for you.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/about-header/about-header.component.html</context>
           <context context-type="linenumber">6,11</context>
@@ -176,48 +190,49 @@
       </trans-unit>
       <trans-unit id="8188126241841128507" datatype="html">
         <source>قيم الشركة</source>
+        <target>Company Values</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/company-values/company-values.component.html</context>
           <context context-type="linenumber">3,4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4186700872519309959" datatype="html">
-        <source>الابتكار</source>
+        <source>الابتكار</source><target>Creativity</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/company-values/company-values.component.ts</context>
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4392047841633526762" datatype="html">
-        <source>الربح للجانبين</source>
+        <source>الربح للجانبين</source><target>Win-Win Situation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/company-values/company-values.component.ts</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5170430998553505652" datatype="html">
-        <source>التطوير المستمر</source>
+        <source>التطوير المستمر</source><target>Continous Development</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/company-values/company-values.component.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7913633765611533625" datatype="html">
-        <source>الكفاءة</source>
+        <source>الكفاءة</source><target>Efficiency</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/company-values/company-values.component.ts</context>
           <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1674762477891061564" datatype="html">
-        <source>الانضباط</source>
+        <source>الانضباط</source><target>Commitment</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/company-values/company-values.component.ts</context>
           <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6116493471343377353" datatype="html">
-        <source> رؤيتنا ومهمتنا </source>
+        <source> رؤيتنا ومهمتنا </source><target>Our Vision & Mission</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/our-vision/our-vision.component.html</context>
           <context context-type="linenumber">5,6</context>
@@ -225,13 +240,14 @@
       </trans-unit>
       <trans-unit id="4925107392989210469" datatype="html">
         <source> تقديم رؤية لمستقبل التكنولوجيا في المملكة العربية السعودية. تقديم أحدث الحلول العلمية والتقنية لمساعدة عملائنا في أعمالهم ودعم اقتصاد المملكة من خلال توفير أحدث التقنيات والحلول. </source>
+        <target>Providing a vision for the future of technology in the Kingdom of Saudi Arabia. Providing the latest scientific and technical solutions to help our customers in their business and support the Kingdom’s economy by providing the latest technologies and solutions.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/about-us/our-vision/our-vision.component.html</context>
           <context context-type="linenumber">8,10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7024732626981468754" datatype="html">
-        <source>خدماتي</source>
+        <source>خدماتي</source><target>My Services</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/account.component.html</context>
           <context context-type="linenumber">7,8</context>
@@ -250,7 +266,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2418658089324649580" datatype="html">
-        <source>المعلومات الشخصية</source>
+        <source>المعلومات الشخصية</source><target>Personal Information</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/account.component.ts</context>
           <context context-type="linenumber">21</context>
@@ -261,7 +277,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="6982332624551973791" datatype="html">
-        <source>تغيير كلمة المرور</source>
+        <source>تغيير كلمة المرور</source><target>Change Password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/account.component.ts</context>
           <context context-type="linenumber">24</context>
@@ -272,28 +288,28 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2511094015898140692" datatype="html">
-        <source>تسجيل الخروج</source>
+        <source>تسجيل الخروج</source><target>Sign Out</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/account.component.ts</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1657543826114003461" datatype="html">
-        <source> كلمة المرور الجديدة</source>
+        <source> كلمة المرور الجديدة</source><target>New Password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/change-password/change-password.component.html</context>
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4481122110395614906" datatype="html">
-        <source>كلمة المرور مطلوبة</source>
+        <source>كلمة المرور مطلوبة</source><target>Password is required</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/change-password/change-password.component.html</context>
           <context context-type="linenumber">20,21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6137163474022178218" datatype="html">
-        <source>ادخل كلمة مرور قوية</source>
+        <source>ادخل كلمة مرور قوية</source><target>Enter strong password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/change-password/change-password.component.html</context>
           <context context-type="linenumber">21,22</context>
@@ -351,14 +367,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="4539056847305276019" datatype="html">
-        <source> تغيير كلمة المرور </source>
+        <source> تغيير كلمة المرور </source><target>Change Password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/change-password/change-password.component.html</context>
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
       <trans-unit id="949052952196237341" datatype="html">
-        <source>تم تغيير كلمة المرور بنجاح</source>
+        <source>تم تغيير كلمة المرور بنجاح</source><target>Password has been changed successfully</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/change-password/change-password.component.ts</context>
           <context context-type="linenumber">45</context>
@@ -366,6 +382,7 @@
       </trans-unit>
       <trans-unit id="7303130623608776635" datatype="html">
         <source>تعذر الاتصال بقاعدة البيانات، يرجى التحقق من اتصالك بالانترنت والمحاولة مرة أخرى.</source>
+        <target>Unable to connect to the database, please check your internet connection and try again.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/change-password/change-password.component.ts</context>
           <context context-type="linenumber">48</context>
@@ -376,14 +393,14 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8956333081587548460" datatype="html">
-        <source>معلومات الملف الشخصي</source>
+        <source>معلومات الملف الشخصي</source><target>Profile Information</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">2,4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2982016906529261626" datatype="html">
-        <source>اسم الشخص أو الشركة</source>
+        <source>اسم الشخص أو الشركة</source><target>Name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">7,8</context>
@@ -394,7 +411,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2535066173759248198" datatype="html">
-        <source>الاسم بأحرف عربية فقط</source>
+        <source>الاسم بأحرف عربية فقط</source><target>Name in Arabic letters only</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">12,13</context>
@@ -405,7 +422,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8019605996198164776" datatype="html">
-        <source>حقل الاسم مطلوب.</source>
+        <source>حقل الاسم مطلوب.</source><target>Name is required</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">19,20</context>
@@ -416,7 +433,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="6729372261873251247" datatype="html">
-        <source> ادخل الاسم بأحرف عربية فقط. </source>
+        <source> ادخل الاسم بأحرف عربية فقط. </source><target>Enter name is Arabic letters only.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">21</context>
@@ -427,7 +444,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="507049881998093971" datatype="html">
-        <source>البريد الالكتروني</source>
+        <source>البريد الالكتروني</source><target>Email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">26,27</context>
@@ -446,7 +463,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="4107881662610117499" datatype="html">
-        <source> البريد الإلكتروني مطلوب. </source>
+        <source> البريد الإلكتروني مطلوب. </source><target>Email is required</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">38</context>
@@ -465,7 +482,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="4637636111292672607" datatype="html">
-        <source>ادخل بريد الكتروني صالح.</source>
+        <source>ادخل بريد الكتروني صالح.</source><target>Email is not valid.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">40,41</context>
@@ -480,7 +497,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7017314562432851869" datatype="html">
-        <source>الجوال</source>
+        <source>الجوال</source><target>Mobile number</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">45,46</context>
@@ -499,7 +516,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="3481136022106258839" datatype="html">
-        <source>رقم الجوال</source>
+        <source>رقم الجوال</source><target>Mobile number</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">50,51</context>
@@ -510,7 +527,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7856471455959994375" datatype="html">
-        <source>رقم الجوال مطلوب.</source>
+        <source>رقم الجوال مطلوب.</source><target>Mobile number is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">57,58</context>
@@ -525,7 +542,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="1558866319720427195" datatype="html">
-        <source> رقم الجوال يجب أن يكون من 10 أرقام على الأقل. </source>
+        <source> رقم الجوال يجب أن يكون من 10 أرقام على الأقل. </source><target>Mobile number must consists of 10 digits.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">59</context>
@@ -540,7 +557,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="3098094344981576813" datatype="html">
-        <source> ادخل رقم جوال سعودي صالح. </source>
+        <source> ادخل رقم جوال سعودي صالح. </source><target>Enter a valid Saudi number.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">62</context>
@@ -555,7 +572,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7266160246172228705" datatype="html">
-        <source>رقم السجل التجاري</source>
+        <source>رقم السجل التجاري</source><target>Commercial number</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">68,69</context>
@@ -566,7 +583,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5004576224107176039" datatype="html">
-        <source>رقم السجل التجاري المكون من 10 أرقام</source>
+        <source>رقم السجل التجاري المكون من 10 أرقام</source><target>Commercial number consists of 10 digits.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">74,75</context>
@@ -577,7 +594,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="1209164860830221334" datatype="html">
-        <source> رقم السجل التجاري مطلوب. </source>
+        <source> رقم السجل التجاري مطلوب. </source><target>Commercial number is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">85</context>
@@ -588,7 +605,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7582816968359984157" datatype="html">
-        <source> ادخل أرقام فقط. </source>
+        <source> ادخل أرقام فقط. </source><target>Enter number only.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">88</context>
@@ -607,7 +624,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="4660268408484101846" datatype="html">
-        <source> رقم السجل التجاري يجب أن يكون مكون من 10 أرقام. </source>
+        <source> رقم السجل التجاري يجب أن يكون مكون من 10 أرقام. </source><target>Commercial number consists of 10 digits.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">92</context>
@@ -626,7 +643,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7553090957848769363" datatype="html">
-        <source>الشارع - الحي - المدينة</source>
+        <source>الشارع - الحي - المدينة</source><target>Street - District - City</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">105,106</context>
@@ -637,7 +654,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7232626930482812283" datatype="html">
-        <source>العنوان مطلوب.</source>
+        <source>العنوان مطلوب.</source><target>Address is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">112,113</context>
@@ -648,7 +665,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5240446102670280989" datatype="html">
-        <source> ادخل العنوان بأحرف عربية فقط. </source>
+        <source> ادخل العنوان بأحرف عربية فقط. </source><target>Enter Arabic letters only.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">114</context>
@@ -659,28 +676,28 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2836917542886415268" datatype="html">
-        <source> تعديل بيانات الحساب </source>
+        <source> تعديل بيانات الحساب </source><target>Edit Profile</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">142</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3455566007132359397" datatype="html">
-        <source>تم تعديل البيانات بنجاح</source>
+        <source>تم تعديل البيانات بنجاح</source><target>Profile updated successfully</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/personal-information/personal-information.component.ts</context>
           <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9183925204709045960" datatype="html">
-        <source> تسجيل الخروج </source>
+        <source> تسجيل الخروج </source><target>Sign Out</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/account/sign-out/sign-out.component.html</context>
           <context context-type="linenumber">11,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3613488155514689586" datatype="html">
-        <source> اغلاق </source>
+        <source> اغلاق </source><target>Close</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us-modal.component.html</context>
           <context context-type="linenumber">15,16</context>
@@ -688,13 +705,14 @@
       </trans-unit>
       <trans-unit id="8914428874084682034" datatype="html">
         <source> المملكة العربية السعودية - جدة - حي الزهراء - الرمز البريدي:23522 </source>
+        <target>Saudi Arabia - Jeddah - Al Zahraa District - Postal Code: 23522</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3699542652460466003" datatype="html">
-        <source>تواصل معنا</source>
+        <source>تواصل معنا</source><target>Contact Us</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">46,47</context>
@@ -702,55 +720,56 @@
       </trans-unit>
       <trans-unit id="7395868728570609462" datatype="html">
         <source> يمكنك الاتصال بنا وترك الشكاوى والاقتراحات أو الاستفسار الذي تريده، وسوف نتصل بك في أقرب وقت ممكن </source>
+        <target>You can contact us and leave complaints, suggestions or inquiries you want, and we will contact you as soon as possible</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">48,49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6394675950099518247" datatype="html">
-        <source>الاسم</source>
+        <source>الاسم</source><target>Name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">56,57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2503190107853259805" datatype="html">
-        <source>اكتب اسمك هنا</source>
+        <source>اكتب اسمك هنا</source><target>Enter your name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">63,64</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7785791588736439412" datatype="html">
-        <source>الاسم مطلوب.</source>
+        <source>الاسم مطلوب.</source><target>Name is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">69,70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4118689758294349109" datatype="html">
-        <source>الاسم قصير جدا.</source>
+        <source>الاسم قصير جدا.</source><target>Name is too short.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">70,71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="383179906871776672" datatype="html">
-        <source>name@email.com</source>
+        <source>name@email.com</source><target>name@email.com</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">106,107</context>
         </context-group>
       </trans-unit>
       <trans-unit id="143091450952602257" datatype="html">
-        <source> ادخل بريد الكتروني صالح. </source>
+        <source> ادخل بريد الكتروني صالح. </source><target>Email is not valid.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">116</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3414708027470552280" datatype="html">
-        <source>الموضوع</source>
+        <source>الموضوع</source><target>Subject</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">122,123</context>
@@ -761,7 +780,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7393449031072175164" datatype="html">
-        <source>الموضوع مطلوب.</source>
+        <source>الموضوع مطلوب.</source><target>Subject is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">135,136</context>
@@ -769,13 +788,14 @@
       </trans-unit>
       <trans-unit id="4140398578681143450" datatype="html">
         <source> اسم الموضوع قصير جداً. </source>
+        <target>Too short!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">137</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4541627169347545760" datatype="html">
-        <source>الرسالة</source>
+        <source>الرسالة</source><target>Message</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">143,144</context>
@@ -783,6 +803,7 @@
       </trans-unit>
       <trans-unit id="3657269828196364467" datatype="html">
         <source>اكتب رسالتك هنا</source>
+        <target>Enter your message</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">151,152</context>
@@ -790,6 +811,7 @@
       </trans-unit>
       <trans-unit id="7144942574440388201" datatype="html">
         <source>الرسالة مطلوبة.</source>
+        <target>Message is required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">157,158</context>
@@ -797,13 +819,14 @@
       </trans-unit>
       <trans-unit id="8076819418717618834" datatype="html">
         <source> الرسالة قصيرة جداً. </source>
+        <target>Message is too short.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">159</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1877875792587436897" datatype="html">
-        <source> ارسال </source>
+        <source> ارسال </source><target>Send Message</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.html</context>
           <context context-type="linenumber">174</context>
@@ -814,7 +837,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="6021422222014301574" datatype="html">
-        <source>تم الإرسال بنجاح، شكرا لتواصلكم معنا.</source>
+        <source>تم الإرسال بنجاح، شكرا لتواصلكم معنا.</source><target>Message has been sent successfully.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.ts</context>
           <context context-type="linenumber">93</context>
@@ -822,13 +845,14 @@
       </trans-unit>
       <trans-unit id="1170856641629651774" datatype="html">
         <source>تعذر الإرسال في الوقت الحالي، يرجى المحاولة في وقت آخر.</source>
+        <target>Failed to send message, please try again later.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contact-us/contact-us.component.ts</context>
           <context context-type="linenumber">97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4746304928246902230" datatype="html">
-        <source>انشاء عقد جديد</source>
+        <source>انشاء عقد جديد</source><target>Create New Contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/contract.component.ts</context>
           <context context-type="linenumber">20</context>
@@ -843,7 +867,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="3596100290273226740" datatype="html">
-        <source>العقود المسجلة</source>
+        <source>العقود المسجلة</source><target>Registered Contracts</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/contract.component.ts</context>
           <context context-type="linenumber">21</context>
@@ -854,7 +878,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7868739707063815391" datatype="html">
-        <source>طلب زيارة</source>
+        <source>طلب زيارة</source><target>Visit Request</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/contract.component.ts</context>
           <context context-type="linenumber">22</context>
@@ -866,6 +890,7 @@
       </trans-unit>
       <trans-unit id="2018692606272165001" datatype="html">
         <source>يرجى إدخال البيانات التالية لتسجيل عقدك</source>
+        <target>Please fulfill the required data to register your contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">3,5</context>
@@ -873,6 +898,7 @@
       </trans-unit>
       <trans-unit id="6915299576126043063" datatype="html">
         <source>عدد الكاميرات الداخلية</source>
+        <target>Indoor Cameras Count</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">11,12</context>
@@ -880,6 +906,7 @@
       </trans-unit>
       <trans-unit id="1003295356710884785" datatype="html">
         <source> ادخل عدد الكاميرات الداخلية. </source>
+        <target>Enter indoor cameras count.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">27</context>
@@ -887,6 +914,7 @@
       </trans-unit>
       <trans-unit id="7380091876124035754" datatype="html">
         <source>عدد الكاميرات الخارجية</source>
+        <target>Outdoor Cameras Count</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">36,37</context>
@@ -894,6 +922,7 @@
       </trans-unit>
       <trans-unit id="3322427828008945607" datatype="html">
         <source> ادخل عدد الكاميرات الخارجية. </source>
+        <target>Enter outdoor cameras count.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">52</context>
@@ -901,13 +930,14 @@
       </trans-unit>
       <trans-unit id="5983939741153190391" datatype="html">
         <source>نوع وحدة التخزين</source>
+        <target>Storage Device Type</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">61,62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="525561357273764363" datatype="html">
-        <source> ادخل نوع وحدة التخزين. </source>
+        <source> ادخل نوع وحدة التخزين. </source><target>Enter storage device type. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">79</context>
@@ -915,6 +945,7 @@
       </trans-unit>
       <trans-unit id="8289866568345167268" datatype="html">
         <source>مدة التسجيل</source>
+        <target>Record Period</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">85,86</context>
@@ -922,6 +953,7 @@
       </trans-unit>
       <trans-unit id="8714373620498526287" datatype="html">
         <source> ادخل مدة التسجيل. </source>
+        <target>Enter record period</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">104</context>
@@ -929,6 +961,7 @@
       </trans-unit>
       <trans-unit id="222266506589386746" datatype="html">
         <source>عدد شاشات العرض</source>
+        <target>Display Screens Count</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">110,111</context>
@@ -936,20 +969,21 @@
       </trans-unit>
       <trans-unit id="1168227729558300254" datatype="html">
         <source> ادخل عدد شاشات العرض. </source>
+        <target>Enter display screens count.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3064438241677972409" datatype="html">
-        <source>ادخل أرقام فقط.</source>
+        <source>ادخل أرقام فقط.</source><target>Enter digits only.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">128,129</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6864238506734511862" datatype="html">
-        <source>نوع الكاميرا</source>
+        <source>نوع الكاميرا</source><target>Camera Type</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">132,133</context>
@@ -957,6 +991,7 @@
       </trans-unit>
       <trans-unit id="5861854140902522941" datatype="html">
         <source> ادخل نوع الكاميرا. </source>
+        <target>Enter camera type.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">149</context>
@@ -964,13 +999,15 @@
       </trans-unit>
       <trans-unit id="1300260240275876914" datatype="html">
         <source> السعر غير شامل ضريبة القيمة المضافة </source>
+        <target>Price not including VAT</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">159</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8389201229565936247" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ price }}"/> ريال سعودي</source>
+        <source> ريال سعودي</source>
+        <target><x id="INTERPOLATION" equiv-text="{{ price }}"/>SAR</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">163,164</context>
@@ -981,98 +1018,98 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8572204791250870308" datatype="html">
-        <source>الخطوة القادمة</source>
+        <source>الخطوة القادمة</source><target>Next Step</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.html</context>
           <context context-type="linenumber">175,176</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3087708551937555672" datatype="html">
-        <source>شهر</source>
+        <source>شهر</source><target>1 Month</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5654278116050462881" datatype="html">
-        <source>شهران</source>
+        <source>شهران</source><target>2 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="757981965535747906" datatype="html">
-        <source>ثلاثة أشهر</source>
+        <source>ثلاثة أشهر</source><target>3 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6826220632250381200" datatype="html">
-        <source>أربعة أشهر</source>
+        <source>أربعة أشهر</source><target>4 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3904853731968261740" datatype="html">
-        <source>خمسة أشهر</source>
+        <source>خمسة أشهر</source><target>5 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="640585157294998315" datatype="html">
-        <source>ستة أشهر</source>
+        <source>ستة أشهر</source><target>6 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1301452666335285772" datatype="html">
-        <source>سبعة أشهر</source>
+        <source>سبعة أشهر</source><target>7 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3750641075032048207" datatype="html">
-        <source>ثمانية أشهر</source>
+        <source>ثمانية أشهر</source><target>8 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2233756367989335961" datatype="html">
-        <source>تسعة أشهر</source>
+        <source>تسعة أشهر</source><target>9 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6702978238882042379" datatype="html">
-        <source>عشرة أشهر</source>
+        <source>عشرة أشهر</source><target>10 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="673837222754621442" datatype="html">
-        <source>أحد عشر شهر</source>
+        <source>أحد عشر شهر</source><target>11 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="827789447015129913" datatype="html">
-        <source>اثنا عشر شهر</source>
+        <source>اثنا عشر شهر</source><target>12 Months</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/create-new-contract/create-new-contract.component.ts</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1855863810974705308" datatype="html">
-        <source>تهانينا</source>
+        <source>تهانينا</source><target>Congratulations</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/final-contract/final-contract.component.html</context>
           <context context-type="linenumber">10,11</context>
@@ -1080,6 +1117,7 @@
       </trans-unit>
       <trans-unit id="8047441455963307320" datatype="html">
         <source> لقد أنجزت مهمة تقديم تفاصيل العقد، وتم ارسال الفاتورة الى بريدك الالكتروني، و يمكنك الآن تحميل نسخة من العقد </source>
+        <target>You have completed the task of submitting the contract details, they have been submitted to your email, and you can now download a copy of the contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/final-contract/final-contract.component.html</context>
           <context context-type="linenumber">12,13</context>
@@ -1087,13 +1125,17 @@
       </trans-unit>
       <trans-unit id="185263052086045479" datatype="html">
         <source>تحميل العقد</source>
+        <target>Download Contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/final-contract/final-contract.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8707908654576025354" datatype="html">
-        <source> اذا كان متصفحك لا يدعم الانتقال التلقائي <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;url&quot;&gt;"/>اضغط هنا<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <source>
+         اذا كان متصفحك لا يدعم الانتقال التلقائي <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;url&quot;&gt;"/>اضغط هنا<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+         </source>
+         <target>If your browser does not support automatic switching <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;url&quot;&gt;"/>Click here<x id="CLOSE_LINK" ctype ="x-a" equiv-text="&lt;/a&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment-redirect/payment-redirect.component.html</context>
           <context context-type="linenumber">12,14</context>
@@ -1101,6 +1143,7 @@
       </trans-unit>
       <trans-unit id="3065523546689075653" datatype="html">
         <source>عملية الدفع تمت بنجاح وجاري تحويلك الآن لصفحة تحميل العقد</source>
+        <target>The payment process was completed successfully and you are now being redirected to the contract download page</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment-redirect/payment-redirect.component.ts</context>
           <context context-type="linenumber">30</context>
@@ -1108,13 +1151,14 @@
       </trans-unit>
       <trans-unit id="2669111045917864595" datatype="html">
         <source>تعذر اتمام عملية السداد، جاري تحويلك لصفحة الدفع مرة أخرى</source>
+        <target>The payment process could not be completed. You are being redirected to the payment page again</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment-redirect/payment-redirect.component.ts</context>
           <context context-type="linenumber">47</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5825048493318254717" datatype="html">
-        <source>الدفع</source>
+        <source>الدفع</source><target>Payment</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">4,5</context>
@@ -1122,48 +1166,49 @@
       </trans-unit>
       <trans-unit id="950781020026487932" datatype="html">
         <source> يرجى إدخال البيانات التالية لاتمام عملية التعاقد </source>
+        <target>Please enter the following information to complete the contracting process</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">6,7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3330300965289966032" datatype="html">
-        <source>اسم حامل البطاقة </source>
+        <source>اسم حامل البطاقة </source><target>Name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">12,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8687756484253742902" datatype="html">
-        <source>اسم حامل البطاقة</source>
+        <source>اسم حامل البطاقة</source><target>Name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">18,19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7154557757490409337" datatype="html">
-        <source>ادخل اسم حامل البطاقة.</source>
+        <source>ادخل اسم حامل البطاقة.</source><target>Enter your name.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">24,25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8043897233356749852" datatype="html">
-        <source> رقم بطاقة الدفع</source>
+        <source> رقم بطاقة الدفع</source><target>Card Number</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">28,29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5809729765369705691" datatype="html">
-        <source>ادخل رقم البطاقة.</source>
+        <source>ادخل رقم البطاقة.</source><target>Enter card number.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">39,40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5264792007993443897" datatype="html">
-        <source>ادخل رقم بطاقة صالح.</source>
+        <source>ادخل رقم بطاقة صالح.</source><target>Enter valid card number.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">40,41</context>
@@ -1171,6 +1216,7 @@
       </trans-unit>
       <trans-unit id="7156489963495760130" datatype="html">
         <source> ادخل رقم بطاقة مكون من 14 خانة على الأقل. </source>
+        <target>Card number consists of 14 digits.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">42</context>
@@ -1178,20 +1224,21 @@
       </trans-unit>
       <trans-unit id="4370122298826025895" datatype="html">
         <source> ادخل الرقم المكون من ثلاثة أرقام على ظهر البطاقة. </source>
+        <target>Enter CVC number.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
       <trans-unit id="52105968588729228" datatype="html">
-        <source>ادخل رقم صالح.</source>
+        <source>ادخل رقم صالح.</source><target>Enter a valid number.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">56,57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6784825825702402197" datatype="html">
-        <source> الرقم يجب أن يكون مكون من ثلاثة خانات. </source>
+        <source> الرقم يجب أن يكون مكون من ثلاثة خانات. </source><target>Number consists of 3 digits.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">58</context>
@@ -1202,35 +1249,35 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8703873967902440440" datatype="html">
-        <source> تاريخ الانتهاء</source>
+        <source> تاريخ الانتهاء</source><target>Expiry Date</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="348654607345539085" datatype="html">
-        <source> ادخل تاريخ انتهاء البطاقة. </source>
+        <source> ادخل تاريخ انتهاء البطاقة. </source><target>Enter expiry date.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6946280687029022543" datatype="html">
-        <source>ادخل تاريخ صالح.</source>
+        <source>ادخل تاريخ صالح.</source><target>Enter a valid date.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">84,85</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7904443775478434680" datatype="html">
-        <source> اتمام </source>
+        <source> اتمام </source><target>Submit</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8311200839099660077" datatype="html">
-        <source>السعر</source>
+        <source>السعر</source><target>Price</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">107,108</context>
@@ -1241,7 +1288,10 @@
         </context-group>
       </trans-unit>
       <trans-unit id="5707953040483126914" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ price }}"/> ر.س</source>
+        <source>
+        <x id="INTERPOLATION" equiv-text="{{ price }}"/> ر.س
+        </source>
+        <target><x id="INTERPOLATION" equiv-text="{{ price }}"/> SAR</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">112,113</context>
@@ -1260,35 +1310,35 @@
         </context-group>
       </trans-unit>
       <trans-unit id="8371794751488166927" datatype="html">
-        <source>ضريبة القيمة المضافة (15%)</source>
+        <source>ضريبة القيمة المضافة (15%)</source><target>VAT (15%)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">117,118</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3810881590463278316" datatype="html">
-        <source>الخصم</source>
+        <source>الخصم</source><target>Discount</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">125,126</context>
         </context-group>
       </trans-unit>
       <trans-unit id="382095499533398919" datatype="html">
-        <source>إجمالي التكلفة</source>
+        <source>إجمالي التكلفة</source><target>Total Price</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">135,136</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3446947268780920443" datatype="html">
-        <source>هل لديك كود خصم؟</source>
+        <source>هل لديك كود خصم؟</source><target>Do you have a promocode?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">139,140</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2201482239850013115" datatype="html">
-        <source>ادخل كود الخصم</source>
+        <source>ادخل كود الخصم</source><target>Enter promocode</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.html</context>
           <context context-type="linenumber">146,147</context>
@@ -1296,6 +1346,7 @@
       </trans-unit>
       <trans-unit id="5464428060192266151" datatype="html">
         <source>تهانينا، لقد حصلت على خصم بقيمة <x id="PH" equiv-text="foundPromoCode.discount"/>%</source>
+        <source>Congratulations, you've got <x id="PH" equiv-text="foundPromoCode.discount"/>% discount.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.ts</context>
           <context context-type="linenumber">65</context>
@@ -1303,6 +1354,7 @@
       </trans-unit>
       <trans-unit id="1028145531069006125" datatype="html">
         <source>كوبون الخصم الذي ادخلته منتهى الصلاحية</source>
+        <target>Promocode is expired</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.ts</context>
           <context context-type="linenumber">71</context>
@@ -1310,48 +1362,49 @@
       </trans-unit>
       <trans-unit id="6072014527685609903" datatype="html">
         <source>كوبون الخصم الذي ادخلته غير صحيح</source>
+        <target>Promocode is not valid</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/payment/payment.component.ts</context>
           <context context-type="linenumber">78</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3097723427168039557" datatype="html">
-        <source>رقم العقد</source>
+        <source>رقم العقد</source><target>Contract number</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/registered-contracts/registered-contracts.component.html</context>
           <context context-type="linenumber">8,9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="85338400872031445" datatype="html">
-        <source>قيمة العقد</source>
+        <source>قيمة العقد</source><target>Contract value</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/registered-contracts/registered-contracts.component.html</context>
           <context context-type="linenumber">9,10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="244832321268922555" datatype="html">
-        <source>تحميل نسخة PDF</source>
+        <source>تحميل نسخة PDF</source><target>Download PDF version</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/registered-contracts/registered-contracts.component.html</context>
           <context context-type="linenumber">10,11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="170433758632805581" datatype="html">
-        <source>تجديد العقد</source>
+        <source>تجديد العقد</source><target>Renew Contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/registered-contracts/registered-contracts.component.html</context>
           <context context-type="linenumber">11,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1163212851027616653" datatype="html">
-        <source> تجديد العقد </source>
+        <source> تجديد العقد </source><target>Renew Contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/registered-contracts/registered-contracts.component.html</context>
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2772564727882596543" datatype="html">
-        <source>لا توجد عقود مسجلة</source>
+        <source>لا توجد عقود مسجلة</source><target>There are no registered Contracts</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/registered-contracts/registered-contracts.component.html</context>
           <context context-type="linenumber">41,42</context>
@@ -1359,13 +1412,14 @@
       </trans-unit>
       <trans-unit id="440064431863063522" datatype="html">
         <source> اذا كنت بحاجة لزيارة تقني، يمكنك بضغطة زر واحدة الآن ارسال طلب زيارة الكترونيا وسنعاود الاتصال بك في خلال 24 ساعة لتحديد موعد للزيارة مقابل 750 ريال فقط. </source>
-        <context-group purpose="location">
+         <target>If you need a technical visit, with one click of a button you can now send a visit request electronically and we will contact you back within 24 hours to schedule a visit for only 750 riyals.</target>
+         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/visit-request/visit-request.component.html</context>
           <context context-type="linenumber">4,6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4911613375137036315" datatype="html">
-        <source>ارسال طلب زيارة</source>
+        <source>ارسال طلب زيارة</source><target>Send visit request</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/visit-request/visit-request.component.html</context>
           <context context-type="linenumber">25,26</context>
@@ -1373,6 +1427,7 @@
       </trans-unit>
       <trans-unit id="8753317354150967589" datatype="html">
         <source>لديك طلب زيارة مسجل بالفعل وسيتم الاتصال بك في خلال 24 ساعة من وقت تقديم الطلب.</source>
+        <target>You have a visit request already registered and you will be contacted within 24 hours of submitting the request</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/visit-request/visit-request.component.ts</context>
           <context context-type="linenumber">36</context>
@@ -1380,48 +1435,49 @@
       </trans-unit>
       <trans-unit id="484010770810701686" datatype="html">
         <source>تم تقديم طلب زيارة برقم <x id="PH" equiv-text="res.id + 10000"/>، وسيتم الاتصال بك في خلال 24 ساعة.</source>
+        <target>A visit request has been submitted with <x id="PH" equiv-text="res.id + 10000"/>, and you will be contacted within 24 hours.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/contract/visit-request/visit-request.component.ts</context>
           <context context-type="linenumber">48,50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5179268198113711501" datatype="html">
-        <source>أكثر من 10 سنوات من الخبرة</source>
+        <source>أكثر من 10 سنوات من الخبرة</source><target>More than 10 years of experience</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/about-company/about-company.component.ts</context>
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3593040975294559595" datatype="html">
-        <source>أكثر من 5 شركاء</source>
+        <source>أكثر من 5 شركاء</source><target>More than 5 partners </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/about-company/about-company.component.ts</context>
           <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5268024582002565856" datatype="html">
-        <source>أكثر من 3 ضيافة</source>
+        <source>أكثر من 3 ضيافة</source><target>More than 3 hospitality</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/about-company/about-company.component.ts</context>
           <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3085894943253085200" datatype="html">
-        <source>أكثر من 2 مكتب</source>
+        <source>أكثر من 2 مكتب</source><target>More than 2 Offices</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/about-company/about-company.component.ts</context>
           <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="383960079818397318" datatype="html">
-        <source>أكثر من 100 عميل سعيد</source>
+        <source>أكثر من 100 عميل سعيد</source><target>More than 100 happy client</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/about-company/about-company.component.ts</context>
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4079142648629564995" datatype="html">
-        <source>أكثر من 50 مشروع</source>
+        <source>أكثر من 50 مشروع</source><target>More than 50 project</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/about-company/about-company.component.ts</context>
           <context context-type="linenumber">43</context>
@@ -1429,20 +1485,21 @@
       </trans-unit>
       <trans-unit id="8592382786494105343" datatype="html">
         <source> احمي منزلك وعملك بأحدث كاميرات وأنظمة التأمين </source>
+        <target>Secure your home and work using the latest cameras and security systems.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/header/header.component.html</context>
           <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8209885520149919266" datatype="html">
-        <source> أمنك مسئوليتنا </source>
+        <source> أمنك مسئوليتنا </source><target>Your security is our responsibility</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/header/header.component.html</context>
           <context context-type="linenumber">8,9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5155702857637532018" datatype="html">
-        <source>اعرف أكثر</source>
+        <source>اعرف أكثر</source><target>Know More</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/header/header.component.html</context>
           <context context-type="linenumber">13,14</context>
@@ -1454,6 +1511,7 @@
       </trans-unit>
       <trans-unit id="8389047601523483921" datatype="html">
         <source> كيف يمكنني تركيب الكاميرات بنفسي </source>
+        <target>How can I install cameras?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/how-to-install/how-to-install.component.html</context>
           <context context-type="linenumber">11,12</context>
@@ -1461,6 +1519,7 @@
       </trans-unit>
       <trans-unit id="4002733544933232945" datatype="html">
         <source>أولاً، عليك أن تقرر عدد الكاميرات التي تحتاجها والمكان الذي تريد وضعها فيها. يجب عليك تغطية المناطق الأكثر عرضة للخطر في الممتلكات الخاصة بك، مثل الباب الأمامي، والباب الخلفي، والنوافذ، والمرآب، وما إلى ذلك. يمكنك أيضًا استخدام جرس باب فيديو لبابك الأمامي، والذي يمكن أن ينبهك عندما يقترب شخص ما من الجرس أو يقرعه. يمكنك أيضًا استخدام الكاميرات الداخلية لمراقبة غرف أو مناطق معينة داخل منزلك.</source>
+       <target>First, you need to decide how many cameras you need and where you want to put them. You should cover the most vulnerable areas of your property, such as the front door, back door, windows, garage, etc. You can also use a video doorbell for your front door, which can alert you when someone approaches or rings the bell. You can also use indoor cameras to monitor specific rooms or areas within your home.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/how-to-install/how-to-install.component.ts</context>
           <context context-type="linenumber">20</context>
@@ -1468,6 +1527,7 @@
       </trans-unit>
       <trans-unit id="252662455916611472" datatype="html">
         <source>ثانياً، عليك اختيار نوع الكاميرات والنظام الذي تريده. هناك خيارات سلكية ولاسلكية، بالإضافة إلى خيارات تناظرية ورقمية. تتطلب الكاميرات السلكية توصيل كابلات من كل كاميرا إلى جهاز DVR مركزي (مسجل فيديو رقمي) أو صندوق NVR (مسجل فيديو شبكي)، والذي يقوم بتخزين اللقطات ويسمح لك بالوصول إليها عن بعد. تستخدم الكاميرات اللاسلكية إشارات Wi-Fi أو الإشارات الخلوية لنقل اللقطات إلى خدمة سحابية أو جهاز تخزين محلي. تستخدم الكاميرات التناظرية كبلات BNC وبالونات (محولات تحول الإشارات التناظرية إلى إشارات رقمية) للاتصال بصندوق DVR. تستخدم الكاميرات الرقمية كابلات إيثرنت أو شبكة Wi-Fi للاتصال بصندوق NVR أو الخدمة السحابية.</source>
+        <target>Secondly, you need to choose the type of cameras and system you want. There are wired and wireless options, as well as analog and digital options. Wired cameras require connecting cables from each camera to a central DVR (digital video recorder) or NVR (network video recorder) box, which stores the footage and allows you to access it remotely. Wireless cameras use Wi-Fi or cellular signals to transfer footage to a cloud service or local storage device. Analog cameras use BNC cables and ballasts (converters that convert analog signals into digital signals) to connect to a DVR box. Digital cameras use Ethernet or Wi-Fi cables to connect to an NVR box or cloud service.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/how-to-install/how-to-install.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -1475,6 +1535,7 @@
       </trans-unit>
       <trans-unit id="6275302879120956142" datatype="html">
         <source>ثالثا، تحتاج إلى إعداد تركيب الكاميرا. يجب عليك تخطيط مسار الكابلات (في حالة استخدام الكاميرات السلكية) والتأكد من أن لديك ما يكفي من الطول والموصلات لكل كاميرا. يجب عليك أيضًا التحقق من مصدر الطاقة واتصال الإنترنت لكل كاميرا. قد تحتاج إلى حفر ثقوب في الجدران أو الأسقف لتشغيل الكابلات أو تركيب الكاميرات. يجب عليك أيضًا تحديد المنطقة التي تريد تركيب كل كاميرا فيها بقلم رصاص وحفر الثقوب مسبقًا إذا لزم الأمر.</source>
+        <target>Third, you need to prepare the camera installation. You should plan the cable route (if using wired cameras) and make sure you have enough length and connectors for each camera. You should also check the power supply and internet connection for each camera. You may need to drill holes in walls or ceilings to run cables or install cameras. You should also mark with a pencil the area where you want to mount each camera and pre-drill holes if necessary.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/how-to-install/how-to-install.component.ts</context>
           <context context-type="linenumber">30</context>
@@ -1482,6 +1543,7 @@
       </trans-unit>
       <trans-unit id="2197262669123152976" datatype="html">
         <source>رابعا، تحتاج إلى تركيب الكاميرات وتوصيلها بجهاز DVR أو NVR (في حالة استخدام الكاميرات السلكية) أو بشبكة Wi-Fi الخاصة بك (في حالة استخدام الكاميرات اللاسلكية). يجب عليك اتباع التعليمات المرفقة مع نظام الكاميرا الخاص بك واستخدام دعامات التثبيت والمسامير المتوفرة. يجب عليك أيضًا ضبط زاوية وموضع كل كاميرا للحصول على أفضل عرض للمنطقة التي تريد مراقبتها. يجب عليك أيضًا اختبار كل كاميرا للتأكد من أنها تعمل بشكل صحيح وترسل صورًا وصوتًا واضحًا.</source>
+        <target>Fourth, you need to mount the cameras and connect them to your DVR or NVR (if using wired cameras) or your Wi-Fi network (if using wireless cameras). You must follow the instructions included with your camera system and use the mounting brackets and screws provided. You should also adjust the angle and position of each camera to get the best view of the area you want to monitor. You should also test each camera to make sure it is working properly and sending clear images and sound.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/how-to-install/how-to-install.component.ts</context>
           <context context-type="linenumber">35</context>
@@ -1489,20 +1551,21 @@
       </trans-unit>
       <trans-unit id="4128502441150250207" datatype="html">
         <source>خامسًا، تحتاج إلى إعداد واجهة المستخدم لنظام الكاميرا الخاص بك. يجب عليك توصيل جهاز DVR أو NVR الخاص بك بالشاشة والماوس ولوحة المفاتيح، أو استخدام تطبيق الهاتف الذكي أو متصفح الويب للوصول إلى نظام الكاميرا الخاص بك عن بعد. يجب عليك اتباع الإرشادات التي تأتي مع نظام الكاميرا الخاص بك وإعداد حسابك وكلمة المرور وإعدادات الشبكة وإعدادات التسجيل وإعدادات اكتشاف الحركة وإعدادات التنبيهات وما إلى ذلك. ويجب عليك أيضًا مراجعة لقطاتك بانتظام وحذف أي ملفات غير ضرورية لإخلاء مساحة.</source>
+        <target>Fifth, you need to set up the user interface for your camera system. You must connect your DVR or NVR to a monitor, mouse, and keyboard, or use a smartphone app or web browser to access your camera system remotely. You should follow the instructions that came with your camera system and set up your account and password, network settings, recording settings, motion detection settings, alerts settings, etc. You should also review your snapshots regularly and delete any unnecessary files to free up space.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/how-to-install/how-to-install.component.ts</context>
           <context context-type="linenumber">40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7658232495563004995" datatype="html">
-        <source>خدماتنا</source>
+        <source>خدماتنا</source><target>Our Services</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.html</context>
           <context context-type="linenumber">11,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="525522925738523504" datatype="html">
-        <source>عقد صيانة كاميرات</source>
+        <source>عقد صيانة كاميرات</source><target>Cameras Maintainance Contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.html</context>
           <context context-type="linenumber">28,29</context>
@@ -1510,20 +1573,21 @@
       </trans-unit>
       <trans-unit id="3286399851947409388" datatype="html">
         <source> تقوم شركة رؤية الأشياء بتوصيل وتمديد شبكات الكاميرات الأمنية كما تمكنكم من التعاقد إلكترونيا على التركيب والتمديد وحجز موعد للمعاينة السريعة. </source>
+        <target> Things Vision Company connects and extends security camera networks. It also enables you to contract electronically for installation and extension and book an appointment for a quick inspection. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.html</context>
           <context context-type="linenumber">30,32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6727722480911721110" datatype="html">
-        <source>تعاقد الآن</source>
+        <source>تعاقد الآن</source><target>Contract Now</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.html</context>
           <context context-type="linenumber">36,37</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2364215136041688535" datatype="html">
-        <source> تجديد عقد صيانة الكاميرات </source>
+        <source> تجديد عقد صيانة الكاميرات </source><target>Renew Contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.html</context>
           <context context-type="linenumber">45</context>
@@ -1531,6 +1595,7 @@
       </trans-unit>
       <trans-unit id="3470832092801617301" datatype="html">
         <source> اذا كان لديك تعاقد معنا وترغب بتجديده، توفر شركة رؤية الأشياء امكانية تجديد العقد الكترونياً. </source>
+        <target> If you have a contract with us and would like to renew it, Vision Things Company provides the possibility of renewing the contract electronically. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.html</context>
           <context context-type="linenumber">48,49</context>
@@ -1538,6 +1603,7 @@
       </trans-unit>
       <trans-unit id="7853934026938393430" datatype="html">
         <source>جدد عقدك الآن</source>
+        <target>Renew Your Contract</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.html</context>
           <context context-type="linenumber">53,54</context>
@@ -1545,13 +1611,14 @@
       </trans-unit>
       <trans-unit id="8440078387065975563" datatype="html">
         <source> تقدم شركة رؤية الأشياء العديد من الخدمات والحلول الأمنية لتأمين منزلك وعملك باستخدام افضل واحدث كاميرات المراقبة والأنظمة الأمنية </source>
+        <target> Things Vision Company offers many security services and solutions to secure your home and business using the best and latest surveillance cameras and security systems </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.html</context>
           <context context-type="linenumber">72,73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="441332679852287790" datatype="html">
-        <source>الاستشارة</source>
+        <source>الاستشارة</source><target>Consultation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.ts</context>
           <context context-type="linenumber">17</context>
@@ -1559,13 +1626,14 @@
       </trans-unit>
       <trans-unit id="1214084759610043988" datatype="html">
         <source>نحن نقدم استشارات مجانية وتقييما لاحتياجاتك الأمنية ونوصي بالمنتجات والأنظمة والخدمات الأمنية الأكثر ملائمة لممتلكاتك وميزانيتك</source>
+        <target>We provide a free consultation and assessment of your security needs and recommend the security products, systems and services that best suit your property and budget</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2732124936048067160" datatype="html">
-        <source>التركيب</source>
+        <source>التركيب</source><target>Installation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.ts</context>
           <context context-type="linenumber">23</context>
@@ -1573,13 +1641,14 @@
       </trans-unit>
       <trans-unit id="3793816892359965824" datatype="html">
         <source>نقوم بتثبيت الكاميرات والأنظمة الأمنية الخاصة بك باحترافية وكفاءة, مما يضمن وضعها بشكل صحيح وتوصيلها وتهيئتها لتوفير الأداء والتغطية الأمثل</source>
+        <target>We install your security cameras and systems professionally and efficiently, ensuring they are correctly positioned, connected and configured to provide optimal performance and coverage</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.ts</context>
           <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4842608458345613376" datatype="html">
-        <source>التعاقد عن بعد</source>
+        <source>التعاقد عن بعد</source><target>Online Contracting</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.ts</context>
           <context context-type="linenumber">29</context>
@@ -1587,6 +1656,7 @@
       </trans-unit>
       <trans-unit id="1159437441674940987" datatype="html">
         <source>لأن وقتك يهمنا قمنا بتوفير خدمات التعاقد عن بعد والتي تمكنك من التعاقد وتجديد العقد وطلب زيارة التقني من خلال موقعنا</source>
+        <target>Because your time is important to us, we have provided remote contracting services that enable you to contract, renew the contract, and request a technician’s visit through our website</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/our-services/our-services.component.ts</context>
           <context context-type="linenumber">30</context>
@@ -1594,13 +1664,14 @@
       </trans-unit>
       <trans-unit id="7096596226538573446" datatype="html">
         <source> لماذا اختار شركة رؤية الأشياء </source>
+        <target>Why Choose Us</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.html</context>
           <context context-type="linenumber">11,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8330009305413007536" datatype="html">
-        <source>السعر أفضل من سعر السوق</source>
+        <source>السعر أفضل من سعر السوق</source><target>Price is better than the market</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">21</context>
@@ -1608,6 +1679,7 @@
       </trans-unit>
       <trans-unit id="3457433271790500678" datatype="html">
         <source>تقدم رؤية الأشياء دائما أفضل الأسعار مقارنة بالسوق المحلي والعالمي</source>
+        <target>Seeing Things always offers the best prices compared to the local and international market</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">22</context>
@@ -1615,13 +1687,15 @@
       </trans-unit>
       <trans-unit id="928686245166919320" datatype="html">
         <source>تقديم الدعم الفني للمعدات التقنية</source>
-        <context-group purpose="location">
+        <target>Providing technical support for technical equipment</target>
+     <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2481422871963041791" datatype="html">
         <source>كما نقدم الدعم الفني والمساعدة والزيارات لحل المشاكل</source>
+        <target>We also provide technical support, assistance and visits to solve problems</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -1629,6 +1703,7 @@
       </trans-unit>
       <trans-unit id="7535953184187909649" datatype="html">
         <source>توريد المعدات التقنية الجديدة</source>
+        <target>Supply of new technical equipment</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">33</context>
@@ -1636,6 +1711,7 @@
       </trans-unit>
       <trans-unit id="8973082976038724516" datatype="html">
         <source>توفر شركة رؤية الأشياء حلولا تقنية جديدة تماما وأفضل دائما</source>
+        <target>Things Vision provides brand new and always better technology solutions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">34</context>
@@ -1643,6 +1719,7 @@
       </trans-unit>
       <trans-unit id="2471672113038267232" datatype="html">
         <source>تقديم الحلول التقنية المناسبة</source>
+        <target>Providing appropriate technical solutions</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">39</context>
@@ -1650,6 +1727,7 @@
       </trans-unit>
       <trans-unit id="8790864689542697158" datatype="html">
         <source>نحن دائما نختار ونوصي بالاختيار الأفضل والحلول المناسبة لعملائنا</source>
+        <target>We always select and recommend the best and most appropriate solutions to our clients</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">40</context>
@@ -1657,6 +1735,7 @@
       </trans-unit>
       <trans-unit id="7638960101531679415" datatype="html">
         <source>خبرة الشركة في المجال التقني</source>
+        <target>The company's experience in the technical field</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">45</context>
@@ -1664,6 +1743,7 @@
       </trans-unit>
       <trans-unit id="4897190564920990954" datatype="html">
         <source>تتمتع الشركة بالخبرة الكافية في مجالات تكنولوجيا المعلومات على أيدي مهندسينا</source>
+       <target>The company has sufficient experience in the fields of information technology at the hands of our engineers</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/home/why-choose/why-choose.component.ts</context>
           <context context-type="linenumber">46</context>
@@ -1671,6 +1751,7 @@
       </trans-unit>
       <trans-unit id="4096103442810733520" datatype="html">
         <source>ما هي المعلومات التي نقوم بجمعها؟</source>
+        <target>What information do we collect?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">3,4</context>
@@ -1678,20 +1759,22 @@
       </trans-unit>
       <trans-unit id="3910788215824765195" datatype="html">
         <source> قد نقوم بجمع الأنواع التالية من المعلومات منك </source>
-        <context-group purpose="location">
+        <target> We may collect the following types of information from you </target>
+         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.html</context>
           <context context-type="linenumber">5,6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="699476811410522997" datatype="html">
         <source> تتضمن اسمك وعنوان بريدك الإلكتروني ورقم هاتفك وأي معلومات أخرى تقدمها لنا طوعًا عند الاتصال بنا أو تسجيل حساب أو تقديم طلب أو الاشتراك في نشرتنا الإخبارية.</source>
+        <source> includes your name, email address, phone number, and any other information you voluntarily provide to us when you contact us, register an account, place an order, or subscribe to our newsletter.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2334387571898065883" datatype="html">
-        <source>المعلومات الفنية</source>
+        <source>المعلومات الفنية</source><target>Technical Information</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">27</context>
@@ -1699,13 +1782,14 @@
       </trans-unit>
       <trans-unit id="3193142952901961898" datatype="html">
         <source>تتضمن عنوان IP الخاص بك، ونوع المتصفح، ونوع الجهاز، ونظام التشغيل، وغيرها من المعلومات التي نجمعها تلقائيًا عند وصولك إلى موقعنا على الويب من خلال ملفات تعريف الارتباط أو تقنيات التتبع الأخرى.</source>
+        <target>Includes your IP address, browser type, device type, operating system, and other information we collect automatically when you access our website through cookies or other tracking technologies.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="104804505193609948" datatype="html">
-        <source>الاستخدام</source>
+        <source>الاستخدام</source><target>Usage</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">33</context>
@@ -1713,13 +1797,15 @@
       </trans-unit>
       <trans-unit id="8013507338566026391" datatype="html">
         <source>تتضمن سجل التصفح الخاص بك واستعلامات البحث والتفضيلات والمعلومات الأخرى التي نجمعها عندما تتفاعل مع موقعنا الإلكتروني أو منتجاتنا وخدماتنا.</source>
-        <context-group purpose="location">
+        <target>Includes your browsing history, search queries, preferences and other information we collect when you interact with our website or products and services.</target>
+             <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="495195596637060335" datatype="html">
         <source>كيف نستعمل معلوماتك؟</source>
+        <target>How do we use your information?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">42</context>
@@ -1727,13 +1813,15 @@
       </trans-unit>
       <trans-unit id="1368077226067537871" datatype="html">
         <source>قد نستخدم معلوماتك للأغراض التالية:</source>
-        <context-group purpose="location">
+        <target>We may use your information for the following purposes:</target>
+      <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7834380559402727289" datatype="html">
         <source>لتزويدك بمنتجاتنا وخدماتنا ومعالجة طلباتك وتوصيل منتجاتك والتواصل معك بشأن طلباتك ومعاملاتك.</source>
+        <target>To provide you with our products and services, process your orders, deliver your products, and communicate with you about your orders and transactions.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">45</context>
@@ -1741,6 +1829,7 @@
       </trans-unit>
       <trans-unit id="2653893295494550943" datatype="html">
         <source>لتحسين موقعنا ومنتجاتنا وخدماتنا، وتخصيص تجربتك على موقعنا وفقًا لاهتماماتك وتفضيلاتك.</source>
+       <target>To improve our site, products, and services, and to tailor your experience on our site to your interests and preferences.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">46</context>
@@ -1748,6 +1837,7 @@
       </trans-unit>
       <trans-unit id="613275845430802521" datatype="html">
         <source>لإرسال رسائل البريد الإلكتروني التسويقية والترويجية والنشرات الإخبارية وغيرها من وسائل الاتصال إليك حول منتجاتنا وخدماتنا وعروضنا وأحداثنا، إذا كنت قد وافقت على استلامها.</source>
+       <target>To send you marketing and promotional emails, newsletters and other communications about our products, services, offers and events, if you have agreed to receive them.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">47</context>
@@ -1755,6 +1845,7 @@
       </trans-unit>
       <trans-unit id="2529277961093622787" datatype="html">
         <source>للرد على استفساراتكم أو ملاحظاتكم أو شكاويكم أو طلبات الدعم.</source>
+        <target>To respond to your inquiries, comments, complaints or support requests.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">48</context>
@@ -1762,6 +1853,7 @@
       </trans-unit>
       <trans-unit id="5742455097760418292" datatype="html">
         <source>لحماية موقعنا الإلكتروني ومنتجاتنا وخدماتنا، ولمنع وكشف والتحقيق في الاحتيال أو الخروقات الأمنية أو غيرها من الأنشطة غير القانونية أو غير المصرح بها.</source>
+        <target>To protect our website, products and services, and to prevent, detect and investigate fraud, security breaches or other illegal or unauthorized activity.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">49</context>
@@ -1769,6 +1861,7 @@
       </trans-unit>
       <trans-unit id="2793476135652635794" datatype="html">
         <source>للامتثال لالتزاماتنا القانونية، وإنفاذ الشروط والأحكام الخاصة بنا، وحماية حقوقنا ومصالحنا.</source>
+        <target>To comply with our legal obligations, enforce our terms and conditions, and protect our rights and interests.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">50</context>
@@ -1776,20 +1869,23 @@
       </trans-unit>
       <trans-unit id="8326426537776101900" datatype="html">
         <source>كيف نشارك معلوماتك؟</source>
-        <context-group purpose="location">
+        <target>How do we share your information?</target>
+         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9072840123951245289" datatype="html">
         <source>قد نشارك معلوماتك مع الأطراف التالية:</source>
-        <context-group purpose="location">
+        <target>We may share your information with the following parties:</target>
+         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="720889266155058870" datatype="html">
         <source>مقدمو الخدمات: هذه شركات خارجية تساعدنا في عملياتنا التجارية، مثل الاستضافة ومعالجة الدفع والتسليم والتحليلات والتسويق وخدمة العملاء. نحن نشارك معلوماتك فقط مع مقدمي الخدمات الذين نثق بهم والذين وافقوا على حماية معلوماتك وفقًا لهذه السياسة والقوانين المعمول بها.</source>
+        <target>Service Providers: These are third-party companies that help us with our business operations, such as hosting, payment processing, delivery, analytics, marketing, and customer service. We only share your information with service providers that we trust and who have agreed to protect your information in accordance with this policy and applicable laws.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">59</context>
@@ -1797,6 +1893,7 @@
       </trans-unit>
       <trans-unit id="4620285956234309601" datatype="html">
         <source>الشركات التابعة: هذه هي الشركات التابعة لنا أو الشركات الأم أو غيرها من الكيانات ذات الصلة التي تخضع لسيطرة مشتركة معنا. قد نشارك معلوماتك مع الشركات التابعة لنا لأغراض تجارية داخلية، مثل الإدارة والتنظيم وتطوير المنتجات.</source>
+       <target>Affiliates: These are our subsidiaries, parent companies or other related entities that are under common control with us. We may share your information with our affiliates for internal business purposes, such as administration, management, and product development.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">60</context>
@@ -1804,6 +1901,7 @@
       </trans-unit>
       <trans-unit id="5064987644224691510" datatype="html">
         <source>شركاء العمل: هم شركات خارجية نتعاون معها لنقدم لك منتجات أو خدمات أو عروض ترويجية قد تهمك. لا يجوز لنا مشاركة معلوماتك مع شركائنا التجاريين إلا إذا وافقت على تلقي مثل هذه الاتصالات منهم أو منا.</source>
+        <target>Business partners: These are third-party companies with whom we partner to offer you products, services or promotions that may be of interest to you. We may not share your information with our business partners unless you agree to receive such communications from them or from us.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">61</context>
@@ -1811,6 +1909,7 @@
       </trans-unit>
       <trans-unit id="5111606277385139704" datatype="html">
         <source>جهات إنفاذ القانون والجهات التنظيمية: هذه هي السلطات الحكومية أو الكيانات الأخرى التي لديها القدرة على طلب أو إجبارنا على الكشف عن معلوماتك لأغراض قانونية أو تنظيمية. يجوز لنا مشاركة معلوماتك مع جهات إنفاذ القانون والجهات التنظيمية إذا اعتقدنا أن ذلك ضروري أو مناسب للقيام بذلك، أو إذا طلب منا ذلك بموجب القانون.</source>
+        <target>Law Enforcement and Regulators: These are government authorities or other entities that have the ability to request or compel us to disclose your information for legal or regulatory purposes. We may share your information with law enforcement and regulatory authorities if we believe it is necessary or appropriate to do so, or if we are required to do so by law.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -1818,6 +1917,7 @@
       </trans-unit>
       <trans-unit id="2263297967369590535" datatype="html">
         <source>كيف نحمي معلوماتك؟</source>
+        <target>How do we protect your information?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">68</context>
@@ -1840,6 +1940,7 @@
       </trans-unit>
       <trans-unit id="2378907136581521142" datatype="html">
         <source>نحن نتخذ تدابير معقولة لحماية معلوماتك من الوصول أو الاستخدام أو الكشف أو التغيير أو التدمير غير المصرح به. نحن نستخدم وسائل حماية فنية وإدارية ومادية، مثل التشفير وجدران الحماية وكلمات المرور وأدوات التحكم في الوصول، لتأمين معلوماتك. ومع ذلك، لا يمكننا ضمان أن معلوماتك آمنة تمامًا من المتسللين أو الهجمات الإلكترونية أو التهديدات الأخرى، وأنك تستخدم موقعنا الإلكتروني ومنتجاتنا وخدماتنا على مسؤوليتك الخاصة.</source>
+       <target>We take reasonable measures to protect your information from unauthorized access, use, disclosure, alteration or destruction. We use technical, administrative, and physical safeguards, such as encryption, firewalls, passwords, and access controls, to secure your information. However, we cannot guarantee that your information is completely secure from hackers, cyber-attacks or other threats, and you use our website, products and services at your own risk.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">71</context>
@@ -1847,6 +1948,7 @@
       </trans-unit>
       <trans-unit id="2882762041308931123" datatype="html">
         <source>كيف نستخدم ملفات تعريف الارتباط وتقنيات التتبع الأخرى؟</source>
+        <target>How do we use cookies and other tracking technologies?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">77</context>
@@ -1854,6 +1956,7 @@
       </trans-unit>
       <trans-unit id="8780184970456785120" datatype="html">
         <source>نحن نستخدم ملفات تعريف الارتباط وتقنيات التتبع الأخرى، مثل إشارات الويب والبكسل والعلامات، لجمع وتخزين المعلومات حول زيارتك واستخدامك لموقعنا الإلكتروني ومنتجاتنا وخدماتنا. ملفات تعريف الارتباط هي ملفات نصية صغيرة يتم وضعها على متصفحك أو جهازك بواسطة مواقع الويب التي تزورها. إنها تساعدنا على تذكر تفضيلاتك، وتعزيز تجربة المستخدم الخاصة بك، وقياس وتحليل أداء موقعنا على الويب، وتقديم الإعلانات ذات الصلة لك.</source>
+        <target>We use cookies and other tracking technologies, such as web beacons, pixels and tags, to collect and store information about your visit and use of our website, products and services. Cookies are small text files that are placed on your browser or device by websites you visit. They help us remember your preferences, enhance your user experience, measure and analyze the performance of our website, and deliver relevant advertising to you.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">80</context>
@@ -1861,6 +1964,7 @@
       </trans-unit>
       <trans-unit id="6978132217492683241" datatype="html">
         <source>كيف نقوم بتحديث هذه السياسة؟</source>
+        <target>How do we update this policy?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">86</context>
@@ -1868,6 +1972,7 @@
       </trans-unit>
       <trans-unit id="2694599495057029851" datatype="html">
         <source>قد نقوم بتحديث هذه السياسة من وقت لآخر لتعكس التغييرات في ممارساتنا أو تقنياتنا أو متطلباتنا القانونية. سنقوم بإخطارك بأي تغييرات جوهرية عن طريق نشر إشعار على موقعنا، أو عن طريق إرسال بريد إلكتروني إليك، إذا كانت لدينا تفاصيل الاتصال الخاصة بك. سيتم الإشارة إلى تاريخ آخر تحديث في أعلى هذه السياسة. نحن نشجعك على مراجعة هذه السياسة بشكل دوري لتبقى على علم بكيفية تعاملنا مع معلوماتك.</source>
+        <target>We may update this policy from time to time to reflect changes in our practices, technology, or legal requirements. We will notify you of any material changes by posting a notice on our website, or by sending you an email, if we have your contact details. The date it was last updated will be indicated at the top of this policy. We encourage you to review this policy periodically to stay informed about how we are handling your information.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/privacy-policy/privacy-policy.component.ts</context>
           <context context-type="linenumber">89</context>
@@ -1875,6 +1980,7 @@
       </trans-unit>
       <trans-unit id="522118279507095132" datatype="html">
         <source> نحن نهدف إلى تقديم منتجات وخدمات عالية الجودة وتلبية رضا عملائنا. إذا كنت غير راضٍ عن المنتج الذي اشتريته من موقعنا، فلديك الحق في استبداله أو استرجاعه وفقًا للشروط والأحكام التالية: </source>
+        <target> We aim to provide high quality products and services and meet our customers' satisfaction. If you are not satisfied with the product you purchased from our website, you have the right to exchange or return it according to the following terms and conditions: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.html</context>
           <context context-type="linenumber">4,6</context>
@@ -1882,6 +1988,7 @@
       </trans-unit>
       <trans-unit id="6370496423060738413" datatype="html">
         <source> نحن نحتفظ بالحق في رفض طلبات الاستبدال أو الاسترجاع التي لا تتوافق مع شروط وأحكام سياسة الموقع، أو التي تبدو مشبوهة أو غير مبررة. </source>
+        <target> We reserve the right to refuse exchange or return requests that do not comply with the terms and conditions of the site policy, or appear suspicious or unjustified. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.html</context>
           <context context-type="linenumber">50,51</context>
@@ -1889,6 +1996,7 @@
       </trans-unit>
       <trans-unit id="824290891926606889" datatype="html">
         <source>تعليمات الكاميرات المباعة</source>
+        <target>Instructions for retail cameras</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.ts</context>
           <context context-type="linenumber">16</context>
@@ -1900,6 +2008,7 @@
       </trans-unit>
       <trans-unit id="3882014313793307783" datatype="html">
         <source>يجب أن تكون الكاميرات المراقبة التي ترغب في استبدالها أو استرجاعها في حالتها الأصلية وغير مستخدمة أو معيبة أو مخالفة للمواصفات القياسية السعودية أو للمعلومات التي تم تزويدك بها عند الشراء.</source>
+        <target>The surveillance cameras that you wish to exchange or return must be in their original condition and not used, defective, or in violation of Saudi standard specifications or the information that was provided to you upon purchase.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.ts</context>
           <context context-type="linenumber">18</context>
@@ -1907,6 +2016,7 @@
       </trans-unit>
       <trans-unit id="1418106390144043153" datatype="html">
         <source>يجب أن تقوم بإرجاع الكاميرات المراقبة مع جميع ملحقاتها والعبوة الأصلية والفاتورة ووثيقة الضمان إن وجدت.</source>
+        <target>You must return the surveillance cameras with all their accessories, the original packaging, the invoice, and the warranty document, if any.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -1914,6 +2024,7 @@
       </trans-unit>
       <trans-unit id="2918850958257274051" datatype="html">
         <source>يجب أن تقوم بإرجاع الكاميرات المراقبة خلال 7 أيام من تاريخ استلامها، ما لم يتم تحديد مدة أطول في وصف المنتج أو في سياسة الموقع.</source>
+        <target>You must return surveillance cameras within 7 days from the date of receipt, unless a longer period is specified in the product description or site policy.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.ts</context>
           <context context-type="linenumber">20</context>
@@ -1921,6 +2032,7 @@
       </trans-unit>
       <trans-unit id="2690264693722332596" datatype="html">
         <source>يمكنك اختيار استبدال الكاميرات المراقبة بمنتجات أخرى متوفرة في موقعنا بنفس القيمة أو أعلى، وفي هذه الحالة سيتم خصم الفرق من رصيدك أو طلبه منك عند التسليم.</source>
+       <target>You can choose to replace the surveillance cameras with other products available on our website of the same or higher value, in which case the difference will be deducted from your balance or requested from you upon delivery.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -1928,6 +2040,7 @@
       </trans-unit>
       <trans-unit id="4461498910287735283" datatype="html">
         <source>يمكنك اختيار استرجاع الكاميرات المراقبة واسترداد المبلغ الذي دفعته عن طريق نفس وسيلة الدفع التي استخدمتها عند الشراء، أو عن طريق تحويل بنكي إلى حسابك، أو عن طريق إضافة رصيد إلى حسابك في موقعنا.</source>
+        <target>You can choose to retrieve the surveillance cameras and get a refund for the amount you paid via the same payment method you used when purchasing, or via a bank transfer to your account, or by adding a balance to your account on our website.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.ts</context>
           <context context-type="linenumber">29</context>
@@ -1935,6 +2048,7 @@
       </trans-unit>
       <trans-unit id="2053389557187370613" datatype="html">
         <source>سيتم استرداد المبلغ خلال 14 يومًا من تاريخ استلامنا للكاميرات المراقبة المرتجعة، ما لم يتم تحديد مدة أقصر في وصف المنتج أو في سياسة الموقع.</source>
+        <target>The refund will be made within 14 days from the date we receive the returned security cameras, unless a shorter period is specified in the product description or site policy.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.ts</context>
           <context context-type="linenumber">30</context>
@@ -1942,6 +2056,7 @@
       </trans-unit>
       <trans-unit id="4613656081266029567" datatype="html">
         <source>سيتم خصم رسوم الشحن والتوصيل من المبلغ المسترد، إلا إذا كان سبب الاسترجاع هو خطأ من جانبنا أو عيب في المنتج أو مخالفة للمواصفات. لا يمكن استبدال أو استرجاع الكاميرات المراقبة التي تم تخصيصها أو تعديلها حسب طلبك، أو التي تم فتحها أو تركيبها أو تشغيلها بطريقة غير صحيحة أو تسببت في تلفها.</source>
+        <target>Shipping and handling fees will be deducted from the refund amount, unless the reason for the return is an error on our part, a product defect, or a violation of specifications. Surveillance cameras that have been customized or modified to your request, or that have been opened, installed or operated incorrectly or have been damaged cannot be replaced or refunded.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/return-policy/return-policy.component.ts</context>
           <context context-type="linenumber">31</context>
@@ -1949,6 +2064,7 @@
       </trans-unit>
       <trans-unit id="2956829872616895804" datatype="html">
         <source>تم تسجيل الدخول بنجاح، وجاري تحويلك للصفحة الرئيسية</source>
+        <target>You have logged in successfully, and you are being redirected to the home page</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-in-redirect/sign-in-redirect.component.html</context>
           <context context-type="linenumber">3,4</context>
@@ -1956,6 +2072,7 @@
       </trans-unit>
       <trans-unit id="4630260391192426648" datatype="html">
         <source>كلمة المرور</source>
+        <target>Password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-in/sign-in.component.html</context>
           <context context-type="linenumber">25,26</context>
@@ -1967,6 +2084,7 @@
       </trans-unit>
       <trans-unit id="643403968250345638" datatype="html">
         <source>كلمة المرور مطلوبة .</source>
+        <target>Password required.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-in/sign-in.component.html</context>
           <context context-type="linenumber">37,38</context>
@@ -1978,6 +2096,7 @@
       </trans-unit>
       <trans-unit id="8643747736310701351" datatype="html">
         <source> ادخل كلمة مرور قوية مكونة من 6 أرقام على الأقل </source>
+        <target> Enter a strong password of at least 6 numbers </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-in/sign-in.component.html</context>
           <context context-type="linenumber">39</context>
@@ -1985,6 +2104,7 @@
       </trans-unit>
       <trans-unit id="3852398071327796605" datatype="html">
         <source> تسجيل الدخول </source>
+        <target>Sign In</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-in/sign-in.component.html</context>
           <context context-type="linenumber">63</context>
@@ -1994,6 +2114,9 @@
         <source> ليس لديك حساب؟ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/sign-up&quot; class=&quot;text-blue-800 underline&quot;
             &gt;"/>انشئ حساب الآن<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a
           &gt;"/></source>
+          <target> Don't have an account? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/sign-up&quot; class=&quot;text-blue-800 underline&quot;
+             &gt;"/>Create an account now<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a
+           &gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-in/sign-in.component.html</context>
           <context context-type="linenumber">68,73</context>
@@ -2001,6 +2124,7 @@
       </trans-unit>
       <trans-unit id="4163511939343533666" datatype="html">
         <source>البريد الالكتروني أو كلمة المرور غير صحيحة، برجاء التحقق من صحة البيانات والمحاولة مرة أخرى.</source>
+        <target>Incorrect email or password, please verify the data is correct and try again.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-in/sign-in.component.ts</context>
           <context context-type="linenumber">62</context>
@@ -2012,6 +2136,7 @@
       </trans-unit>
       <trans-unit id="6876577738912114716" datatype="html">
         <source>انشاء حساب جديد</source>
+        <target>Create New Account</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-up/sign-up.component.html</context>
           <context context-type="linenumber">3,4</context>
@@ -2019,6 +2144,7 @@
       </trans-unit>
       <trans-unit id="7821543984407317769" datatype="html">
         <source> انشاء حساب </source>
+        <target>Create Account</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-up/sign-up.component.html</context>
           <context context-type="linenumber">151</context>
@@ -2026,6 +2152,7 @@
       </trans-unit>
       <trans-unit id="7077483669188069242" datatype="html">
         <source> لديك حساب بالفعل؟ <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/sign-in&quot; class=&quot;text-blue-800 underline&quot;&gt;"/> سجل دخولك الآن <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target> Already have an account? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/sign-in&quot; class=&quot;text-blue-800 underline&quot;&gt;"/> Log in now <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-up/sign-up.component.html</context>
           <context context-type="linenumber">156,161</context>
@@ -2033,6 +2160,7 @@
       </trans-unit>
       <trans-unit id="1525454962568398090" datatype="html">
         <source>البريد الالكتروني الذي ادخلته مستخدم بالفعل</source>
+        <target>The email you entered is already in use</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/sign-up/sign-up.component.ts</context>
           <context context-type="linenumber">116</context>
@@ -2040,6 +2168,7 @@
       </trans-unit>
       <trans-unit id="5503988052049874901" datatype="html">
         <source>الخدمات</source>
+        <target>Services</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/terms-and-conditions/terms-and-conditions.component.ts</context>
           <context context-type="linenumber">21</context>
@@ -2047,6 +2176,7 @@
       </trans-unit>
       <trans-unit id="5952585772575580333" datatype="html">
         <source>الخدمات نحن نقدم خدمات تركيب وصيانة كاميرات المراقبة للأفراد والشركات وفقا للعقود المبرمة معنا. يمكنك طلب خدمتنا عن طريق إنشاء عقد جديد على الموقع أو طلب زيارة من فريقنا. نحن نضمن جودة خدمتنا وضمان كاميرات المراقبة لمدة سنة واحدة من تاريخ التركيب.</source>
+        <target>Services We provide installation and maintenance services for surveillance cameras for individuals and companies in accordance with the contracts concluded with us. You can request our service by creating a new contract on the website or requesting a visit from our team. We guarantee the quality of our service and guarantee the surveillance cameras for one year from the date of installation.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/terms-and-conditions/terms-and-conditions.component.ts</context>
           <context context-type="linenumber">22</context>
@@ -2054,6 +2184,7 @@
       </trans-unit>
       <trans-unit id="687319883218349237" datatype="html">
         <source>المسئولية</source>
+        <target>Responsibility</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/terms-and-conditions/terms-and-conditions.component.ts</context>
           <context context-type="linenumber">27</context>
@@ -2061,6 +2192,7 @@
       </trans-unit>
       <trans-unit id="8216307105473981288" datatype="html">
         <source>المسؤلية نحن نتحمل المسؤولية عن أي خسارة أو ضرر ناجم عن خطأ أو تقصير من جانبنا أو فريقنا أثناء تقديم الخدمة. ولكن نحن لا نتحمل المسؤولية عن أي خسارة أو ضرر ناجم عن سوء استخدام أو تدخل غير مصرح به أو عوامل خارجة عن سيطرتنا. كما أننا لا نتحمل المسؤولية عن أي محتوى أو بيانات يتم تسجيلها أو نقلها أو حفظها بواسطة كاميرات المراقبة. عليك أن تحترم قوانين حماية الخصوصية وحقوق الآخرين عند استخدام كاميرات المراقبة.</source>
+        <target>Liability We bear responsibility for any loss or damage resulting from an error or negligence on our part or our team while providing the service. However, we do not accept responsibility for any loss or damage resulting from misuse, unauthorized intervention or factors beyond our control. We also do not bear responsibility for any content or data recorded, transmitted or saved by surveillance cameras. You must respect laws protecting privacy and the rights of others when using surveillance cameras.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/terms-and-conditions/terms-and-conditions.component.ts</context>
           <context context-type="linenumber">28</context>
@@ -2068,6 +2200,7 @@
       </trans-unit>
       <trans-unit id="8935924347039189754" datatype="html">
         <source>الملكية الفكرية</source>
+        <target>Intellectual Property</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/terms-and-conditions/terms-and-conditions.component.ts</context>
           <context context-type="linenumber">33</context>
@@ -2075,6 +2208,7 @@
       </trans-unit>
       <trans-unit id="6692808555601070743" datatype="html">
         <source>جميع حقوق الملكية الفكرية في هذا الموقع ومحتواه تخضع للحماية القانونية وتنتمي إلينا أو إلى مرخصينا. لا يجوز لك نسخ أو تعديل أو توزيع أو نشر أو عرض أو استخدام أو إعادة إنتاج أو نقل أو بيع أو إنشاء أعمال مشتقة من أي جزء من هذا الموقع أو محتواه دون الحصول على إذن خطي منا أو من مرخصينا.</source>
+       <target>All intellectual property rights in this website and its content are legally protected and belong to us or our licensors. You may not copy, modify, distribute, publish, display, use, reproduce, transmit, sell or create derivative works from any part of this Site or its Content without written permission from us or our licensors.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/components/pages/terms-and-conditions/terms-and-conditions.component.ts</context>
           <context context-type="linenumber">34</context>

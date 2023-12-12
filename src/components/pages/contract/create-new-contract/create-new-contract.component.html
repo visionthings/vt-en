@@ -23,10 +23,12 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="indoor_cameras.errors?.['required']">
+            <p i18n *ngIf="indoor_cameras.errors?.['required']">
               ادخل عدد الكاميرات الداخلية.
             </p>
-            <p *ngIf="indoor_cameras.errors?.['pattern']">ادخل أرقام فقط.</p>
+            <p i18n *ngIf="indoor_cameras.errors?.['pattern']">
+              ادخل أرقام فقط.
+            </p>
           </div>
         </div>
         <div>
@@ -46,10 +48,12 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="outdoor_cameras.errors?.['required']">
+            <p i18n *ngIf="outdoor_cameras.errors?.['required']">
               ادخل عدد الكاميرات الخارجية.
             </p>
-            <p *ngIf="outdoor_cameras.errors?.['pattern']">ادخل أرقام فقط.</p>
+            <p i18n *ngIf="outdoor_cameras.errors?.['pattern']">
+              ادخل أرقام فقط.
+            </p>
           </div>
         </div>
         <div>
@@ -71,7 +75,7 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="storage_device.errors?.['required']">
+            <p i18n *ngIf="storage_device.errors?.['required']">
               ادخل نوع وحدة التخزين.
             </p>
           </div>
@@ -96,7 +100,7 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="period_of_record.errors?.['required']">
+            <p i18n *ngIf="period_of_record.errors?.['required']">
               ادخل مدة التسجيل.
             </p>
           </div>
@@ -118,10 +122,10 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="show_screens.errors?.['required']">
+            <p i18n *ngIf="show_screens.errors?.['required']">
               ادخل عدد شاشات العرض.
             </p>
-            <p *ngIf="show_screens.errors?.['pattern']">ادخل أرقام فقط.</p>
+            <p i18n *ngIf="show_screens.errors?.['pattern']">ادخل أرقام فقط.</p>
           </div>
         </div>
         <div>
@@ -141,7 +145,9 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="camera_type.errors?.['required']">ادخل نوع الكاميرا.</p>
+            <p i18n *ngIf="camera_type.errors?.['required']">
+              ادخل نوع الكاميرا.
+            </p>
           </div>
         </div>
         <!-- Total price -->
@@ -154,7 +160,7 @@
             </p>
           </div>
           <div id="price" class="bg-blue-200 rounded-lg py-3">
-            <p class="text-center text-white">{{ price }} ريال سعودي</p>
+            <p i18n class="text-center text-white">{{ price }} ريال سعودي</p>
           </div>
         </div>
         <button
@@ -166,7 +172,7 @@
           [disabled]="!camerasForm.valid"
           type="submit"
         >
-          <p class="px-3 text-white">الخطوة القادمة</p>
+          <p i18n class="px-3 text-white">الخطوة القادمة</p>
           <img
             class="pt-1"
             ngSrc="assets/images/left_arrow.png"

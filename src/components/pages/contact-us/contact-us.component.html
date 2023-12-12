@@ -44,15 +44,17 @@
     </div>
     <div class="md:col-span-9 bg-white rounded-lg pt-5 shadow container">
       <h3 class="text-3xl leading-relaxed" i18n>تواصل معنا</h3>
-      <p>
+      <p i18n>
         يمكنك الاتصال بنا وترك الشكاوى والاقتراحات أو الاستفسار الذي تريده، وسوف
         نتصل بك في أقرب وقت ممكن
       </p>
-      <div class="py-10" i18n>
+      <div class="py-10">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="grid grid-cols-2 gap-5">
             <div>
-              <label for="name" class="block mb-2 text-blue-800">الاسم</label>
+              <label for="name" class="block mb-2 text-blue-800" i18n
+                >الاسم</label
+              >
               <input
                 id="name"
                 name="name"
@@ -64,12 +66,14 @@
                 *ngIf="name.invalid && (name.dirty || name.touched)"
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
-                <p *ngIf="name.errors?.['required']">الاسم مطلوب.</p>
-                <p *ngIf="name.errors?.['minlength']">الاسم قصير جدا.</p>
+                <p *ngIf="name.errors?.['required']" i18n>الاسم مطلوب.</p>
+                <p *ngIf="name.errors?.['minlength']" i18n>الاسم قصير جدا.</p>
               </div>
             </div>
             <div>
-              <label for="phone" class="block mb-2 text-blue-800">الجوال</label>
+              <label for="phone" class="block mb-2 text-blue-800" i18n
+                >الجوال</label
+              >
               <input
                 id="phone"
                 name="phone"
@@ -81,17 +85,17 @@
                 *ngIf="phone.invalid && (phone.dirty || phone.touched)"
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
-                <p *ngIf="phone.errors?.['required']">رقم الجوال مطلوب.</p>
-                <p *ngIf="phone.errors?.['minlength']">
+                <p *ngIf="phone.errors?.['required']" i18n>رقم الجوال مطلوب.</p>
+                <p *ngIf="phone.errors?.['minlength']" i18n>
                   رقم الجوال يجب أن يكون من 10 أرقام على الأقل.
                 </p>
-                <p *ngIf="phone.errors?.['pattern']">
+                <p *ngIf="phone.errors?.['pattern']" i18n>
                   ادخل رقم جوال سعودي صالح.
                 </p>
               </div>
             </div>
             <div>
-              <label for="email" class="block mb-2 text-blue-800"
+              <label for="email" class="block mb-2 text-blue-800" i18n
                 >البريد الالكتروني</label
               >
               <input
@@ -105,14 +109,16 @@
                 *ngIf="email.invalid && (email.dirty || email.touched)"
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
-                <p *ngIf="email.errors?.['required']">
+                <p *ngIf="email.errors?.['required']" i18n>
                   البريد الإلكتروني مطلوب.
                 </p>
-                <p *ngIf="email.errors?.['email']">ادخل بريد الكتروني صالح.</p>
+                <p *ngIf="email.errors?.['email']" i18n>
+                  ادخل بريد الكتروني صالح.
+                </p>
               </div>
             </div>
             <div>
-              <label for="subject" class="block mb-2 text-blue-800"
+              <label for="subject" class="block mb-2 text-blue-800" i18n
                 >الموضوع</label
               >
               <input
@@ -126,14 +132,14 @@
                 *ngIf="subject.invalid && (subject.dirty || subject.touched)"
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
-                <p *ngIf="subject.errors?.['required']">الموضوع مطلوب.</p>
-                <p *ngIf="subject.errors?.['minlength']">
+                <p *ngIf="subject.errors?.['required']" i18n>الموضوع مطلوب.</p>
+                <p *ngIf="subject.errors?.['minlength']" i18n>
                   اسم الموضوع قصير جداً.
                 </p>
               </div>
             </div>
             <div class="col-span-2">
-              <label for="message" class="block mb-2 text-blue-800"
+              <label for="message" class="block mb-2 text-blue-800" i18n
                 >الرسالة</label
               >
               <textarea
@@ -148,12 +154,15 @@
                 *ngIf="message.invalid && (message.dirty || message.touched)"
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
-                <p *ngIf="message.errors?.['required']">الرسالة مطلوبة.</p>
-                <p *ngIf="message.errors?.['minlength']">الرسالة قصيرة جداً.</p>
+                <p *ngIf="message.errors?.['required']" i18n>الرسالة مطلوبة.</p>
+                <p *ngIf="message.errors?.['minlength']" i18n>
+                  الرسالة قصيرة جداً.
+                </p>
               </div>
             </div>
             <div class="col-span-2 flex justify-center">
               <button
+                i18n
                 class="bg-teal-500 hover:bg-cyan-500 px-20 py-3 rounded-md shadow-lg text-white"
                 [class.ring-teal-500]="clicking"
                 [class.ring-1]="clicking"

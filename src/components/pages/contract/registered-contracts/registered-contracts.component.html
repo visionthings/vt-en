@@ -1,21 +1,21 @@
 <section class="pb-10">
-  <h3 class="text-3xl text-center mb-10">العقود المسجلة</h3>
+  <h3 i18n class="text-3xl text-center mb-10">العقود المسجلة</h3>
   @if (registeredContracts.length !== 0) {
   <div id="table-wrapper">
     <table>
       <thead>
         <tr>
-          <th>رقم العقد</th>
-          <th>قيمة العقد</th>
-          <th>تحميل نسخة PDF</th>
-          <th>تجديد العقد</th>
+          <th i18n>رقم العقد</th>
+          <th i18n>قيمة العقد</th>
+          <th i18n>تحميل نسخة PDF</th>
+          <th i18n>تجديد العقد</th>
         </tr>
       </thead>
       <tbody>
         @for (contract of registeredContracts; track $index) {
         <tr>
           <td>{{ contract.contract_number }}</td>
-          <td>{{ contract.total_price }} ريال سعودي</td>
+          <td i18n>{{ contract.total_price }} ريال سعودي</td>
           <td>
             <button (click)="generateContract(contract.id)">
               <img
@@ -27,7 +27,9 @@
             </button>
           </td>
           <td>
-            <button (click)="renewContract(contract.id)">تجديد العقد</button>
+            <button i18n (click)="renewContract(contract.id)">
+              تجديد العقد
+            </button>
           </td>
         </tr>
         }
@@ -36,7 +38,7 @@
   </div>
   } @else {
   <div>
-    <h3 class="text-xl text-center">لا توجد عقود مسجلة</h3>
+    <h3 i18n class="text-xl text-center">لا توجد عقود مسجلة</h3>
     <div class="flex justify-center my-10">
       <img src="assets/images/unlike.png" alt="Unlike" />
     </div>

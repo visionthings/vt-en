@@ -1,10 +1,10 @@
-<section i18n class="container pb-10">
-  <h3 class="text-3xl mb-5">معلومات الملف الشخصي</h3>
+<section class="container pb-10">
+  <h3 i18n class="text-3xl mb-5">معلومات الملف الشخصي</h3>
 
   <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
     <div class="container grid grid-cols-1 md:grid-cols-2 gap-10">
       <div class="md:col-span-2">
-        <label for="name" class="block mb-1">اسم الشخص أو الشركة</label>
+        <label i18n for="name" class="block mb-1">اسم الشخص أو الشركة</label>
         <input
           id="name"
           name="name"
@@ -16,12 +16,14 @@
           *ngIf="name.invalid && (name.dirty || name.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="name.errors?.['required']">حقل الاسم مطلوب.</p>
-          <p *ngIf="name.errors?.['pattern']">ادخل الاسم بأحرف عربية فقط.</p>
+          <p i18n *ngIf="name.errors?.['required']">حقل الاسم مطلوب.</p>
+          <p i18n *ngIf="name.errors?.['pattern']">
+            ادخل الاسم بأحرف عربية فقط.
+          </p>
         </div>
       </div>
       <div>
-        <label for="email" class="block mb-1">البريد الالكتروني</label>
+        <label i18n for="email" class="block mb-1">البريد الالكتروني</label>
         <input
           id="email"
           name="email"
@@ -32,13 +34,15 @@
           *ngIf="email.invalid && (email.dirty || email.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="email.errors?.['required']">البريد الإلكتروني مطلوب.</p>
-          <p *ngIf="email.errors?.['email']">ادخل بريد الكتروني صالح.</p>
+          <p i18n *ngIf="email.errors?.['required']">
+            البريد الإلكتروني مطلوب.
+          </p>
+          <p i18n *ngIf="email.errors?.['email']">ادخل بريد الكتروني صالح.</p>
         </div>
       </div>
 
       <div>
-        <label for="phone" class="block mb-1">الجوال</label>
+        <label i18n for="phone" class="block mb-1">الجوال</label>
         <input
           id="phone"
           name="phone"
@@ -50,15 +54,17 @@
           *ngIf="phone.invalid && (phone.dirty || phone.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="phone.errors?.['required']">رقم الجوال مطلوب.</p>
-          <p *ngIf="phone.errors?.['minlength']">
+          <p i18n *ngIf="phone.errors?.['required']">رقم الجوال مطلوب.</p>
+          <p i18n *ngIf="phone.errors?.['minlength']">
             رقم الجوال يجب أن يكون من 10 أرقام على الأقل.
           </p>
-          <p *ngIf="phone.errors?.['pattern']">ادخل رقم جوال سعودي صالح.</p>
+          <p i18n *ngIf="phone.errors?.['pattern']">
+            ادخل رقم جوال سعودي صالح.
+          </p>
         </div>
       </div>
       <div>
-        <label for="commercial_number" class="block mb-1"
+        <label i18n for="commercial_number" class="block mb-1"
           >رقم السجل التجاري</label
         >
         <input
@@ -75,21 +81,23 @@
           "
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="commercial_number.errors?.['required']">
+          <p i18n *ngIf="commercial_number.errors?.['required']">
             رقم السجل التجاري مطلوب.
           </p>
-          <p *ngIf="commercial_number.errors?.['pattern']">ادخل أرقام فقط.</p>
+          <p i18n *ngIf="commercial_number.errors?.['pattern']">
+            ادخل أرقام فقط.
+          </p>
 
-          <p *ngIf="commercial_number.errors?.['minlength']">
+          <p i18n *ngIf="commercial_number.errors?.['minlength']">
             رقم السجل التجاري يجب أن يكون مكون من 10 أرقام.
           </p>
-          <p *ngIf="commercial_number.errors?.['maxlength']">
+          <p i18n *ngIf="commercial_number.errors?.['maxlength']">
             رقم السجل التجاري يجب أن يكون مكون من 10 أرقام.
           </p>
         </div>
       </div>
       <div>
-        <label for="address" class="block mb-1">العنوان</label>
+        <label i18n for="address" class="block mb-1">العنوان</label>
         <input
           id="commercial_number"
           name="commercial_number"
@@ -101,8 +109,8 @@
           *ngIf="address.invalid && (address.dirty || address.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="address.errors?.['required']">العنوان مطلوب.</p>
-          <p *ngIf="address.errors?.['pattern']">
+          <p i18n *ngIf="address.errors?.['required']">العنوان مطلوب.</p>
+          <p i18n *ngIf="address.errors?.['pattern']">
             ادخل العنوان بأحرف عربية فقط.
           </p>
         </div>
@@ -111,17 +119,18 @@
         *ngIf="responseMessage"
         class="w-100 py-2 container bg-blue-100 text-blue-800 mt-1 rounded md:col-span-2"
       >
-        <p class="text-center">{{ responseMessage }}</p>
+        <p i18n class="text-center">{{ responseMessage }}</p>
       </div>
       <div
         *ngIf="errorMessage"
         class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded col-span-2"
       >
-        <p class="text-center">{{ errorMessage }}</p>
+        <p i18n class="text-center">{{ errorMessage }}</p>
       </div>
       <div class="md:col-span-2">
         <div class="flex justify-center">
           <button
+            i18n
             class="bg-teal-500 hover:bg-cyan-500 px-20 py-3 rounded-md shadow-lg text-white"
             [class.ring-teal-500]="clicking"
             [class.ring-1]="clicking"
