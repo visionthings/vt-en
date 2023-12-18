@@ -15,5 +15,5 @@ register();
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
-  title = 'Vision Things';
+  title = 'VT';
 }

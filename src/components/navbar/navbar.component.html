@@ -48,17 +48,16 @@
       >
       }
 
-      <a routerLink="/">
-        <div class="flex items-center">
-          <p class="mx-1">En</p>
-          <img
-            ngSrc="assets/images/lang.png"
-            alt="Language"
-            width="30"
-            height="30"
-            priority
-          /></div
-      ></a>
+      <div class="flex items-center cursor-pointer" (click)="changeLanguage()">
+        <p class="mx-1">{{ lang }}</p>
+        <img
+          ngSrc="assets/images/lang.png"
+          alt="Language"
+          width="30"
+          height="30"
+          priority
+        />
+      </div>
     </div>
   </div>
 

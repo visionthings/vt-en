@@ -73,32 +73,32 @@ export class FooterComponent {
   socialMediaIcons: {
     id: number;
     title: string;
-    icon: string;
+    iconURL: string;
     url: string;
   }[] = [
     {
       id: 1,
-      title: 'Facebook',
-      icon: 'assets/images/social_media_icons/facebook.png',
-      url: 'https://www.facebook.com',
+      title: 'Facebok',
+      iconURL: 'assets/images/social_media/fb.png',
+      url: 'https://www.facebook.com/visionthings.sa',
     },
     {
       id: 2,
-      title: 'Instagram',
-      icon: 'assets/images/social_media_icons/instagram.png',
-      url: 'https://www.instagram.com',
+      title: 'X',
+      iconURL: 'assets/images/social_media/x.png',
+      url: 'https://twitter.com/visionthings_sa',
     },
     {
       id: 3,
-      title: 'Linked In',
-      icon: 'assets/images/social_media_icons/linkedin.png',
-      url: 'https://www.linkedin.com',
+      title: 'LinkedIn',
+      iconURL: 'assets/images/social_media/linkedin.png',
+      url: 'https://www.linkedin.com/company/visionthings',
     },
     {
       id: 4,
-      title: 'Snapchat',
-      icon: 'assets/images/social_media_icons/snapchat.png',
-      url: 'https://www.snapchat.com',
+      title: 'YouTube',
+      iconURL: 'assets/images/social_media/yt.png',
+      url: 'https://www.youtube.com/@visionthings_sa',
     },
   ];
   data: any = {
@@ -106,9 +106,9 @@ export class FooterComponent {
     api_password: 'tmGeSwL5SA',
     sms_type: 'T',
     encoding: 'U',
-    sender_id: 'Vision Things',
+    sender_id: 'Gateway.sa',
     phonenumber: '0544542828',
-    textmessage: 'Testing POST method',
+    templateid: '909',
     V1: 'Ahmed',
     V2: '83747',
   };

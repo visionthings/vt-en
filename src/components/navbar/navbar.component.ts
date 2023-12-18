@@ -1,4 +1,11 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import {
+  Component,
+  Inject,
+  Injectable,
+  LOCALE_ID,
+  OnInit,
+  inject,
+} from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLinkActive, RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,7 +28,10 @@ import { AuthService } from '../../services/auth.service';
 })
 @Injectable({ providedIn: 'root' })
 export class NavbarComponent implements OnInit {
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    @Inject(LOCALE_ID) public locale: string
+  ) {}
   navItems: { id: number; title: string; path: string }[] = [
     {
       id: 1,
@@ -52,6 +62,22 @@ export class NavbarComponent implements OnInit {
 
   isLoggedIn: boolean = false;
 
+  // Change language
+  lang: string = '';
+  changeLanguage() {
+    if (typeof window !== 'undefined') {
+      const currentURL = window.location.href;
+      let newURL;
+      if (currentURL.includes('ar-SA')) {
+        newURL = currentURL.replace('ar-SA', 'en-US');
+        window.location.assign(newURL);
+      } else {
+        newURL = currentURL.replace('en-US', 'ar-SA');
+        window.location.assign(newURL);
+      }
+    }
+  }
+
   ngOnInit(): void {
     this.authService.handleAuth();
     this.authService.isAuthenticated.subscribe({
@@ -59,5 +85,6 @@ export class NavbarComponent implements OnInit {
         this.isLoggedIn = res;
       },
     });
+    this.locale === 'ar-SA' ? (this.lang = 'En') : (this.lang = 'العربية');
   }
 }
