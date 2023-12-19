@@ -33,7 +33,7 @@ export class VisitRequestComponent {
       next: (res: any) => {
         this.userData = res;
         if (res.visit_requests.length !== 0) {
-          this.responseMessage = $localize`لديك طلب زيارة مسجل بالفعل وسيتم الاتصال بك في خلال 24 ساعة من وقت تقديم الطلب.`;
+          this.responseMessage = `You have a visit request already registered and you will be contacted within 24 hours of submitting the request.`;
         } else {
           this.visitRequest
             .sendVisitRequest({
@@ -45,9 +45,9 @@ export class VisitRequestComponent {
             .subscribe({
               next: (res: any) => {
                 console.log(res);
-                this.responseMessage = $localize`تم تقديم طلب زيارة برقم ${
+                this.responseMessage = `A visit request has been submitted with the number ${
                   res.id + 10000
-                }، وسيتم الاتصال بك في خلال 24 ساعة.`;
+                }, and you will be contacted within 24 hours.`;
               },
               error: (err) => {
                 console.log(err);

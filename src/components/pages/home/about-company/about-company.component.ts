@@ -13,34 +13,34 @@ export class AboutCompanyComponent {
   statistics_first_row: { id: number; title: string; image_url: string }[] = [
     {
       id: 1,
-      title: $localize`أكثر من 10 سنوات من الخبرة`,
+      title: `More than 10 years of experience`,
       image_url: 'assets/images/about_company/1.png',
     },
     {
       id: 2,
-      title: $localize`أكثر من 5 شركاء`,
+      title: `More than 5 partners`,
       image_url: 'assets/images/about_company/2.png',
     },
     {
       id: 3,
-      title: $localize`أكثر من 3 ضيافة`,
+      title: `More than 3 hospitality`,
       image_url: 'assets/images/about_company/3.png',
     },
   ];
   statistics_second_row: { id: number; title: string; image_url: string }[] = [
     {
       id: 1,
-      title: $localize`أكثر من 2 مكتب`,
+      title: `More than 2 offices`,
       image_url: 'assets/images/about_company/4.png',
     },
     {
       id: 2,
-      title: $localize`أكثر من 100 عميل سعيد`,
+      title: `More than 100 happy customers`,
       image_url: 'assets/images/about_company/5.png',
     },
     {
       id: 3,
-      title: $localize`أكثر من 50 مشروع`,
+      title: `More than 50 projects`,
       image_url: 'assets/images/about_company/6.png',
     },
   ];

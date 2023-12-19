@@ -42,10 +42,10 @@ export class ChangePasswordComponent {
 
     this.authService.editProfile(this.updatePasswordForm.value).subscribe({
       next: (res: any) => {
-        this.responseMessage = $localize`تم تغيير كلمة المرور بنجاح`;
+        this.responseMessage = 'Password has been changed successfully';
       },
       error: (error) => {
-        this.errorMessage = $localize`تعذر الاتصال بقاعدة البيانات، يرجى التحقق من اتصالك بالانترنت والمحاولة مرة أخرى.`;
+        this.errorMessage = 'Failed to update password, please try again later';
       },
     });
   }

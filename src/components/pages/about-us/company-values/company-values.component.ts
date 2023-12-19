@@ -17,27 +17,27 @@ export class CompanyValuesComponent {
     {
       id: 1,
       icon: 'assets/images/company_values/1.png',
-      title: $localize`الابتكار`,
+      title: `Creativity`,
     },
     {
       id: 2,
       icon: 'assets/images/company_values/2.png',
-      title: $localize`الربح للجانبين`,
+      title: `Win-Win Situation`,
     },
     {
       id: 3,
       icon: 'assets/images/company_values/3.png',
-      title: $localize`التطوير المستمر`,
+      title: 'Continuous Development',
     },
     {
       id: 4,
       icon: 'assets/images/company_values/4.png',
-      title: $localize`الكفاءة`,
+      title: `Efficiency`,
     },
     {
       id: 5,
       icon: 'assets/images/company_values/5.png',
-      title: $localize`الانضباط`,
+      title: `Commitment`,
     },
   ];
 }

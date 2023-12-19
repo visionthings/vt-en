@@ -37,19 +37,19 @@
       @if (isLoggedIn) {
       <a routerLink="/account"
         ><div class="border rounded-md p-2 mx-2">
-          <p i18n>ملفي الشخصي</p>
+          <p>Account</p>
         </div></a
       >
       } @else {
       <a routerLink="/sign-in"
         ><div class="border rounded-md p-2 mx-2">
-          <p i18n>تسجيل الدخول</p>
+          <p>Sign In</p>
         </div></a
       >
       }
 
       <div class="flex items-center cursor-pointer" (click)="changeLanguage()">
-        <p class="mx-1">{{ lang }}</p>
+        <p class="mx-1">العربية</p>
         <img
           ngSrc="assets/images/lang.png"
           alt="Language"

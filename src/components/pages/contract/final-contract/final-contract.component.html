@@ -7,14 +7,15 @@
     />
   </div>
   <div class="py-5">
-    <h2 i18n class="text-4xl text-center">تهانينا</h2>
-    <h4 i18n class="text-2xl text-center my-5">
-      لقد أنجزت مهمة تقديم تفاصيل العقد، وتم ارسال الفاتورة الى بريدك
-      الالكتروني، و يمكنك الآن تحميل نسخة من العقد
+    <h2 class="text-4xl text-center">Congratulations</h2>
+    <h4 class="text-2xl text-center my-5">
+      You have completed the task of submitting the contract details, and the
+      invoice has been sent to your email Electronically, you can now download a
+      copy of the contract
     </h4>
     <div class="flex justify-center">
       <div class="w-fit" (click)="generateContract()">
-        <app-green-button i18n-text text="تحميل العقد"></app-green-button>
+        <app-green-button text="Download Contract"></app-green-button>
         <app-contract-pdf [data]="data" />
       </div>
     </div>

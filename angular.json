@@ -9,20 +9,11 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
-      "i18n": {
-        "sourceLocale": "ar-SA",
-        "locales": {
-          "en-US": {
-            "translation": "src/locale/translation.en.xlf"
-          }
-        }
-      },
+
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": true,
-            "baseHref": "ar-SA",
             "outputPath": "dist/vt",
             "index": "src/index.html",
             "browser": "src/main.ts",

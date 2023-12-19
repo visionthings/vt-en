@@ -62,20 +62,20 @@ export class PaymentComponent {
           this.expiryDate = Date.parse(foundPromoCode.expiry_date);
           const currentDate = new Date();
           if (currentDate < this.expiryDate) {
-            this.responseMessage = $localize`تهانينا، لقد حصلت على خصم بقيمة ${foundPromoCode.discount}%`;
+            this.responseMessage = `Congratulations, you've got ${foundPromoCode.discount}% discount`;
             this.discount = foundPromoCode?.discount;
             if (typeof window !== 'undefined') {
               localStorage.setItem('discount', foundPromoCode?.discount);
             }
           } else {
-            this.responseMessage = $localize`كوبون الخصم الذي ادخلته منتهى الصلاحية`;
+            this.responseMessage = 'Promocode is expired';
             this.discount = 0;
             if (typeof window !== 'undefined') {
               localStorage.setItem('discount', '0');
             }
           }
         } else {
-          this.responseMessage = $localize`كوبون الخصم الذي ادخلته غير صحيح`;
+          this.responseMessage = 'Promocode is not valid';
           this.discount = 0;
           if (typeof window !== 'undefined') {
             localStorage.setItem('discount', '0');
@@ -152,7 +152,9 @@ export class PaymentComponent {
       .subscribe({
         next: (res: any) => {
           if (typeof window !== 'undefined') {
-            location.href = res.source.transaction_url;
+            if (res.source.transaction_url) {
+              location.href = res.source.transaction_url;
+            }
           }
         },
         error: (err) => {

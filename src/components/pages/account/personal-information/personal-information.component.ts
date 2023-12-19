@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
-import { AuthService, User } from '../../../../services/auth.service';
+import { AuthService } from '../../../../services/auth.service';
 
 @Component({
   selector: 'app-personal-information',
@@ -89,11 +89,12 @@ export class PersonalInformationComponent {
         localStorage.setItem('commercial_number', res.commercial_number);
         localStorage.setItem('address', res.address);
 
-        this.responseMessage = $localize`تم تعديل البيانات بنجاح`;
+        this.responseMessage = 'Your information has been updated successfully';
       },
       error: (error) => {
         console.log(this.editProfileForm.value);
-        this.errorMessage = $localize`تعذر الاتصال بقاعدة البيانات، يرجى التحقق من اتصالك بالانترنت والمحاولة مرة أخرى.`;
+        this.errorMessage =
+          'Failed to update your information, Please try again later';
       },
     });
   }

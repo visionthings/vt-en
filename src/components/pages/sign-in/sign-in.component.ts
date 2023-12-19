@@ -59,7 +59,7 @@ export class SignInComponent {
         this.router.navigateByUrl('/sign-in-redirect');
       },
       error: (error) => {
-        this.errorMessage = $localize`البريد الالكتروني أو كلمة المرور غير صحيحة، برجاء التحقق من صحة البيانات والمحاولة مرة أخرى.`;
+        this.errorMessage = `The email or password is incorrect. Please verify the data is correct and try again.`;
       },
     });
   }

@@ -113,8 +113,8 @@ export class SignUpComponent {
           error.error.message.startsWith(
             'SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry'
           )
-            ? (this.errorMessage = $localize`البريد الالكتروني الذي ادخلته مستخدم بالفعل`)
-            : (this.errorMessage = $localize`البريد الالكتروني أو كلمة المرور غير صحيحة، برجاء التحقق من صحة البيانات والمحاولة مرة أخرى.`);
+            ? (this.errorMessage = `The email you entered is already in use`)
+            : (this.errorMessage = `The email or password is incorrect. Please verify the data is correct and try again.`);
         },
       });
   }

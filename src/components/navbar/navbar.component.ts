@@ -1,13 +1,6 @@
-import {
-  Component,
-  Inject,
-  Injectable,
-  LOCALE_ID,
-  OnInit,
-  inject,
-} from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { RouterLinkActive, RouterModule } from '@angular/router';
+import { RouterLinkActive, RouterModule, Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from '../../services/auth.service';
@@ -28,29 +21,26 @@ import { AuthService } from '../../services/auth.service';
 })
 @Injectable({ providedIn: 'root' })
 export class NavbarComponent implements OnInit {
-  constructor(
-    private authService: AuthService,
-    @Inject(LOCALE_ID) public locale: string
-  ) {}
+  constructor(private authService: AuthService, private router: Router) {}
   navItems: { id: number; title: string; path: string }[] = [
     {
       id: 1,
-      title: $localize`الرئيسية`,
+      title: `Home`,
       path: 'home',
     },
     {
       id: 2,
-      title: $localize`عن الشركة`,
+      title: 'About Us',
       path: '/about-us',
     },
     {
       id: 3,
-      title: $localize`عقد الكاميرات`,
+      title: 'Cameras Contract',
       path: '/contract',
     },
     {
       id: 4,
-      title: $localize`اتصل بنا`,
+      title: 'Contact Us',
       path: '/contact-us',
     },
   ];
@@ -62,19 +52,9 @@ export class NavbarComponent implements OnInit {
 
   isLoggedIn: boolean = false;
 
-  // Change language
-  lang: string = '';
   changeLanguage() {
     if (typeof window !== 'undefined') {
-      const currentURL = window.location.href;
-      let newURL;
-      if (currentURL.includes('ar-SA')) {
-        newURL = currentURL.replace('ar-SA', 'en-US');
-        window.location.assign(newURL);
-      } else {
-        newURL = currentURL.replace('en-US', 'ar-SA');
-        window.location.assign(newURL);
-      }
+      location.href = `https://vt.com.sa${this.router.url}`;
     }
   }
 
@@ -85,6 +65,5 @@ export class NavbarComponent implements OnInit {
         this.isLoggedIn = res;
       },
     });
-    this.locale === 'ar-SA' ? (this.lang = 'En') : (this.lang = 'العربية');
   }
 }

@@ -17,9 +17,9 @@ export class ContractComponent {
     title: string;
     path: string;
   }[] = [
-    { id: 1, title: $localize`انشاء عقد جديد`, path: 'create-new-contract' },
-    { id: 2, title: $localize`العقود المسجلة`, path: 'registered-contracts' },
-    { id: 3, title: $localize`طلب زيارة`, path: 'visit-request' },
+    { id: 1, title: `Create New Contract`, path: 'create-new-contract' },
+    { id: 2, title: `Registered Contracts`, path: 'registered-contracts' },
+    { id: 3, title: `Request Technical Visit`, path: 'visit-request' },
   ];
 
   navigateToService(servicePath: string) {

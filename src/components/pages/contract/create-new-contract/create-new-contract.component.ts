@@ -17,18 +17,18 @@ export class CreateNewContractComponent {
     id: number;
     title: string;
   }[] = [
-    { id: 1, title: $localize`شهر` },
-    { id: 2, title: $localize`شهران` },
-    { id: 3, title: $localize`ثلاثة أشهر` },
-    { id: 4, title: $localize`أربعة أشهر` },
-    { id: 5, title: $localize`خمسة أشهر` },
-    { id: 6, title: $localize`ستة أشهر` },
-    { id: 7, title: $localize`سبعة أشهر` },
-    { id: 8, title: $localize`ثمانية أشهر` },
-    { id: 9, title: $localize`تسعة أشهر` },
-    { id: 10, title: $localize`عشرة أشهر` },
-    { id: 11, title: $localize`أحد عشر شهر` },
-    { id: 12, title: $localize`اثنا عشر شهر` },
+    { id: 1, title: `1 Month` },
+    { id: 2, title: `2 Months` },
+    { id: 3, title: '3 Months' },
+    { id: 4, title: '4 Months' },
+    { id: 5, title: '5 Months' },
+    { id: 6, title: '6 Months' },
+    { id: 7, title: '7 Months' },
+    { id: 8, title: '8 Months' },
+    { id: 9, title: '9 Months' },
+    { id: 10, title: '10 Months' },
+    { id: 11, title: '11 Months' },
+    { id: 12, title: '12 Months' },
   ];
   clicking: boolean = false;
 

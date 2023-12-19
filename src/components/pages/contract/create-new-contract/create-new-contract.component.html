@@ -1,14 +1,13 @@
 <section class="container">
-  <h3 class="text-3xl leading-relaxed" i18n>انشاء عقد جديد</h3>
-  <p i18n>يرجى إدخال البيانات التالية لتسجيل عقدك</p>
-
+  <h3 class="text-3xl leading-relaxed">Create New Contract</h3>
+  <p>Please fill the required information</p>
   <!-- Cameras data -->
   <div class="py-10">
     <form [formGroup]="camerasForm" (ngSubmit)="onSubmit()">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <label for="indoor_cameras" class="block mb-1" i18n
-            >عدد الكاميرات الداخلية</label
+          <label for="indoor_cameras" class="block mb-1">
+            Indoor Cameras Count</label
           >
           <input
             id="indoor_cameras"
@@ -23,17 +22,15 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p i18n *ngIf="indoor_cameras.errors?.['required']">
-              ادخل عدد الكاميرات الداخلية.
+            <p *ngIf="indoor_cameras.errors?.['required']">
+              Enter indoor cameras count
             </p>
-            <p i18n *ngIf="indoor_cameras.errors?.['pattern']">
-              ادخل أرقام فقط.
-            </p>
+            <p *ngIf="indoor_cameras.errors?.['pattern']">Digits only</p>
           </div>
         </div>
         <div>
-          <label for="outdoor_cameras" class="block mb-1" i18n
-            >عدد الكاميرات الخارجية</label
+          <label for="outdoor_cameras" class="block mb-1">
+            Outdoor Cameras Count</label
           >
           <input
             id="outdoor_cameras"
@@ -48,17 +45,15 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p i18n *ngIf="outdoor_cameras.errors?.['required']">
-              ادخل عدد الكاميرات الخارجية.
+            <p *ngIf="outdoor_cameras.errors?.['required']">
+              Enter outdoor cameras count
             </p>
-            <p i18n *ngIf="outdoor_cameras.errors?.['pattern']">
-              ادخل أرقام فقط.
-            </p>
+            <p *ngIf="outdoor_cameras.errors?.['pattern']">Digits only</p>
           </div>
         </div>
         <div>
-          <label for="storage_device" class="block mb-1" i18n
-            >نوع وحدة التخزين</label
+          <label for="storage_device" class="block mb-1">
+            Storage device type</label
           >
           <select
             id="storage_device"
@@ -75,14 +70,14 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p i18n *ngIf="storage_device.errors?.['required']">
-              ادخل نوع وحدة التخزين.
+            <p *ngIf="storage_device.errors?.['required']">
+              Enter storage device type
             </p>
           </div>
         </div>
         <div>
-          <label for="period_of_record" class="block mb-1" i18n
-            >مدة التسجيل</label
+          <label for="period_of_record" class="block mb-1">
+            Record Period</label
           >
           <select
             id="period_of_record"
@@ -90,7 +85,7 @@
             formControlName="period_of_record"
           >
             @for (period of periods; track period.id) {
-            <option [value]="period.id" i18n>{{ period.title }}</option>
+            <option [value]="period.id">{{ period.title }}</option>
             }
           </select>
           <div
@@ -100,20 +95,19 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p i18n *ngIf="period_of_record.errors?.['required']">
-              ادخل مدة التسجيل.
+            <p *ngIf="period_of_record.errors?.['required']">
+              Enter record period
             </p>
           </div>
         </div>
         <div>
-          <label for="show_screens" class="block mb-1" i18n
-            >عدد شاشات العرض</label
+          <label for="show_screens" class="block mb-1">
+            Show Screens Count</label
           >
           <input
             id="show_screens"
             name="show_screens"
             formControlName="show_screens"
-            i18n
           />
           <div
             *ngIf="
@@ -122,14 +116,14 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p i18n *ngIf="show_screens.errors?.['required']">
-              ادخل عدد شاشات العرض.
+            <p *ngIf="show_screens.errors?.['required']">
+              Enter show screens count
             </p>
-            <p i18n *ngIf="show_screens.errors?.['pattern']">ادخل أرقام فقط.</p>
+            <p *ngIf="show_screens.errors?.['pattern']">Digits only</p>
           </div>
         </div>
         <div>
-          <label for="camera_type" class="block mb-1" i18n>نوع الكاميرا</label>
+          <label for="camera_type" class="block mb-1"> Cameras Type</label>
           <select
             id="camera_type"
             name="camera_type"
@@ -145,9 +139,7 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p i18n *ngIf="camera_type.errors?.['required']">
-              ادخل نوع الكاميرا.
-            </p>
+            <p *ngIf="camera_type.errors?.['required']">Enter cameras type</p>
           </div>
         </div>
         <!-- Total price -->
@@ -155,12 +147,10 @@
           class="md:col-span-2 bg-blue-50 rounded-lg container py-3 grid grid-cols-1 md:grid-cols-2 gap-10"
         >
           <div class="bg-blue-200 rounded-lg py-3">
-            <p class="text-center text-blue-800" i18n>
-              السعر غير شامل ضريبة القيمة المضافة
-            </p>
+            <p class="text-center text-blue-800">Price NOT Including VAT</p>
           </div>
           <div id="price" class="bg-blue-200 rounded-lg py-3">
-            <p i18n class="text-center text-white">{{ price }} ريال سعودي</p>
+            <p class="text-center text-white">{{ price }} SAR</p>
           </div>
         </div>
         <button
@@ -172,7 +162,7 @@
           [disabled]="!camerasForm.valid"
           type="submit"
         >
-          <p i18n class="px-3 text-white">الخطوة القادمة</p>
+          <p class="px-3 text-white">Next</p>
           <img
             class="pt-1"
             ngSrc="assets/images/left_arrow.png"

@@ -27,7 +27,8 @@ export class PaymentRedirectComponent implements OnInit {
     this.route.queryParamMap.pipe(first()).subscribe({
       next: (res: any) => {
         if (res.params.message === 'APPROVED' && res.params.status === 'paid') {
-          this.message = $localize`عملية الدفع تمت بنجاح وجاري تحويلك الآن لصفحة تحميل العقد`;
+          this.message =
+            "Payment has been done successfully, You're being redirected not to contract download page";
           this.url = '/contract/final-contract';
           this.img = 'success';
           this.contract
@@ -44,7 +45,8 @@ export class PaymentRedirectComponent implements OnInit {
             this.router.navigateByUrl('/contract/final-contract');
           }, 3000);
         } else {
-          this.message = $localize`تعذر اتمام عملية السداد، جاري تحويلك لصفحة الدفع مرة أخرى`;
+          this.message =
+            "Payment failed, You're being redirected to payment page again";
           this.url = '/contract/payment';
           this.img = 'failed';
           setTimeout(() => {

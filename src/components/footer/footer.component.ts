@@ -16,57 +16,57 @@ export class FooterComponent {
   footerColumns: any[] = [
     {
       id: 1,
-      title: $localize`روابط سريعة`,
+      title: 'Quick Links',
       items: [
         {
           id: 1,
-          title: $localize`الرئيسية`,
+          title: 'Home',
           path: '/',
         },
         {
           id: 2,
-          title: $localize`عن الشركة`,
+          title: 'About Us',
           path: '/about-us',
         },
         {
           id: 3,
-          title: $localize`عقد الكاميرات`,
+          title: 'Cameras Contract',
           path: '/contract',
         },
         {
           id: 4,
-          title: $localize`اتصل بنا`,
+          title: 'Contact Us',
           path: '/contact-us',
         },
       ],
     },
     {
       id: 2,
-      title: $localize`الأحكام والشروط`,
+      title: 'Terms & Conditions',
       items: [
         {
           id: 1,
-          title: $localize`الأحكام والشروط`,
+          title: 'Terms & Conditions',
           path: '/terms-and-conditions',
         },
-        { id: 2, title: $localize`سياسة الخصوصية`, path: '/privacy-policy' },
+        { id: 2, title: 'Privacy Policy', path: '/privacy-policy' },
         {
           id: 3,
-          title: $localize`سياسة الاستبدال والاسترجاع`,
+          title: 'Return & Exchange Policy',
           path: '/return-policy',
         },
       ],
     },
     {
       id: 3,
-      title: $localize`العنوان`,
+      title: `Address`,
       items: [
         {
           id: 1,
-          title: $localize`المملكة العربية السعودية - جدة - حي الزهراء`,
+          title: `The Kingdom of Saudi Arabia - Jeddah - Al-Zahraa District`,
           path: null,
         },
-        { id: 2, title: $localize`الرمز البريدي: 23522`, path: null },
+        { id: 2, title: `Zip Code: 23522`, path: null },
       ],
     },
   ];
