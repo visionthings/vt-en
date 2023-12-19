@@ -21,8 +21,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": false,
-            "baseHref": "test",
+            "localize": true,
+            "baseHref": "ar-SA",
             "outputPath": "dist/vt",
             "index": "src/index.html",
             "browser": "src/main.ts",
