@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#upper-footer {
+  color: black;
+}
+
+#lower-footer {
+  background: rgb(104, 132, 253);
+  background: radial-gradient(
+    circle,
+    rgba(104, 132, 253, 1) 0%,
+    rgba(34, 42, 166, 1) 100%
+  );
+  color: white;
+}
+
+.icon-container {
+  background: rgb(104, 132, 253);
+  background: radial-gradient(
+    circle,
+    rgba(104, 132, 253, 1) 0%,
+    rgba(34, 42, 166, 1) 100%
+  );
+}

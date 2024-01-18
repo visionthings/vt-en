@@ -1,0 +1,56 @@
+<section class="container">
+  <h3 class="text-center text-3xl my-10">Exchange and return policy</h3>
+  <p class="text-center">
+    We aim to provide high quality products and services and meet our customers'
+    satisfaction. if I were If you are not satisfied with the product you
+    purchased from our site, you have the right to exchange it or It can be
+    returned according to the following terms and conditions:
+  </p>
+  <div class="py-10 grid grid-cols-1 gap-10 py-5">
+    @for (item of items; track item.id; let e=$even) { @if (e) {
+    <div
+      class="bg-white rounded-lg shadow container py-5 flex flex-wrap md:flex-nowrap gap-10"
+    >
+      <div class="container">
+        <h5 class="text-blue-800 text-lg">
+          {{ item.title }}
+        </h5>
+        <ul class="container">
+          @for (point of item.points; track $index) {
+          <li>{{ point }}</li>
+          }
+        </ul>
+      </div>
+      <div class="flex flex-col justify-center">
+        <img [ngSrc]="item.icon" alt="item icon" width="300" height="300" />
+      </div>
+    </div>
+    } @else {
+    <div
+      class="bg-white rounded-lg shadow container py-5 flex flex-wrap md:flex-nowrap gap-10"
+    >
+      <div class="flex flex-col justify-center">
+        <img [ngSrc]="item.icon" alt="item icon" width="300" height="300" />
+      </div>
+      <div class="container">
+        <h5 class="text-blue-800 text-lg">
+          {{ item.title }}
+        </h5>
+        <ul class="container">
+          @for (point of item.points; track $index) {
+          <li>{{ point }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+    } }
+  </div>
+
+  <div class="bg-sky-50 rounded py-5 shadow container mb-10">
+    <p class="text-center">
+      We reserve the right to refuse exchange or return requests that do not
+      meet our terms and provisions of the site policy, or which appear
+      suspicious or unjustified.
+    </p>
+  </div>
+</section>

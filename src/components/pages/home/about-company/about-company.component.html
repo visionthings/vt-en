@@ -1,0 +1,54 @@
+<section
+  class="container grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-10 mb-20"
+>
+  <div>
+    <h3 class="text-3xl leading-relaxed">About Vision Things</h3>
+    <p class="my-5">
+      Vision Things is a Saudi company specialized in providing the best
+      security solutions. we've got A team of experienced and certified
+      technicians who can install and maintain the system Your security
+      professionally and efficiently. In seeing things we believe there is no
+      security A luxury, even a necessity. That's why we offer a wide range of
+      products and services that Fits your specific needs and budget. Whether
+      you need a simple surveillance camera Or a complex security system, we
+      have the right solution for you.
+    </p>
+    <app-green-button
+      text="Contact Us"
+      rightIcon="assets/images/social_media_icons/phone.png"
+      route="/contact-us"
+    ></app-green-button>
+  </div>
+  <div>
+    <div class="grid grid-cols-3 gap-5 mb-5 pe-5 animate-bounce-slow">
+      @for (item of statistics_first_row; track item.id) {
+      <div
+        class="bg-white shadow-md flex flex-col justify-center items-center p-3 rounded-lg"
+      >
+        <img
+          [ngSrc]="item.image_url"
+          alt="Statistical icon"
+          width="36"
+          height="71"
+        />
+        <p class="text-center">{{ item.title }}</p>
+      </div>
+      }
+    </div>
+    <div class="grid grid-cols-3 gap-5 ps-5 animate-bounce-slow">
+      @for (item of statistics_second_row; track item.id) {
+      <div
+        class="bg-white shadow-md flex flex-col justify-center items-center p-3 rounded-lg"
+      >
+        <img
+          [ngSrc]="item.image_url"
+          alt="Statistical icon"
+          width="36"
+          height="71"
+        />
+        <p class="text-center">{{ item.title }}</p>
+      </div>
+      }
+    </div>
+  </div>
+</section>

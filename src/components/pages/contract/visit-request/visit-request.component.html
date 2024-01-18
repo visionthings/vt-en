@@ -1,0 +1,28 @@
+<section class="container pb-5">
+  <h3 class="text-3xl text-center mb-10">Technical Visit Request</h3>
+  <p class="text-center mb-10">
+    If you need a technical visit, with one click of a button you can now send a
+    visit request Electronically and we will call you back within 24 hours to
+    schedule a visit for 750 Riyal only.
+  </p>
+
+  <div
+    *ngIf="responseMessage"
+    class="rounded shadow bg-blue-100 text-blue-800 text-center mb-10 py-3"
+  >
+    <p>{{ responseMessage }}</p>
+  </div>
+
+  <div class="flex justify-center">
+    <button
+      class="flex justify-center bg-teal-500 hover:bg-cyan-500 px-20 py-3 rounded-md shadow-lg"
+      [class.ring-teal-500]="clicking"
+      [class.ring-1]="clicking"
+      (mousedown)="handleClickingChange()"
+      (mouseup)="handleClickingChange()"
+      (click)="sendVisitRequest()"
+    >
+      <p class="text-white">Request Technical Visit</p>
+    </button>
+  </div>
+</section>

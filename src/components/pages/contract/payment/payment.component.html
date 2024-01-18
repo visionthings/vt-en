@@ -1,0 +1,150 @@
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-5 pb-10">
+  <!-- Payment form -->
+  <div>
+    <h3 class="text-3xl mb-5">Payment</h3>
+    <p class="text-xl mb-10">Please fill the following fields</p>
+
+    <form [formGroup]="paymentForm" (ngSubmit)="sendPayment()">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="md:col-span-2">
+          <label for="name" class="block mb-1">Name </label>
+          <input
+            id="name"
+            name="name"
+            formControlName="name"
+            placeholder="Name"
+          />
+          <div
+            *ngIf="name.invalid && (name.dirty || name.touched)"
+            class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+          >
+            <p *ngIf="name.errors?.['required']">Name is required</p>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <label for="number" class="block mb-1"> Card Number</label>
+          <input
+            id="number"
+            name="number"
+            formControlName="number"
+            placeholder="0000 0000 0000 0000"
+          />
+          <div
+            *ngIf="number.invalid && (number.dirty || number.touched)"
+            class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+          >
+            <p *ngIf="number.errors?.['required']">Enter card number</p>
+            <p *ngIf="number.errors?.['pattern']">Number not valid</p>
+            <p *ngIf="number.errors?.['minlength']">
+              Number must consists of 14 digits
+            </p>
+          </div>
+        </div>
+        <div class="md:col-span-1">
+          <label for="cvc" class="block mb-1">CVC </label>
+          <input id="cvc" name="cvc" formControlName="cvc" placeholder="000" />
+          <div
+            *ngIf="cvc.invalid && (cvc.dirty || cvc.touched)"
+            class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+          >
+            <p *ngIf="cvc.errors?.['required']">Enter CVC number</p>
+            <p *ngIf="cvc.errors?.['pattern']">Enter a valid number</p>
+            <p *ngIf="cvc.errors?.['minlength']">Number consists of 3 digits</p>
+            <p *ngIf="cvc.errors?.['maxlength']">Number consists of 3 digits</p>
+          </div>
+        </div>
+        <div class="md:col-span-1">
+          <label for="expiry_date" class="block mb-1">Expiry Date</label>
+          <input
+            id="expiry_date"
+            name="expiry_date"
+            formControlName="expiry_date"
+            placeholder="00/00"
+          />
+          <div
+            *ngIf="
+              expiry_date.invalid && (expiry_date.dirty || expiry_date.touched)
+            "
+            class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+          >
+            <p *ngIf="expiry_date.errors?.['required']">Enter expiry date</p>
+            <p *ngIf="expiry_date.errors?.['pattern']">Date is not valid</p>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <button
+            class="bg-teal-500 hover:bg-cyan-500 w-full py-3 rounded-md shadow-lg text-white"
+            [class.ring-teal-500]="clicking"
+            [class.ring-1]="clicking"
+            (mousedown)="handleClickingChange()"
+            (mouseup)="handleClickingChange()"
+            [disabled]="!paymentForm.valid"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Price details -->
+  <div class="container bg-blue-50 py-5">
+    <h3 class="text-3xl mb-5">Price</h3>
+    <div class="flex justify-between text-blue-800 mb-3">
+      <div class="py-3"><p>Price</p></div>
+      <div class="bg-blue-100 rounded shadow w-fit py-3">
+        <div class="container">
+          <p>{{ price }} SAR</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between text-blue-800 mb-3">
+      <div class="py-3"><p>VAT (15%)</p></div>
+      <div class="bg-blue-100 rounded shadow w-fit py-3">
+        <div class="container">
+          <p>{{ vat }} SAR</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-between text-blue-800 mb-3">
+      <div class="py-3"><p>Discount</p></div>
+      <div class="bg-blue-100 rounded shadow w-fit py-3">
+        <div class="container">
+          <p>{{ discount }} SAR</p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-between bg-white mb-3 rounded shadow py-3 text-blue-800 container"
+    >
+      <p>Total Price</p>
+      <p>{{ totalPrice }} SAR</p>
+    </div>
+    <div class="text-center text-blue-800 my-5">
+      <p>Do you have promocode</p>
+    </div>
+    <form [formGroup]="discountForm" (ngSubmit)="getDiscount()">
+      <input
+        type="text"
+        name="promo_code"
+        placeholder="Enter promocode"
+        class="mb-3"
+        formControlName="promocode"
+      />
+      <button
+        class="bg-teal-500 hover:bg-cyan-500 w-full py-3 rounded-md shadow-lg text-white mb-3"
+        [disabled]="!discountForm.valid"
+        type="submit"
+      >
+        Submit
+      </button>
+      <div
+        *ngIf="responseMessage"
+        class="bg-white mb-3 rounded shadow py-3 text-center text-blue-800 container"
+      >
+        <p>{{ responseMessage }}</p>
+      </div>
+    </form>
+  </div>
+</section>
