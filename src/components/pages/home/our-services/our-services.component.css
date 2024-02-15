@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#our-services {
+  background-image: url("../../../../assets/images/our_services/main.png");
+  background-size: 100% 100%;
+  color: white;
+}
+
+#our-services-content {
+  background-image: url("../../../../assets/images/our_services/rays.png");
+}

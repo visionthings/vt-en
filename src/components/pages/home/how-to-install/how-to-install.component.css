@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#how-to-install {
+  background-image: url("../../../../assets/images/how_to_install/how_to_install_bg.png");
+  background-size: 100% 100%;
+  color: white;
+}
+
+#how-to-install .container {
+  background-image: url("../../../../assets/images/how_to_install/rays.png");
+}

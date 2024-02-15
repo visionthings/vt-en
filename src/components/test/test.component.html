@@ -1,0 +1,30 @@
+<section class="container py-10">
+  <div class="bg-white my-10 container py-10">
+    <form [formGroup]="smsForm" (ngSubmit)="sendOTP()">
+      <div class="mb-5">
+        <label for="mobile"> رقم الجوال</label>
+        <input id="mobile" type="text" formControlName="mobile" name="mobile" />
+      </div>
+      <button type="submit" class="bg-rose-700 text-white rounded-lg py-2 px-5">
+        إرسال
+      </button>
+    </form>
+  </div>
+
+  <div class="bg-white rounded-lg py-10 my-10 container">
+    <form [formGroup]="verifyForm" (ngSubmit)="verifyOtp()">
+      <div class="mb-5">
+        <label for="code"> رمز التحقق </label>
+        <input id="code" type="text" formControlName="code" name="code" />
+      </div>
+      <button type="submit" class="bg-rose-700 text-white rounded-lg py-2 px-5">
+        إرسال
+      </button>
+    </form>
+  </div>
+  @if (error) {
+  <div class="bg-white rounded-lg py-10 my-10 container" dir="ltr">
+    Endpoint = {{ endpoint }}
+  </div>
+  }
+</section>

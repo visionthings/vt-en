@@ -1,0 +1,106 @@
+<section class="container mb-20">
+  <div id="our-services">
+    <!-- Title -->
+    <div class="flex justify-center">
+      <img
+        ngSrc="assets/images/camera_heading.png"
+        alt="Camera"
+        width="50"
+        height="50"
+      />
+      <h3 class="text-3xl text-center text-black mx-3">خدماتنا</h3>
+    </div>
+
+    <!-- Content -->
+    <div id="our-services-content" class="container py-40">
+      <!-- Cameras grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="flex justify-center animate-bounce-slow">
+          <img
+            ngSrc="assets/images/our_services/camera_1.png"
+            alt="Camera"
+            width="200"
+            height="280"
+          />
+        </div>
+        <div class="flex flex-col justify-center">
+          <div class="container">
+            <h4 class="text-xl leading-relaxed">عقد صيانة كاميرات</h4>
+            <p class="mb-3">
+              تقوم شركة رؤية الأشياء بتوصيل وتمديد شبكات الكاميرات الأمنية كما
+              تمكنكم من التعاقد إلكترونيا على التركيب والتمديد وحجز موعد
+              للمعاينة السريعة.
+            </p>
+            <app-green-button
+              text="تعاقد الآن"
+              rightIcon="assets/images/our_services/button_contract_icon.png"
+              route="/contract/create-new-contract"
+            ></app-green-button>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center">
+          <div class="container">
+            <h4 class="text-xl leading-relaxed">تجديد عقد صيانة الكاميرات</h4>
+            <p class="mb-3">
+              اذا كان لديك تعاقد معنا وترغب بتجديده، توفر شركة رؤية الأشياء
+              امكانية تجديد العقد الكترونياً.
+            </p>
+            <app-green-button
+              text="جدد عقدك الآن"
+              rightIcon="assets/images/our_services/button_contract_icon.png"
+              route="/contract/registered-contracts"
+            ></app-green-button>
+          </div>
+        </div>
+        <div class="flex justify-center animate-bounce-slow">
+          <img
+            ngSrc="assets/images/our_services/camera_2.png"
+            alt="Camera"
+            width="250"
+            height="320"
+          />
+        </div>
+      </div>
+
+      <!-- Middle text -->
+      <div class="container">
+        <p class="text-center py-20 md:px-20">
+          تقدم شركة رؤية الأشياء العديد من الخدمات والحلول الأمنية لتأمين منزلك
+          وعملك باستخدام افضل واحدث كاميرات المراقبة والأنظمة الأمنية
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          @for (service of services; track service.id) {
+          <div class="relative container bg-white rounded-xl py-5 shadow-lg">
+            <div
+              class="absolute -right-2 -top-2 rounded-full bg-slate-100 p-7 animate-ping-slow"
+            ></div>
+            <div
+              class="absolute -right-2 -top-2 rounded-full bg-slate-100 p-3 shadow-lg"
+            >
+              <img
+                [src]="service.icon"
+                alt="Service Icon"
+                width="30"
+                height="30"
+              />
+            </div>
+            <h5 class="text-center text-black text-xl leading-relaxed">
+              {{ service.title }}
+            </h5>
+            <p class="text-black">{{ service.content }}</p>
+          </div>
+          }
+        </div>
+      </div>
+
+      <!-- Know more button -->
+      <div class="flex justify-center pt-10">
+        <app-green-button text="اعرف أكثر" route="/about-us"></app-green-button>
+      </div>
+    </div>
+  </div>
+</section>

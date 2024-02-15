@@ -1,0 +1,14 @@
+<section>
+  <div class="flex justify-center">
+    @if (img !== '') { @if (img === 'success') {
+    <img src="assets/images/like.png" alt="Like" />
+    } @else {
+    <img src="assets/images/unlike.png" alt="Unike" />
+
+    } }
+  </div>
+  <h3 class="text-xl text-center my-5">{{ message }}</h3>
+  <p class="text-center">
+    اذا كان متصفحك لا يدعم الانتقال التلقائي <a [routerLink]="url">اضغط هنا</a>
+  </p>
+</section>

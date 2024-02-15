@@ -1,0 +1,19 @@
+<a [routerLink]="route">
+  <button
+    class="bg-teal-500 hover:bg-cyan-500 px-20 py-3 rounded-md shadow-lg"
+    [class.ring-teal-500]="clicking"
+    [class.ring-1]="clicking"
+    (mousedown)="handleClickingChange()"
+    (mouseup)="handleClickingChange()"
+  >
+    <div class="flex">
+      @if (rightIcon !== null) {
+      <img [ngSrc]="rightIcon" alt="icon" width="20" height="20" />
+      }
+      <p class="px-3 text-white">{{ text }}</p>
+      @if (leftIcon !== null) {
+      <img [ngSrc]="leftIcon" alt="icon" width="20" height="20" />
+      }
+    </div>
+  </button>
+</a>

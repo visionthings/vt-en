@@ -1,0 +1,89 @@
+<div id="header"></div>
+
+<section class="pt-10 container">
+  <h3 class="text-3xl text-center mb-5">دعنا نتحقق من رقم جوالك أولاً</h3>
+  <form [formGroup]="phoneForm" (ngSubmit)="getCode()">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div>
+        <label for="phone">رقم الجوال</label>
+        <input
+          id="phone"
+          type="text"
+          name="phone"
+          formControlName="phone"
+          placeholder="أدخل رقم جوال سعودي"
+        />
+        <div
+          *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="phone.errors?.['required']">رقم الجوال مطلوب.</p>
+          <p *ngIf="phone.errors?.['minlength']">
+            رقم الجوال يجب أن يكون من 10 أرقام على الأقل.
+          </p>
+          <p *ngIf="phone.errors?.['pattern']">ادخل رقم جوال سعودي صالح.</p>
+        </div>
+      </div>
+      <div class="pt-3">
+        <button
+          type="submit"
+          class="bg-blue-700 text-white py-4 w-full rounded-lg"
+          [disabled]="!phoneForm.valid"
+        >
+          إرسال رمز التحقق
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Verifiy Code -->
+  @if (hasCode) {
+  <div class="mt-10">
+    <h3 class="text-xl text-center mb-5">
+      أدخل الرمز الذي تم إرساله إلى هاتفك
+    </h3>
+    <div class="flex justify-center">
+      <form [formGroup]="verifyForm" (ngSubmit)="submit()">
+        <div class="grid grid-cols-1 gap-5 w-96">
+          <div>
+            <label for="code"> الرمز </label>
+            <input
+              id="code"
+              type="text"
+              name="code"
+              formControlName="code"
+              placeholder="أدخل الرمز الذي تم إرساله إلى جوالك"
+            />
+            <div
+              *ngIf="code.invalid && (code.dirty || code.touched)"
+              class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+            >
+              <p *ngIf="code.errors?.['required']">أدخل الرمز</p>
+              <p *ngIf="code.errors?.['minlength']">
+                أدخل الرمز المكون من 4 أرقام
+              </p>
+              <p *ngIf="code.errors?.['maxlength']">
+                أدخل الرمز المكون من 4 أرقام
+              </p>
+            </div>
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="bg-blue-700 text-white py-3 w-full rounded-lg"
+              [disabled]="!verifyForm.valid"
+            >
+              إتمام
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    @if (codeError) {
+    <div class="mt-5 py-2 px-5 bg-rose-700 text-white rounded-lg text-center">
+      <p>{{ codeError }}</p>
+    </div>
+    }
+  </div>
+  }
+</section>

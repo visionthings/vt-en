@@ -1,0 +1,28 @@
+<section class="container pb-5">
+  <h3  class="text-3xl text-center mb-10">طلب زيارة</h3>
+  <p  class="text-center mb-10">
+    اذا كنت بحاجة لزيارة تقني، يمكنك بضغطة زر واحدة الآن ارسال طلب زيارة
+    الكترونيا وسنعاود الاتصال بك في خلال 24 ساعة لتحديد موعد للزيارة مقابل 750
+    ريال فقط.
+  </p>
+
+  <div
+    *ngIf="responseMessage"
+    class="rounded shadow bg-blue-100 text-blue-800 text-center mb-10 py-3"
+  >
+    <p >{{ responseMessage }}</p>
+  </div>
+
+  <div class="flex justify-center">
+    <button
+      class="flex justify-center bg-teal-500 hover:bg-cyan-500 px-20 py-3 rounded-md shadow-lg"
+      [class.ring-teal-500]="clicking"
+      [class.ring-1]="clicking"
+      (mousedown)="handleClickingChange()"
+      (mouseup)="handleClickingChange()"
+      (click)="sendVisitRequest()"
+    >
+      <p  class="text-white">ارسال طلب زيارة</p>
+    </button>
+  </div>
+</section>

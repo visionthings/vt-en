@@ -1,0 +1,36 @@
+<section class="container mb-20">
+  <!-- Title -->
+  <div class="flex justify-center mb-20">
+    <img
+      ngSrc="assets/images/camera_heading.png"
+      alt="Camera"
+      width="50"
+      height="50"
+    />
+    <h3 class="text-3xl text-center text-black mx-3">
+      لماذا اختار شركة رؤية الأشياء
+    </h3>
+  </div>
+
+  <!-- Content -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    @for (point of points; track point.id) {
+    <div class="flex">
+      <div class="relative">
+        <div class="bg-white rounded-xl shadow-xl p-5">
+          <img
+            [ngSrc]="point.icon"
+            [alt]="point.title"
+            width="30"
+            height="30"
+          />
+        </div>
+      </div>
+      <div class="container">
+        <h5 class="text-xl">{{ point.title }}</h5>
+        <p>{{ point.description }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</section>

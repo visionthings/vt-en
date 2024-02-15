@@ -1,0 +1,22 @@
+<section>
+  <div class="w-ull">
+    <img
+      src="assets/images/final_contract.png"
+      alt="Done"
+      style="max-width: 100%"
+    />
+  </div>
+  <div class="py-5">
+    <h2 class="text-4xl text-center">تهانينا</h2>
+    <h4 class="text-2xl text-center my-5">
+      لقد أنجزت مهمة تقديم تفاصيل العقد، وتم ارسال الفاتورة الى بريدك
+      الالكتروني، و يمكنك الآن تحميل نسخة من العقد
+    </h4>
+    <div class="flex justify-center">
+      <div class="w-fit" (click)="generateContract()">
+        <app-green-button text="تحميل العقد"></app-green-button>
+        <app-contract-pdf [data]="data" />
+      </div>
+    </div>
+  </div>
+</section>

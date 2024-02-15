@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#contract {
+  background-image: url("../../../../assets/images/contract/contract.png");
+  background-size: 100% 100%;
+  position: absolute;
+  top: -100000000000px;
+  left: -100000000000px;
+  width: 1280px;
+  height: 2308px;
+  font-size: 24px;
+}
+table {
+  width: 100%;
+}
+table,
+td,
+th {
+  border: 2px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td {
+  height: 60px;
+}

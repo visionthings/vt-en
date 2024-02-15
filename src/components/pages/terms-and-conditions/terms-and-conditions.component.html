@@ -1,0 +1,16 @@
+<section class="container">
+  <h3 class="text-3xl text-center my-10" >الأحكام والشروط</h3>
+  <div class="grid grid-cols-1 gap-10">
+    @for (term of terms; track term.id) {
+    <div class="bg-white rounded-lg shadow container py-5 flex">
+      <div class="flex flex-col justify-center">
+        <img [ngSrc]="term.icon" alt="Term Icon" width="50" height="50" />
+      </div>
+      <div class="container">
+        <h5 class="text-xl text-blue-800">{{ term.title }}</h5>
+        <p>{{ term.description }}</p>
+      </div>
+    </div>
+    }
+  </div>
+</section>

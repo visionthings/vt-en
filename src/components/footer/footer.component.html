@@ -1,0 +1,82 @@
+<footer>
+  <!-- Upper footer -->
+  <div
+    id="upper-footer"
+    class="flex justify-center pt-40 md:pt-20 relative h-100 w-100"
+  >
+    <div
+      class="bg-white p-5 rounded-lg grid grid-cols-1 md:grid-cols-3 md:justify-items-center shadow-lg absolute -bottom-10"
+    >
+      <!-- Email -->
+      <div class="flex items-center mb-5 md:mb-0">
+        <div class="icon-container p-3 rounded-full">
+          <img
+            ngSrc="assets/images/social_media_icons/mail.png"
+            alt="mail"
+            width="20"
+            height="20"
+          />
+        </div>
+        <p class="px-2">info&#64;vision-things.com</p>
+      </div>
+
+      <!-- Line -->
+      <div class="w-0.5 h-100 bg-blue-700"></div>
+
+      <!-- Phone -->
+      <div class="flex items-center">
+        <div class="icon-container p-3 rounded-full">
+          <img
+            ngSrc="assets/images/social_media_icons/phone.png"
+            alt="mail"
+            width="20"
+            height="20"
+          />
+        </div>
+        <p class="px-2">00966581077506</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lower footer -->
+  <div id="lower-footer">
+    <div class="container pt-20 pb-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div>
+          <img
+            ngSrc="assets/images/logo.png"
+            alt="Logo"
+            width="45"
+            height="50"
+          />
+          <p class="my-5">
+            إذا كنت ترغب في الحصول على خدمة من رؤية الأشياء، يمكنك الاتصال بنا
+            أو عبر وسائل التواصل الخاصة بنا
+          </p>
+          <div class="flex">
+            @for (icon of socialMediaIcons; track icon.id) {
+            <a [href]="icon.url">
+              <img
+                [ngSrc]="icon.iconURL"
+                [alt]="icon.title"
+                width="40"
+                height="40"
+              />
+            </a>
+            }
+          </div>
+        </div>
+        @for (column of footerColumns; track column.id) {
+        <div>
+          <p class="text-xl mb-5">{{ column.title }}</p>
+          @for (item of column.items; track item.id) {
+          <a [routerLink]="item.path">
+            <p class="mb-3">{{ item.title }}</p></a
+          >
+          }
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</footer>

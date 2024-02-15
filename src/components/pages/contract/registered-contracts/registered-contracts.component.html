@@ -1,0 +1,52 @@
+<section class="pb-10">
+  <h3 class="text-3xl text-center mb-10">العقود المسجلة</h3>
+  @if (registeredContracts.length !== 0) {
+  <div id="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>رقم العقد</th>
+          <th>قيمة العقد</th>
+          <th>تحميل نسخة PDF</th>
+          <th>تجديد العقد</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (contract of registeredContracts; track $index) {
+        <tr>
+          <td>{{ contract.contract_number }}</td>
+          <td>{{ contract.total_price }} ريال سعودي</td>
+          <td>
+            <button (click)="generateContract(contract.id)">
+              <img
+                ngSrc="assets/images/download.png"
+                alt="Download"
+                width="15"
+                height="15"
+              />
+            </button>
+          </td>
+          <td>
+            <button (click)="renewContract(contract.id)">تجديد العقد</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  } @else {
+  <div>
+    <h3 class="text-xl text-center">لا توجد عقود مسجلة</h3>
+    <div class="flex justify-center my-10">
+      <img src="assets/images/unlike.png" alt="Unlike" />
+    </div>
+    <div class="flex justify-center">
+      <div class="w-fit" (click)="createNewContract()">
+        <app-green-button text="انشاء عقد جديد"></app-green-button>
+      </div>
+    </div>
+  </div>
+  }
+
+  <app-contract-pdf [data]="currentData" />
+</section>

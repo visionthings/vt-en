@@ -1,0 +1,61 @@
+<section class="container">
+  <h3 class="text-center text-3xl my-10" >سياسة الخصوصية</h3>
+  <h5 class="text-center text-xl" >ما هي المعلومات التي نقوم بجمعها؟</h5>
+  <h6 class="text-center text-lg" >
+    قد نقوم بجمع الأنواع التالية من المعلومات منك
+  </h6>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5 py-5">
+    @for (info of information; track info.id) {
+    <div class="bg-white rounded-lg shadow container py-5">
+      <div class="flex justify-center">
+        <img [ngSrc]="info.icon" alt="Info icon" width="60" height="60" />
+      </div>
+      <p class="text-center text-blue-800 text-xl">
+        {{ info.title }}
+      </p>
+      <p class="text-center">{{ info.desciption }}</p>
+    </div>
+    }
+  </div>
+  <div class="grid grid-cols-1 gap-10 py-5">
+    @for (policy of policies; track policy.id; let e=$even) { @if (e) {
+    <div
+      class="bg-white rounded-lg shadow container py-5 flex flex-wrap md:flex-nowrap gap-10"
+    >
+      <div class="container">
+        <h5 class="text-blue-800 text-lg">
+          {{ policy.title }}
+        </h5>
+        <p>{{ policy.description }}</p>
+        <ul class="container">
+          @for (point of policy.points; track $index) {
+          <li>{{ point }}</li>
+          }
+        </ul>
+      </div>
+      <div class="flex flex-col justify-center">
+        <img [ngSrc]="policy.icon" alt="Policy icon" width="300" height="300" />
+      </div>
+    </div>
+    } @else {
+    <div
+      class="bg-white rounded-lg shadow container py-5 flex flex-wrap md:flex-nowrap gap-10"
+    >
+      <div class="flex flex-col justify-center">
+        <img [ngSrc]="policy.icon" alt="Policy icon" width="300" height="300" />
+      </div>
+      <div class="container">
+        <h5 class="text-blue-800 text-lg">
+          {{ policy.title }}
+        </h5>
+        <p>{{ policy.description }}</p>
+        <ul class="container">
+          @for (point of policy.points; track $index) {
+          <li>{{ point }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+    } }
+  </div>
+</section>

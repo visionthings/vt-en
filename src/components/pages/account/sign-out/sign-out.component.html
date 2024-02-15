@@ -1,0 +1,12 @@
+<section class="flex justify-center pb-5">
+  <button
+    class="bg-red-800 hover:bg-red-700 px-20 py-3 rounded-md shadow-lg text-white"
+    [class.ring-red-700]="clicking"
+    [class.ring-1]="clicking"
+    (mousedown)="handleClickingChange()"
+    (mouseup)="handleClickingChange()"
+    (click)="signOut()"
+  >
+    تسجيل الخروج
+  </button>
+</section>

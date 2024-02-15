@@ -1,0 +1,152 @@
+<section>
+  <div id="header"></div>
+  <h3 class="text-center text-3xl mb-10">انشاء حساب جديد</h3>
+  <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+    <div class="container grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div>
+        <label for="name" class="block mb-1">اسم الشخص أو الشركة</label>
+        <input
+          id="name"
+          name="name"
+          placeholder="الاسم بأحرف عربية فقط"
+          formControlName="name"
+        />
+        <div
+          *ngIf="name.invalid && (name.dirty || name.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="name.errors?.['required']">حقل الاسم مطلوب.</p>
+          <p *ngIf="name.errors?.['pattern']">ادخل الاسم بأحرف عربية فقط.</p>
+        </div>
+      </div>
+      <div>
+        <label for="phone">رقم الجوال</label>
+        <input
+          id="phone"
+          type="text"
+          name="phone"
+          formControlName="phone"
+          placeholder="أدخل رقم جوال سعودي"
+        />
+        <div
+          *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="phone.errors?.['required']">رقم الجوال مطلوب.</p>
+          <p *ngIf="phone.errors?.['minlength']">
+            رقم الجوال يجب أن يكون من 10 أرقام على الأقل.
+          </p>
+          <p *ngIf="phone.errors?.['pattern']">ادخل رقم جوال سعودي صالح.</p>
+        </div>
+      </div>
+      <div>
+        <label for="email" class="block mb-1">البريد الالكتروني</label>
+        <input
+          id="email"
+          name="email"
+          placeholder="name@email.com"
+          formControlName="email"
+        />
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="email.errors?.['required']">البريد الإلكتروني مطلوب.</p>
+          <p *ngIf="email.errors?.['email']">ادخل بريد الكتروني صالح.</p>
+        </div>
+      </div>
+      <div>
+        <label for="password" class="block mb-1">كلمة المرور</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="******"
+          formControlName="password"
+        />
+        <div
+          *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="password.errors?.['required']">كلمة المرور مطلوبة .</p>
+          <p *ngIf="password.errors?.['minlength']">ادخل كلمة مرور قوية</p>
+        </div>
+      </div>
+      <div>
+        <label for="commercial_number" class="block mb-1"
+          >رقم السجل التجاري</label
+        >
+        <input
+          id="commercial_number"
+          name="commercial_number"
+          placeholder="رقم السجل التجاري المكون من 10 أرقام"
+          formControlName="commercial_number"
+        />
+        <div
+          *ngIf="
+            commercial_number.invalid &&
+            (commercial_number.dirty || commercial_number.touched)
+          "
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="commercial_number.errors?.['required']">
+            رقم السجل التجاري مطلوب.
+          </p>
+          <p *ngIf="commercial_number.errors?.['pattern']">ادخل أرقام فقط.</p>
+
+          <p *ngIf="commercial_number.errors?.['minlength']">
+            رقم السجل التجاري يجب أن يكون مكون من 10 أرقام.
+          </p>
+          <p *ngIf="commercial_number.errors?.['maxlength']">
+            رقم السجل التجاري يجب أن يكون مكون من 10 أرقام.
+          </p>
+        </div>
+      </div>
+      <div>
+        <label for="address" class="block mb-1">العنوان</label>
+        <input
+          id="commercial_number"
+          name="commercial_number"
+          placeholder="الشارع - الحي - المدينة"
+          formControlName="address"
+        />
+        <div
+          *ngIf="address.invalid && (address.dirty || address.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="address.errors?.['required']">العنوان مطلوب.</p>
+          <p *ngIf="address.errors?.['pattern']">
+            ادخل العنوان بأحرف عربية فقط.
+          </p>
+        </div>
+      </div>
+      <div
+        *ngIf="errorMessage"
+        class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded col-span-2"
+      >
+        <p class="text-center">{{ errorMessage }}</p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="flex justify-center">
+          <button
+            class="bg-teal-500 hover:bg-cyan-500 px-20 py-3 rounded-md shadow-lg text-white"
+            [class.ring-teal-500]="clicking"
+            [class.ring-1]="clicking"
+            (mousedown)="handleClickingChange()"
+            (mouseup)="handleClickingChange()"
+            type="submit"
+          >
+            انشاء حساب
+          </button>
+        </div>
+
+        <p class="py-5 text-center">
+          لديك حساب بالفعل؟
+          <a routerLink="/sign-in" class="text-blue-800 underline">
+            سجل دخولك الآن
+          </a>
+        </p>
+      </div>
+    </div>
+  </form>
+</section>

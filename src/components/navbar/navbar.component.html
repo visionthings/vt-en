@@ -1,0 +1,84 @@
+<nav class="flex flex-col justify-center relative">
+  <div class="container flex justify-between items-center h-full">
+    <!-- Menu icon -->
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Menu Icon"
+      (click)="toggleNavbarMenu()"
+      class="lg:hidden"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <!-- Logo -->
+    <a routerLink="/home"
+      ><img
+        ngSrc="assets/images/logo.png"
+        alt="Logo"
+        width="35"
+        height="40"
+        priority
+    /></a>
+
+    <!-- Navbar items -->
+    <ul class="hidden lg:flex">
+      @for (navItem of navItems; track navItem.id) {
+      <li class="mx-3">
+        <a [routerLink]="navItem.path" routerLinkActive="active">
+          {{ navItem.title }}
+        </a>
+      </li>
+      }
+    </ul>
+
+    <!-- Sign in and Language -->
+    <div class="flex items-center">
+      @if (isLoggedIn) {
+      <a routerLink="/account"
+        ><div class="border rounded-md p-2 mx-2">
+          <p>ملفي الشخصي</p>
+        </div></a
+      >
+      } @else {
+      <a routerLink="/sign-in"
+        ><div class="border rounded-md p-2 mx-2">
+          <p>تسجيل الدخول</p>
+        </div></a
+      >
+      }
+
+      <div class="flex items-center cursor-pointer" (click)="changeLanguage()">
+        <p class="mx-1">English</p>
+        <img
+          ngSrc="assets/images/lang.png"
+          alt="Language"
+          width="30"
+          height="30"
+          priority
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar Menu -->
+  <div
+    id="navbar-menu"
+    class="absolute top-full w-full h-0 transition-all duration-300 truncate px-5"
+    [class.h-80]="NavbarMenuIsActive"
+  >
+    <ul>
+      @for (navItem of navItems; track navItem.id) {
+      <li class="mx-2 block my-10">
+        <a
+          [routerLink]="navItem.path"
+          routerLinkActive="active"
+          (click)="toggleNavbarMenu()"
+        >
+          {{ navItem.title }}
+        </a>
+      </li>
+      }
+    </ul>
+  </div>
+</nav>
