@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './email-verification.component.html',
-  styleUrl: './email-verification.component.css'
+  styleUrl: './email-verification.component.css',
 })
 export class EmailVerificationComponent {
-
+  resendVerificationMail() {}
 }

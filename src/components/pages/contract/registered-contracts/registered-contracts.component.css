@@ -16,9 +16,6 @@ td {
 tr {
   height: 50px;
 }
-tbody tr:nth-child(even) {
-  background-color: #f2f7fb;
-}
-tbody tr:nth-child(odd) {
-  background-color: #e7f0f8;
+tr:nth-child(even) {
+  background-color: #eff6ff;
 }

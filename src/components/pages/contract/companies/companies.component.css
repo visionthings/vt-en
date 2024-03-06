@@ -1,0 +1,23 @@
+tr:nth-child(even) {
+  background-color: #ecf1f7;
+}
+tbody tr:nth-child(odd) {
+  background-color: #dbeafe;
+}
+
+tr {
+  height: 50px;
+}
+
+input {
+  border: 2px solid rgb(59, 59, 228);
+  border-radius: 7px;
+  height: 50px;
+  padding: 0px 10px;
+}
+input:focus {
+  outline: none;
+}
+button {
+  height: 50px;
+}

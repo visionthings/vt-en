@@ -1,10 +1,10 @@
 <section class="container py-20">
   <div class="grid md:grid-cols-12 gap-10">
     <div
-      class="hidden md:flex md:col-span-3 bg-white rounded-lg pt-5 shadow flex flex-col justify-between"
+      class="hidden md:flex md:col-span-3 bg-white rounded-lg pt-5 shadow flex-col justify-between"
     >
       <div class="container mb-10">
-        <h2 class="text-4xl leading-relaxed mb-2">خدماتي</h2>
+        <h2 class="text-2xl leading-relaxed mb-2">الملف الشخصي</h2>
         @for (item of items; track item.id) {
         <a [routerLink]="item.path" routerLinkActive="active">
           <p class="mb-1">{{ item.title }}</p>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="bg-white rounded-lg py-5 shadow container md:hidden">
-      <h2 class="text-4xl text-center leading-relaxed mb-2">خدماتي</h2>
+      <h2 class="text-4xl text-center leading-relaxed mb-2">الملف الشخصي</h2>
       <form>
         <select
           #servicesOption

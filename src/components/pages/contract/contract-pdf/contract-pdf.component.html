@@ -5,11 +5,7 @@
       <p class="mb-5">التاريخ/ {{ data.contract_date }}</p>
       <!-- QR Code -->
       <div>
-        <qr-code
-          value="رؤية الأشياء"
-          size="250"
-          errorCorrectionLevel="M"
-        ></qr-code>
+        <qr-code [value]="url" size="250" errorCorrectionLevel="M"></qr-code>
       </div>
       <div class="py-5 px-3">
         <p>رقم العقد {{ data.contract_number }}</p>

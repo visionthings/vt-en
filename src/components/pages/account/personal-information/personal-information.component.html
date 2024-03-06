@@ -1,14 +1,14 @@
 <section class="container pb-10">
-  <h3 class="text-3xl mb-5">معلومات الملف الشخصي</h3>
+  <h3 class="text-3xl mb-5">تحديث معلومات الملف الشخصي</h3>
 
   <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
     <div class="container grid grid-cols-1 md:grid-cols-2 gap-10">
       <div class="md:col-span-2">
-        <label for="name" class="block mb-1">اسم الشخص أو الشركة</label>
+        <label for="name" class="block mb-1">اسم المستخدم ثلاثي</label>
         <input
           id="name"
           name="name"
-          placeholder="الاسم بأحرف عربية فقط"
+          placeholder="اسم المستخدم ثلاثي باللغة العربية"
           formControlName="name"
         />
         <div
@@ -55,54 +55,7 @@
           <p *ngIf="phone.errors?.['pattern']">ادخل رقم جوال سعودي صالح.</p>
         </div>
       </div>
-      <div>
-        <label for="commercial_number" class="block mb-1"
-          >رقم السجل التجاري</label
-        >
-        <input
-          id="commercial_number"
-          name="commercial_number"
-          placeholder="رقم السجل التجاري المكون من 10 أرقام"
-          formControlName="commercial_number"
-        />
-        <div
-          *ngIf="
-            commercial_number.invalid &&
-            (commercial_number.dirty || commercial_number.touched)
-          "
-          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
-        >
-          <p *ngIf="commercial_number.errors?.['required']">
-            رقم السجل التجاري مطلوب.
-          </p>
-          <p *ngIf="commercial_number.errors?.['pattern']">ادخل أرقام فقط.</p>
 
-          <p *ngIf="commercial_number.errors?.['minlength']">
-            رقم السجل التجاري يجب أن يكون مكون من 10 أرقام.
-          </p>
-          <p *ngIf="commercial_number.errors?.['maxlength']">
-            رقم السجل التجاري يجب أن يكون مكون من 10 أرقام.
-          </p>
-        </div>
-      </div>
-      <div>
-        <label for="address" class="block mb-1">العنوان</label>
-        <input
-          id="commercial_number"
-          name="commercial_number"
-          placeholder="الشارع - الحي - المدينة"
-          formControlName="address"
-        />
-        <div
-          *ngIf="address.invalid && (address.dirty || address.touched)"
-          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
-        >
-          <p *ngIf="address.errors?.['required']">العنوان مطلوب.</p>
-          <p *ngIf="address.errors?.['pattern']">
-            ادخل العنوان بأحرف عربية فقط.
-          </p>
-        </div>
-      </div>
       <div
         *ngIf="responseMessage"
         class="w-100 py-2 container bg-blue-100 text-blue-800 mt-1 rounded md:col-span-2"

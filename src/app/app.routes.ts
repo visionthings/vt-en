@@ -20,16 +20,17 @@ import { PaymentComponent } from '../components/pages/contract/payment/payment.c
 import { FinalContractComponent } from '../components/pages/contract/final-contract/final-contract.component';
 import { PaymentRedirectComponent } from '../components/pages/contract/payment-redirect/payment-redirect.component';
 import { authGuard } from '../guards/auth.guard';
-import { TestComponent } from '../components/test/test.component';
 import { VerifyComponent } from '../components/pages/verify/verify.component';
 import { EmailVerificationComponent } from '../components/pages/email-verification/email-verification.component';
 import { EmailVerifiedComponent } from '../components/pages/email-verified/email-verified.component';
+import { CompaniesComponent } from '../components/pages/contract/companies/companies.component';
+import { ContractQueryComponent } from '../components/pages/contract-query/contract-query.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'test', component: TestComponent },
+  { path: 'contract-query/:id', component: ContractQueryComponent },
   {
     path: 'contract',
     component: ContractComponent,
@@ -61,6 +62,7 @@ export const routes: Routes = [
         path: 'registered-contracts',
         component: RegisteredContractsComponent,
       },
+      { path: 'companies', component: CompaniesComponent },
       {
         path: 'visit-request',
         component: VisitRequestComponent,

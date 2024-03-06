@@ -15,7 +15,7 @@
         @for (contract of registeredContracts; track $index) {
         <tr>
           <td>{{ contract.contract_number }}</td>
-          <td>{{ contract.total_price }} ريال سعودي</td>
+          <td>{{ contract.price }} ريال سعودي</td>
           <td>
             <button (click)="generateContract(contract.id)">
               <img

@@ -8,8 +8,6 @@
   background-size: 100% 100%;
 }
 
-
-
 input,
 textarea {
   width: 100%;
@@ -25,4 +23,13 @@ textarea:focus {
 }
 input {
   height: 40px;
+}
+.phone-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  color: #222aa6;
+  background-color: #f0f3f8;
+  border: 2px solid #222aa6;
 }

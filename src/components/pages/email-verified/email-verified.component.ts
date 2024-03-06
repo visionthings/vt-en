@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
@@ -18,12 +18,12 @@ export class EmailVerifiedComponent implements OnInit {
     private auth: AuthService
   ) {}
 
+  id = this.route.snapshot.paramMap.get('id');
   message = '';
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
     this.auth
-      .verifyEmail(id)
+      .verifyEmail(this.id)
       .pipe(first())
       .subscribe({
         next: (res: any) => {

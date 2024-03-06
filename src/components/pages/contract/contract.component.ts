@@ -19,7 +19,8 @@ export class ContractComponent {
   }[] = [
     { id: 1, title: `انشاء عقد جديد`, path: 'create-new-contract' },
     { id: 2, title: `العقود المسجلة`, path: 'registered-contracts' },
-    { id: 3, title: `طلب زيارة`, path: 'visit-request' },
+    { id: 3, title: `الشركات المسجلة`, path: 'companies' },
+    { id: 4, title: `طلب زيارة`, path: 'visit-request' },
   ];
 
   navigateToService(servicePath: string) {

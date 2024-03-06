@@ -1,0 +1,23 @@
+<div class="py-5 container w-96">
+  <div class="mb-5">
+    @for (message of data.messages; track $index) {
+    <p class="mb-3">{{ message }}</p>
+    }
+  </div>
+
+  <div class="flex justify-between">
+    <button
+      class="bg-rose-800 hover:bg-rose-900 text-white rounded py-1 px-5"
+      (click)="onNoClick()"
+    >
+      رجوع
+    </button>
+    <a [routerLink]="data.route">
+      <button
+        class="bg-blue-800 hover:bg-blue-900 text-white rounded py-1 px-5"
+      >
+        استمرار
+      </button></a
+    >
+  </div>
+</div>

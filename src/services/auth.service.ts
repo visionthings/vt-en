@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { environment } from '../environments/environment.development';
 export interface User {
@@ -50,11 +50,7 @@ export class AuthService {
   }
 
   signIn(data: any) {
-    return this.http.post<User>(
-      `${this.url}/login`,
-
-      data
-    );
+    return this.http.post<User>(`${this.url}/login`, data);
   }
 
   editProfile(data: any) {
@@ -67,5 +63,36 @@ export class AuthService {
   }
   getUser(id: any) {
     return this.http.get(`${this.url}/users/${id}`);
+  }
+
+  getCompanyData(commercial_number: any) {
+    const headers = new HttpHeaders({
+      accept: 'application/json',
+      apiKey: '1igYNm2Pe3ElCQ4sfnIGq6FmjvC4a6Pk',
+    });
+    return this.http.get(
+      `https://api.wathq.sa/v5/commercialregistration/fullinfo/${commercial_number}`,
+      { headers: headers }
+    );
+  }
+
+  addCompanyToUser(companyData: any, userID: any) {
+    let data = {
+      user_id: userID,
+      commercial_number: companyData.commercial_number,
+      company_name: companyData.company_name,
+      company_type: companyData.company_type,
+      building_number: companyData.building_number,
+      street: companyData.street,
+      district: companyData.district,
+      city: companyData.city,
+    };
+    return this.http.post(`${this.url}/company/store`, data);
+  }
+  getUserCompanies(userID: any) {
+    return this.http.get(`${this.url}/company/${userID}`);
+  }
+  deleteCompany(companyID: any) {
+    return this.http.delete(`${this.url}/company/${companyID}`);
   }
 }

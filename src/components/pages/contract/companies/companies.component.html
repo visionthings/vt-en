@@ -1,0 +1,90 @@
+<section class="pb-10">
+  <h3 class="text-2xl text-center mb-10">
+    الشركات الخاصة بك والمسجلة لدى رؤية الأشياء
+  </h3>
+
+  <div
+    class="overflow-x-auto overflow-y-hidden shadow-lg rounded-lg ring-1 ring-slate-200"
+  >
+    <table class="text-center w-full">
+      <thead class="bg-blue-700 text-white">
+        <tr>
+          <th>اسم الشركة</th>
+          <th>نوع الشركة</th>
+          <th>العنوان</th>
+          <th>رقم السجل التجاري</th>
+          <th>حذف الشركة</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (company of companies; track company.id) {
+        <tr>
+          <td>{{ company.company_name }}</td>
+          <td>{{ company.company_type }}</td>
+          <td>
+            {{
+              company.building_number +
+                " شارع " +
+                company.street +
+                " - حي " +
+                company.district +
+                " - مدينة " +
+                company.city
+            }}
+          </td>
+          <td>{{ company.commercial_number }}</td>
+          <td>
+            <span class="w-fit" (click)="deleteCompany(company.id)">
+              <fa-icon
+                [icon]="deleteIcon"
+                class="text-rose-600 cursor-pointer"
+              ></fa-icon>
+            </span>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-5">
+    <form
+      [formGroup]="companyForm"
+      (ngSubmit)="addCompany()"
+      class="grid grid-cols-1 md:grid-cols-2 gap-10"
+    >
+      <div>
+        <input
+          type="text"
+          id="commercial_number"
+          name="commercial_number"
+          formControlName="commercial_number"
+          class="w-full"
+          placeholder="ادخل رقم السجل التجاري"
+        />
+        <div
+          *ngIf="
+            commercial_number.invalid &&
+            (commercial_number.touched || commercial_number.dirty)
+          "
+        >
+          <p class="text-rose-700">ادخل رقم سجل تجاري صالح.</p>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="bg-teal-600 text-white py-2 w-full rounded"
+        [disabled]="!companyForm.valid"
+      >
+        إضافة شركة جديدة
+      </button>
+    </form>
+  </div>
+  @if (errorMessage) {
+  <div class="flex justify-center pt-10">
+    <div class="bg-rose-700 text-white text-center rounded-lg py-2 container">
+      <p>{{ errorMessage }}</p>
+    </div>
+  </div>
+  }
+</section>

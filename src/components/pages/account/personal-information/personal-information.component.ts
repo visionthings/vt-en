@@ -39,22 +39,6 @@ export class PersonalInformationComponent {
         ),
       ],
     ],
-    commercial_number: [
-      '',
-      [
-        Validators.required,
-        Validators.pattern(/^\d+$/),
-        Validators.minLength(10),
-        Validators.maxLength(10),
-      ],
-    ],
-    address: [
-      '',
-      [
-        Validators.required,
-        Validators.pattern(/^[\u0621-\u064A\u0660-\u0669 ]+$/),
-      ],
-    ],
   });
 
   get name() {
@@ -67,13 +51,8 @@ export class PersonalInformationComponent {
   get phone() {
     return this.editProfileForm.controls['phone'];
   }
-  get commercial_number() {
-    return this.editProfileForm.controls['commercial_number'];
-  }
-  get address() {
-    return this.editProfileForm.controls['address'];
-  }
 
+  x = 'd';
   // Edit profile
   responseMessage: string | null = null;
   errorMessage: string | null = null;

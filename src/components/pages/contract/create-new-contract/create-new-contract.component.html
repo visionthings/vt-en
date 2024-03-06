@@ -6,6 +6,30 @@
   <div class="py-10">
     <form [formGroup]="camerasForm" (ngSubmit)="onSubmit()">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="md:col-span-2">
+          <label for="company" class="block mb-1">الشركة</label>
+          <select
+            name="company"
+            id="company"
+            formControlName="company"
+            ngModel="0"
+          >
+            <option value="0" selected disabled>اختر شركتك</option>
+            @for (company of userCompanies; track company.id; let i = $index) {
+            <option [value]="company.id">
+              {{ company.company_name }}
+            </option>
+            }
+          </select>
+          @if (company.invalid || company.value === '0' && (company.dirty ||
+          company.touched)) {
+          <div
+            class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+          >
+            <p>هذا الحقل مطلوب.</p>
+          </div>
+          }
+        </div>
         <div>
           <label for="indoor_cameras" class="block mb-1"
             >عدد الكاميرات الداخلية</label
@@ -60,9 +84,12 @@
             id="storage_device"
             name="storage_device"
             formControlName="storage_device"
+            (change)="checkStorageDevice()"
+            ngModel="NVR"
           >
-            <option value="NVR">NVR</option>
+            <option value="NVR" selected>NVR</option>
             <option value="CCTV">CCTV</option>
+            <option value="other">أخرى</option>
           </select>
           <div
             *ngIf="
@@ -76,15 +103,29 @@
             </p>
           </div>
         </div>
+        <div *ngIf="isCustomStorageDevice">
+          <label for="custom_storage_device" class="block mb-1"
+            >أدخل نوع وحدة التخزين</label
+          >
+          <input
+            type="text"
+            id="custom_storage_device"
+            name="custom_storage_device"
+            formControlName="custom_storage_device"
+          />
+        </div>
         <div>
           <label for="period_of_record" class="block mb-1">مدة التسجيل</label>
           <select
             id="period_of_record"
             name="period_of_record"
             formControlName="period_of_record"
+            ngModel="6"
           >
             @for (period of periods; track period.id) {
-            <option [value]="period.id">{{ period.title }}</option>
+            <option [value]="period.id" [selected]="period.id == 6">
+              {{ period.title }}
+            </option>
             }
           </select>
           <div
@@ -125,10 +166,13 @@
             id="camera_type"
             name="camera_type"
             formControlName="camera_type"
+            (change)="checkCameraType()"
+            ngModel="EZVIZ"
           >
-            <option value="EZVIZ">EZVIZ</option>
+            <option value="EZVIZ" selected>EZVIZ</option>
             <option value="Hikvision">Hikvision</option>
             <option value="Dahua">Dahua</option>
+            <option value="other">أخرى</option>
           </select>
           <div
             *ngIf="
@@ -139,13 +183,24 @@
             <p *ngIf="camera_type.errors?.['required']">ادخل نوع الكاميرا.</p>
           </div>
         </div>
+        <div *ngIf="isCustomCameraType">
+          <label for="custom_camera_type" class="block mb-1"
+            >أدخل نوع الكاميرا</label
+          >
+          <input
+            type="text"
+            id="custom_camera_type"
+            name="custom_camera_type"
+            formControlName="custom_camera_type"
+          />
+        </div>
         <!-- Total price -->
         <div
           class="md:col-span-2 bg-blue-50 rounded-lg container py-3 grid grid-cols-1 md:grid-cols-2 gap-10"
         >
           <div class="bg-blue-200 rounded-lg py-3">
             <p class="text-center text-blue-800">
-              السعر غير شامل ضريبة القيمة المضافة
+              السعر شامل ضريبة القيمة المضافة
             </p>
           </div>
           <div id="price" class="bg-blue-200 rounded-lg py-3">
@@ -158,7 +213,7 @@
           [class.ring-1]="clicking"
           (mousedown)="handleClickingChange()"
           (mouseup)="handleClickingChange()"
-          [disabled]="!camerasForm.valid"
+          [disabled]="!camerasForm.valid || company.value === '0'"
           type="submit"
         >
           <p class="px-3 text-white">الخطوة القادمة</p>

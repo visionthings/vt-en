@@ -39,25 +39,25 @@ export class FinalContractComponent implements OnInit {
         },
       });
 
-    // this.invoiceService
-    //   .sendInvoice(this.invoiceData)
-    //   .pipe(first())
-    //   .subscribe({
-    //     next: (res) => {
-    //       console.log(res);
-    //     },
-    //     error: (err) => {
-    //       console.log(err);
-    //     },
-    //   });
+    this.invoiceService
+      .sendInvoice(this.invoiceData)
+      .pipe(first())
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
   }
 
   // Contract Data
   date = new Date();
 
-  currentDate = `${this.date.getDate()} / ${
+  currentDate = `${this.date.getFullYear()}-${
     this.date.getMonth() + 1
-  } / ${this.date.getFullYear()}`;
+  }-${this.date.getDate()}`;
 
   newExpiryYear = new Date();
   expiryYear: any = this.newExpiryYear.setFullYear(
@@ -68,11 +68,12 @@ export class FinalContractComponent implements OnInit {
     this.date.getMonth() + 1
   } / ${this.newExpiryYear.getFullYear()} `;
 
-  data = {
+  data: any = {
     user_id:
       typeof window !== 'undefined' && window?.localStorage?.getItem('id'),
     name:
-      typeof window !== 'undefined' && window?.localStorage?.getItem('name'),
+      typeof window !== 'undefined' &&
+      window?.localStorage?.getItem('company_name'),
     phone:
       typeof window !== 'undefined' && window?.localStorage?.getItem('phone'),
     email:
@@ -147,19 +148,21 @@ export class FinalContractComponent implements OnInit {
         },
       ],
       contact: {
-        name: 'Ahmed A.',
+        name: this.data.name,
       },
       currency: 'SAR',
       language: 'ar',
-      tax_amount_type: 'TAX_INCLUSIVE',
-      invoice_number: 'TEST-INV-1234',
-      invoice_date: '2023-11-11',
+      tax_amount_type: 'TAX_EXCLUSIVE',
+      invoice_number: this.data.contract_number,
+      invoice_date: this.data.contract_date,
       line_items: [
         {
-          name: 'Item 1',
+          name: 'كاميرات مراقبة',
           description: 'كاميرات مراقبة',
-          quantity: 2,
-          price: 40,
+          quantity: this.data.total_cameras,
+          price:
+            (this.data.price - this.data.discount) / this.data.total_cameras,
+          tax_rate: 'tax_X5GRWKNpRjPfMDqWCJBtAV',
         },
       ],
     },

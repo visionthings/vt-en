@@ -39,6 +39,9 @@ export class PaymentRedirectComponent implements OnInit {
                   localStorage.setItem('contract_number', res);
                 }
               },
+              error: (err) => {
+                console.log(err);
+              },
             });
           setTimeout(() => {
             this.router.navigateByUrl('/contract/final-contract');

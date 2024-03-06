@@ -1,0 +1,26 @@
+<section
+  class="container bg-white rounded-lg shadow mt-10 flex justify-center py-10"
+>
+  <table>
+    <tbody>
+      <tr>
+        <td>رقم العقد</td>
+        <td>{{ contractData.contract_number }}</td>
+      </tr>
+      <tr>
+        <td>اسم الشركة</td>
+        <td>{{ contractData.name }}</td>
+      </tr>
+      <tr>
+        <td>تاريخ العقد</td>
+        <td>{{ contractData.contract_date }}</td>
+      </tr>
+      <tr>
+        <td>تاريخ انتهاء العقد</td>
+        <td>
+          {{ contractData.expiry_date }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>

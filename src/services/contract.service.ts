@@ -18,4 +18,10 @@ export class ContractService {
   createContract(contractData: any) {
     return this.http.post(`${this.url}/contracts`, contractData);
   }
+
+  // Get contract details by contract number
+
+  getContractDataByNumber(contractNumber: any) {
+    return this.http.get(`${this.url}/contracts/search/${contractNumber}`);
+  }
 }

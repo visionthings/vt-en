@@ -27,4 +27,6 @@ export class ContractPdfComponent implements OnChanges {
   calcCamerasCount(indoor_cameras: any, outdoor_cameras: any) {
     return Number(indoor_cameras) + Number(outdoor_cameras);
   }
+  contractNumber: any = window?.localStorage?.getItem('contract_number');
+  url = `https://vt.com.sa/contract-query/${this.contractNumber}`;
 }

@@ -4,6 +4,7 @@ import { ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import { PaymentService } from '../../../../services/payment.service';
 import { GetPromocodesService } from '../../../../services/get-promocodes.service';
 import { first } from 'rxjs';
+
 @Component({
   selector: 'app-payment',
   standalone: true,
@@ -135,8 +136,8 @@ export class PaymentComponent {
       amount: 100,
       currency: 'SAR',
       description: 'Payment for contract',
-      callback_url: 'https://vt.com.sa/contract/payment-redirect',
-      on_completed: 'https://vt.com.sa/contract/final-contract',
+      callback_url: 'http://localhost:4200/contract/payment-redirect',
+      on_completed: 'http://localhost:4200/contract/final-contract',
       source: {
         type: 'creditcard',
         name: this.paymentForm.value.name,

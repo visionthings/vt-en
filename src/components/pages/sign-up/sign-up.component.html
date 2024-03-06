@@ -4,11 +4,11 @@
   <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
     <div class="container grid grid-cols-1 md:grid-cols-2 gap-10">
       <div>
-        <label for="name" class="block mb-1">اسم الشخص أو الشركة</label>
+        <label for="name" class="block mb-1">اسم المستخدم ثلاثي</label>
         <input
           id="name"
           name="name"
-          placeholder="الاسم بأحرف عربية فقط"
+          placeholder="الاسم ثلاثي باللغة العربية"
           formControlName="name"
         />
         <div
@@ -21,22 +21,27 @@
       </div>
       <div>
         <label for="phone">رقم الجوال</label>
-        <input
-          id="phone"
-          type="text"
-          name="phone"
-          formControlName="phone"
-          placeholder="أدخل رقم جوال سعودي"
-        />
+        <div class="relative">
+          <input
+            id="phone"
+            type="text"
+            name="phone"
+            formControlName="phone"
+            placeholder="أدخل رقم الجوال "
+          />
+          <div
+            class="phone-icon px-5 rounded-l flex justify-center items-center text-lg"
+          >
+            <p>966+</p>
+          </div>
+        </div>
         <div
           *ngIf="phone.invalid && (phone.dirty || phone.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
           <p *ngIf="phone.errors?.['required']">رقم الجوال مطلوب.</p>
-          <p *ngIf="phone.errors?.['minlength']">
-            رقم الجوال يجب أن يكون من 10 أرقام على الأقل.
-          </p>
-          <p *ngIf="phone.errors?.['pattern']">ادخل رقم جوال سعودي صالح.</p>
+
+          <p *ngIf="phone.errors?.['pattern']">رقم الجوال غير صالح.</p>
         </div>
       </div>
       <div>
@@ -53,6 +58,31 @@
         >
           <p *ngIf="email.errors?.['required']">البريد الإلكتروني مطلوب.</p>
           <p *ngIf="email.errors?.['email']">ادخل بريد الكتروني صالح.</p>
+        </div>
+      </div>
+      <div>
+        <label for="email_confirm" class="block mb-1"
+          >تأكيد البريد الالكتروني</label
+        >
+        <input
+          id="email_confirm"
+          name="email_confirm"
+          placeholder="name@email.com"
+          formControlName="email_confirm"
+        />
+        <div
+          *ngIf="
+            email_confirm.invalid &&
+            (email_confirm.dirty || email_confirm.touched)
+          "
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="email_confirm.hasError('email_mismatch')">
+            البريد الالكتروني غير متطابق
+          </p>
+          <p *ngIf="email_confirm.hasError('required')">
+            ادخل البريد الإلكتروني مرة أخرى للتأكيد
+          </p>
         </div>
       </div>
       <div>
@@ -73,6 +103,32 @@
         </div>
       </div>
       <div>
+        <label for="password_confirm" class="block mb-1"
+          >تأكيد كلمة المرور</label
+        >
+        <input
+          id="password"
+          name="password_confirm"
+          type="password"
+          placeholder="******"
+          formControlName="password_confirm"
+        />
+        <div
+          *ngIf="
+            password_confirm.invalid &&
+            (password_confirm.dirty || password_confirm.touched)
+          "
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="password_confirm.errors?.['required']">
+            ادخل كلمة المرور مرة أخرى للتأكيد
+          </p>
+          <p *ngIf="password_confirm.errors?.['password_mismatch']">
+            كلمة المرور غير متطابقة
+          </p>
+        </div>
+      </div>
+      <div class="md:col-span-2">
         <label for="commercial_number" class="block mb-1"
           >رقم السجل التجاري</label
         >
@@ -102,30 +158,7 @@
           </p>
         </div>
       </div>
-      <div>
-        <label for="address" class="block mb-1">العنوان</label>
-        <input
-          id="commercial_number"
-          name="commercial_number"
-          placeholder="الشارع - الحي - المدينة"
-          formControlName="address"
-        />
-        <div
-          *ngIf="address.invalid && (address.dirty || address.touched)"
-          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
-        >
-          <p *ngIf="address.errors?.['required']">العنوان مطلوب.</p>
-          <p *ngIf="address.errors?.['pattern']">
-            ادخل العنوان بأحرف عربية فقط.
-          </p>
-        </div>
-      </div>
-      <div
-        *ngIf="errorMessage"
-        class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded col-span-2"
-      >
-        <p class="text-center">{{ errorMessage }}</p>
-      </div>
+
       <div class="md:col-span-2">
         <div class="flex justify-center">
           <button
@@ -134,6 +167,7 @@
             [class.ring-1]="clicking"
             (mousedown)="handleClickingChange()"
             (mouseup)="handleClickingChange()"
+            [disabled]="signUpForm.invalid"
             type="submit"
           >
             انشاء حساب
