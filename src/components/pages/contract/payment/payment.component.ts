@@ -159,8 +159,9 @@ export class PaymentComponent {
           }
         },
         error: (err) => {
-          console.log(err);
+          this.errorMessage = err.error.message;
         },
       });
   }
+  errorMessage: string | null = null;
 }

@@ -67,7 +67,7 @@
             id="expiry_date"
             name="expiry_date"
             formControlName="expiry_date"
-            placeholder="00/00"
+            placeholder="MM/YYYY"
           />
           <div
             *ngIf="
@@ -96,6 +96,12 @@
         </div>
       </div>
     </form>
+    <div
+      *ngIf="errorMessage"
+      class="mt-5 bg-white mb-3 rounded shadow py-3 text-center text-rose-800 container"
+    >
+      <p>{{ errorMessage }}</p>
+    </div>
   </div>
 
   <!-- Price details -->
