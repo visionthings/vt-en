@@ -1,3 +1,3 @@
 export const environment = {
-  url: 'http://localhost:8000/api',
+  url: 'https://api.vt.com.sa/api',
 };
