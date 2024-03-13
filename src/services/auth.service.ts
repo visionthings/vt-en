@@ -54,15 +54,23 @@ export class AuthService {
   }
 
   editProfile(data: any) {
+    let token;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+    }
     let userID = typeof window !== 'undefined' && localStorage.getItem('id');
-    return this.http.put<User>(
-      `${this.url}/users/${userID}`,
-
-      data
-    );
+    return this.http.put<User>(`${this.url}/users/${userID}`, data, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+    });
   }
   getUser(id: any) {
-    return this.http.get(`${this.url}/users/${id}`);
+    let token;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+    }
+    return this.http.get(`${this.url}/users/${id}`, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+    });
   }
 
   getCompanyData(commercial_number: any) {
@@ -90,9 +98,22 @@ export class AuthService {
     return this.http.post(`${this.url}/company/store`, data);
   }
   getUserCompanies(userID: any) {
-    return this.http.get(`${this.url}/company/${userID}`);
+    let token;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+    }
+    return this.http.get(`${this.url}/company/${userID}`, {
+      headers: new HttpHeaders({ 'api-key': `Bearer ${token}` }),
+    });
   }
   deleteCompany(companyID: any) {
     return this.http.delete(`${this.url}/company/${companyID}`);
+  }
+
+  // Website visits
+  storeVisit() {
+    return this.http.post(`${this.url}/visits`, {
+      headers: new HttpHeaders({ Accept: 'application/json' }),
+    });
   }
 }

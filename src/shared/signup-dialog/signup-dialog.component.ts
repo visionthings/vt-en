@@ -35,10 +35,14 @@ export class SignupDialogComponent {
         next: (res: any) => {
           user = res.user;
           localStorage.setItem('token', res.token);
+          localStorage.setItem('email_verified', 'no');
           localStorage.setItem('id', res.user.id);
           localStorage.setItem('name', res.user.name);
           localStorage.setItem('email', res.user.email);
-          localStorage.setItem('email_verified', 'no');
+          localStorage.setItem('phone', res.user.phone);
+          localStorage.setItem('commercial_number', res.user.commercial_number);
+          localStorage.setItem('address', res.user.address);
+          localStorage.setItem('email_verified', res.user.email_verified);
           this.authService.handleAuth();
           this.authService
             .addCompanyToUser(this.data.companyData, res.user.id)

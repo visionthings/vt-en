@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserService } from '../../../../services/user.service';
 import { VisitRequestService } from '../../../../services/visit-request.service';
+import { AuthService } from '../../../../services/auth.service';
 
 @Component({
   selector: 'app-visit-request',
@@ -12,7 +12,7 @@ import { VisitRequestService } from '../../../../services/visit-request.service'
 })
 export class VisitRequestComponent {
   constructor(
-    private user: UserService,
+    private authService: AuthService,
     private visitRequest: VisitRequestService
   ) {}
 
@@ -29,7 +29,7 @@ export class VisitRequestComponent {
   responseMessage: string | null = null;
 
   sendVisitRequest() {
-    this.user.getUser(this.userID).subscribe({
+    this.authService.getUser(this.userID).subscribe({
       next: (res: any) => {
         this.userData = res;
         if (res.visit_requests.length !== 0) {

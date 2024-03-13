@@ -4,6 +4,7 @@ import { RouterLinkActive, RouterModule, Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthService } from '../../services/auth.service';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -51,6 +52,7 @@ export class NavbarComponent implements OnInit {
   }
 
   isLoggedIn: boolean = false;
+  isAuthComplete: boolean = false;
 
   changeLanguage() {
     if (typeof window !== 'undefined') {
@@ -60,10 +62,24 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.handleAuth();
-    this.authService.isAuthenticated.subscribe({
+
+    this.authService.isAuthenticated.pipe(first()).subscribe({
       next: (res) => {
         this.isLoggedIn = res;
       },
+      complete: () => {
+        this.isAuthComplete = true;
+      },
     });
+
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('visitStored') !== 'yes') {
+        this.authService.storeVisit().subscribe({
+          next: (res) => {
+            localStorage.setItem('visitStored', 'yes');
+          },
+        });
+      }
+    }
   }
 }

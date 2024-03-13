@@ -35,9 +35,7 @@ export class PaymentComponent {
 
   discount: number = 0;
 
-  totalPrice: number = Number(
-    (this.price + this.vat - this.discount).toFixed(2)
-  );
+  totalPrice: number = Number((this.price - this.discount).toFixed(2));
 
   // Discount form
 
@@ -136,8 +134,8 @@ export class PaymentComponent {
       amount: 100,
       currency: 'SAR',
       description: 'Payment for contract',
-      callback_url: 'http://localhost:4200/contract/payment-redirect',
-      on_completed: 'http://localhost:4200/contract/final-contract',
+      callback_url: 'https://vt.com.sa/contract/payment-redirect',
+      on_completed: 'https://vt.com.sa/contract/final-contract',
       source: {
         type: 'creditcard',
         name: this.paymentForm.value.name,

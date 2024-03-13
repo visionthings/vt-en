@@ -6,7 +6,6 @@ import {
   ElementRef,
 } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { UserService } from '../../../../services/user.service';
 import { first } from 'rxjs';
 import { FinalContractComponent } from '../final-contract/final-contract.component';
 import jsPDF from 'jspdf';
@@ -14,6 +13,7 @@ import html2canvas from 'html2canvas';
 import { ContractPdfComponent } from '../contract-pdf/contract-pdf.component';
 import { GreenButtonComponent } from '../../../custom/green-button/green-button.component';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../../services/auth.service';
 
 @Component({
   selector: 'app-registered-contracts',
@@ -32,10 +32,10 @@ import { Router } from '@angular/router';
 export class RegisteredContractsComponent implements OnInit {
   @ViewChild('contract') contract!: ElementRef;
 
-  constructor(private user: UserService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    this.user
+    this.authService
       .getUser(this.userID)
       .pipe(first())
       .subscribe({

@@ -34,6 +34,9 @@ export class FinalContractComponent implements OnInit {
       .createContract(this.data)
       .pipe(first())
       .subscribe({
+        next: (res) => {
+          console.log(res);
+        },
         error: (err) => {
           console.log(err);
         },
@@ -157,11 +160,10 @@ export class FinalContractComponent implements OnInit {
       invoice_date: this.data.contract_date,
       line_items: [
         {
-          name: 'كاميرات مراقبة',
-          description: 'كاميرات مراقبة',
-          quantity: this.data.total_cameras,
-          price:
-            (this.data.price - this.data.discount) / this.data.total_cameras,
+          name: 'عقد صيانة كاميرات مراقبة',
+          description: '',
+          quantity: 1,
+          price: this.data.price - this.data.discount,
           tax_rate: 'tax_X5GRWKNpRjPfMDqWCJBtAV',
         },
       ],

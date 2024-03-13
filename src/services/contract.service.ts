@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environment.development';
 
 @Injectable({
@@ -11,17 +11,35 @@ export class ContractService {
 
   // Get contract number
   getContractNumber() {
-    return this.http.get(`${this.url}/contracts/number`);
+    let token;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+    }
+    return this.http.get(`${this.url}/contracts/number`, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+    });
   }
 
   // Create new contract
   createContract(contractData: any) {
-    return this.http.post(`${this.url}/contracts`, contractData);
+    let token;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+    }
+    return this.http.post(`${this.url}/contracts`, contractData, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+    });
   }
 
   // Get contract details by contract number
 
   getContractDataByNumber(contractNumber: any) {
-    return this.http.get(`${this.url}/contracts/search/${contractNumber}`);
+    let token;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+    }
+    return this.http.get(`${this.url}/contracts/search/${contractNumber}`, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+    });
   }
 }
