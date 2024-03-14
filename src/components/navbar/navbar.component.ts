@@ -52,7 +52,6 @@ export class NavbarComponent implements OnInit {
   }
 
   isLoggedIn: boolean = false;
-  isAuthComplete: boolean = false;
 
   changeLanguage() {
     if (typeof window !== 'undefined') {
@@ -63,12 +62,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.authService.handleAuth();
 
-    this.authService.isAuthenticated.pipe(first()).subscribe({
+    this.authService.isAuthenticated.subscribe({
       next: (res) => {
         this.isLoggedIn = res;
-      },
-      complete: () => {
-        this.isAuthComplete = true;
       },
     });
 

@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { QrCodeModule } from 'ng-qrcode';
+import { environment } from '../../../../environments/environment.development';
 
 @Component({
   selector: 'app-contract-pdf',
@@ -28,5 +29,6 @@ export class ContractPdfComponent implements OnChanges {
     return Number(indoor_cameras) + Number(outdoor_cameras);
   }
   contractNumber: any = window?.localStorage?.getItem('contract_number');
-  url = `https://vt.com.sa/contract-query/${this.contractNumber}`;
+  endpoint = environment.url;
+  url = `${this.endpoint}/contract-query/${this.contractNumber}`;
 }

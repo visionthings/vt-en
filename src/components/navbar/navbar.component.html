@@ -34,13 +34,13 @@
 
     <!-- Sign in and Language -->
     <div class="flex items-center">
-      @if (isAuthComplete && isLoggedIn) {
+      @if ( isLoggedIn) {
       <a routerLink="/account"
         ><div class="border rounded-md p-2 mx-2">
           <p>ملفي الشخصي</p>
         </div></a
       >
-      } @else if (isAuthComplete && !isLoggedIn) {
+      } @else {
       <a routerLink="/sign-in"
         ><div class="border rounded-md p-2 mx-2">
           <p>تسجيل الدخول</p>

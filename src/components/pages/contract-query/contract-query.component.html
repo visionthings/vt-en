@@ -1,7 +1,7 @@
 <section
   class="container bg-white rounded-lg shadow mt-10 flex justify-center py-10"
 >
-  <table>
+  <table *ngIf="contractData">
     <tbody>
       <tr>
         <td>رقم العقد</td>
@@ -23,4 +23,8 @@
       </tr>
     </tbody>
   </table>
+
+  <p *ngIf="errorMessage">
+    {{ errorMessage }}
+  </p>
 </section>
