@@ -1,0 +1,16 @@
+<div class="py-5 container w-96">
+  <div class="mb-5">
+    @for (message of data.messages; track $index) {
+    <p class="mb-3">{{ message }}</p>
+    }
+  </div>
+
+  <div class="flex justify-center">
+    <button
+      class="bg-rose-800 hover:bg-rose-900 text-white rounded py-1 px-5"
+      (click)="onNoClick()"
+    >
+      إغلاق
+    </button>
+  </div>
+</div>

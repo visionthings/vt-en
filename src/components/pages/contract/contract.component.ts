@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { RouterLinkActive, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-contract',
   standalone: true,
-  imports: [CommonModule, RouterModule, RouterLinkActive],
+  imports: [CommonModule, RouterModule, RouterLinkActive, NgOptimizedImage],
   templateUrl: './contract.component.html',
   styleUrl: './contract.component.css',
 })

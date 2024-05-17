@@ -14,6 +14,7 @@ import {
 } from '../../../shared/validators';
 import { MatDialog } from '@angular/material/dialog';
 import { SignupDialogComponent } from '../../../shared/signup-dialog/signup-dialog.component';
+import { SignupErrorDialogComponent } from '../../../shared/signup-error-dialog/signup-error-dialog.component';
 
 @Component({
   selector: 'app-sign-up',
@@ -23,6 +24,7 @@ import { SignupDialogComponent } from '../../../shared/signup-dialog/signup-dial
     RouterModule,
     ReactiveFormsModule,
     SignupDialogComponent,
+    SignupErrorDialogComponent,
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
@@ -131,6 +133,11 @@ export class SignUpComponent {
                 city: res.address.national.city,
               },
             },
+          });
+        },
+        error: () => {
+          const dialogRef = this.dialog.open(SignupErrorDialogComponent, {
+            data: { messages: ['رقم السجل التجاري غير صحيح.'] },
           });
         },
       });

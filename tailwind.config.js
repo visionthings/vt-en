@@ -9,8 +9,8 @@ module.exports = {
       },
     },
     container: {
-      padding: "1rem",
       center: true,
+      padding: "1rem",
     },
   },
   plugins: [],
