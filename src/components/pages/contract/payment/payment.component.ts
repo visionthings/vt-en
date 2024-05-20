@@ -28,14 +28,16 @@ export class PaymentComponent {
   }
 
   // Calculate price
-  price: number =
+  priceWithVAT: number =
     typeof window !== 'undefined' ? Number(localStorage.getItem('price')) : 0;
 
-  vat: number = Number((this.price * 0.15).toFixed(2));
+  vat: number = Number((this.priceWithVAT * 0.15).toFixed(2));
+
+  price = this.priceWithVAT - this.vat;
 
   discount: number = 0;
 
-  totalPrice: number = Number((this.price - this.discount).toFixed(2));
+  totalPrice: number = Number((this.priceWithVAT - this.discount).toFixed(2));
 
   // Discount form
 
@@ -63,6 +65,13 @@ export class PaymentComponent {
           if (currentDate < this.expiryDate) {
             this.responseMessage = `تهانينا، لقد حصلت على خصم بقيمة ${foundPromoCode.discount}%`;
             this.discount = foundPromoCode?.discount;
+            this.totalPrice = Number(
+              (
+                this.priceWithVAT -
+                (this.priceWithVAT * this.discount) / 100
+              ).toFixed(2)
+            );
+
             if (typeof window !== 'undefined') {
               localStorage.setItem('discount', foundPromoCode?.discount);
             }
