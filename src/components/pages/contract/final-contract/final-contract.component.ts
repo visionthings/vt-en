@@ -163,7 +163,7 @@ export class FinalContractComponent implements OnInit {
           name: 'عقد صيانة كاميرات لمدة عام',
           description: 'عقد صيانة كاميرات مراقبة',
           quantity: 1,
-          price: this.data.price - this.data.price * this.data.discount,
+          price: this.data.price - (this.data.price * this.data.discount) / 100,
           tax_rate: 'tax_X5GRWKNpRjPfMDqWCJBtAV',
         },
       ],
