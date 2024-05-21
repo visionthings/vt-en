@@ -189,8 +189,9 @@ export class CreateNewContractComponent implements OnInit {
         );
       }
       localStorage.setItem('price', this.price.toString());
-      let vat = (this.price * 0.15).toFixed(2);
+      let vat = this.price * 0.15;
       localStorage.setItem('vat', vat.toString());
+      localStorage.setItem('total_price', Number(this.price).toString());
     }
     let company = this.userCompanies.find((company: any) => {
       return company.id == this.camerasForm.controls['company'].value;

@@ -73,6 +73,10 @@ export class PaymentComponent {
             );
 
             if (typeof window !== 'undefined') {
+              localStorage.setItem('total_price', this.totalPrice.toString());
+            }
+
+            if (typeof window !== 'undefined') {
               localStorage.setItem('discount', foundPromoCode?.discount);
             }
           } else {

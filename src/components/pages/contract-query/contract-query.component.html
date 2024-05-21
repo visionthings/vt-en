@@ -25,15 +25,15 @@
   </div>
 
   <table *ngIf="contractData" class="w-full text-center ring-1 ring-blue-700">
+    <thead class="bg-blue-700 text-white">
+      <tr>
+        <th>رقم العقد</th>
+        <th>اسم الشركة</th>
+        <th>تاريخ العقد</th>
+        <th>تاريخ انتهاء العقد</th>
+      </tr>
+    </thead>
     <tbody>
-      <thead class="bg-blue-700 text-white">
-        <tr>
-          <th>رقم العقد</th>
-          <th>اسم الشركة</th>
-          <th>تاريخ العقد</th>
-          <th>تاريخ انتهاء العقد</th>
-        </tr>
-      </thead>
       <tr>
         <td>{{ contractData.contract_number }}</td>
         <td>{{ contractData.name }}</td>
