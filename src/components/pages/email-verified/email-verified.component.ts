@@ -27,10 +27,15 @@ export class EmailVerifiedComponent implements OnInit {
       .pipe(first())
       .subscribe({
         next: (res: any) => {
-          this.message = 'تم تفعيل الحساب بنجاح';
+          this.message =
+            'تم تفعيل حسابك بنجاح، وجاري تحويلك الآن لصفحة إنشاء العقد.';
           if (typeof window !== 'undefined') {
             window?.localStorage?.setItem('email_verified', res.email_verified);
           }
+
+          setTimeout(() => {
+            this.router.navigateByUrl('/contract/create-new-contract');
+          }, 5000);
         },
         error: (err) => {
           this.message = 'تعذر تفعيل الحساب، يرجى المحاولة مرة أخرى';

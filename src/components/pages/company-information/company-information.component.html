@@ -1,0 +1,144 @@
+<section class="container py-10">
+  <div class="bg-white py-10 rounded-lg shadow container">
+    <p class="text-lg font-bold mb-10">بيانات شركتك</p>
+
+    <!-- Company Information Form -->
+    <form
+      [formGroup]="companyInformationForm"
+      (ngSubmit)="submit()"
+      class="grid grid-cols-2 gap-5"
+    >
+      <!-- Company Name -->
+      <div>
+        <label for="company_name">اسم الشركة</label>
+        <input
+          type="text"
+          id="company_name"
+          formControlName="company_name"
+          name="company_name"
+          placeholder="اسم شركتك"
+        />
+
+        <div
+          *ngIf="
+            company_name.invalid && (company_name.dirty || company_name.touched)
+          "
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="company_name.errors?.['required']">هذا الحقل مطلوب.</p>
+        </div>
+      </div>
+
+      <!-- Company Type -->
+      <div>
+        <label for="company_type">نوع الشركة</label>
+        <input
+          type="text"
+          id="company_type"
+          formControlName="company_type"
+          name="company_type"
+          placeholder="نوع شركتك مثال: ذات مسئولية محدودة"
+        />
+
+        <div
+          *ngIf="
+            company_type.invalid && (company_type.dirty || company_type.touched)
+          "
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="company_type.errors?.['required']">هذا الحقل مطلوب.</p>
+        </div>
+      </div>
+
+      <!-- Building Number -->
+      <div>
+        <label for="building_number">رقم المبنى</label>
+        <input
+          type="text"
+          id="building_number"
+          formControlName="building_number"
+          name="building_number"
+          placeholder="رقم المبنى"
+        />
+
+        <div
+          *ngIf="
+            building_number.invalid &&
+            (building_number.dirty || building_number.touched)
+          "
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="building_number.errors?.['required']">هذا الحقل مطلوب.</p>
+        </div>
+      </div>
+
+      <!-- Street -->
+      <div>
+        <label for="street">اسم الشارع</label>
+        <input
+          type="text"
+          id="street"
+          formControlName="street"
+          name="street"
+          placeholder="اسم الشارع"
+        />
+
+        <div
+          *ngIf="street.invalid && (street.dirty || street.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="street.errors?.['required']">هذا الحقل مطلوب.</p>
+        </div>
+      </div>
+
+      <!-- District -->
+      <div>
+        <label for="district"> الحي</label>
+        <input
+          type="text"
+          id="district"
+          formControlName="district"
+          name="district"
+          placeholder="الحي"
+        />
+
+        <div
+          *ngIf="district.invalid && (district.dirty || district.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="district.errors?.['required']">هذا الحقل مطلوب.</p>
+        </div>
+      </div>
+
+      <!-- City -->
+      <div>
+        <label for="city"> المدينة</label>
+        <input
+          type="text"
+          id="city"
+          formControlName="city"
+          name="city"
+          placeholder=" المدينة"
+        />
+
+        <div
+          *ngIf="city.invalid && (city.dirty || city.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="city.errors?.['required']">هذا الحقل مطلوب.</p>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center col-span-2">
+        <button
+          type="submit"
+          class="bg-teal-500 text-white rounded-lg py-2 px-10"
+          [disabled]="companyInformationForm.invalid"
+        >
+          ارسال
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

@@ -183,4 +183,12 @@
       </div>
     </div>
   </form>
+
+  @if (errorMessage) {
+  <div class="flex justify-center">
+    <div class="mt-5 bg-rose-700 text-white rounded-lg py-2 px-5 w-fit">
+      <p class="text-center">{{ errorMessage }}</p>
+    </div>
+  </div>
+  }
 </section>

@@ -1,0 +1,101 @@
+<div class="pb-5">
+  <h3 class="text-3xl mb-5">الدفع</h3>
+  <p class="text-xl mb-10">يرجى إدخال البيانات التالية لاتمام عملية التعاقد</p>
+
+  <form [formGroup]="paymentForm" (ngSubmit)="sendPayment()">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div class="md:col-span-2">
+        <label for="name" class="block mb-1">اسم حامل البطاقة </label>
+        <input
+          id="name"
+          name="name"
+          formControlName="name"
+          placeholder="اسم حامل البطاقة"
+        />
+        <div
+          *ngIf="name.invalid && (name.dirty || name.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="name.errors?.['required']">ادخل اسم حامل البطاقة.</p>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <label for="number" class="block mb-1"> رقم بطاقة الدفع</label>
+        <input
+          id="number"
+          name="number"
+          formControlName="number"
+          placeholder="0000 0000 0000 0000"
+        />
+        <div
+          *ngIf="number.invalid && (number.dirty || number.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="number.errors?.['required']">ادخل رقم البطاقة.</p>
+          <p *ngIf="number.errors?.['pattern']">ادخل رقم بطاقة صالح.</p>
+          <p *ngIf="number.errors?.['minlength']">
+            ادخل رقم بطاقة مكون من 14 خانة على الأقل.
+          </p>
+        </div>
+      </div>
+      <div class="md:col-span-1">
+        <label for="cvc" class="block mb-1">CVC </label>
+        <input id="cvc" name="cvc" formControlName="cvc" placeholder="000" />
+        <div
+          *ngIf="cvc.invalid && (cvc.dirty || cvc.touched)"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="cvc.errors?.['required']">
+            ادخل الرقم المكون من ثلاثة أرقام على ظهر البطاقة.
+          </p>
+          <p *ngIf="cvc.errors?.['pattern']">ادخل رقم صالح.</p>
+          <p *ngIf="cvc.errors?.['minlength']">
+            الرقم يجب أن يكون مكون من ثلاثة خانات.
+          </p>
+          <p *ngIf="cvc.errors?.['maxlength']">
+            الرقم يجب أن يكون مكون من ثلاثة خانات.
+          </p>
+        </div>
+      </div>
+      <div class="md:col-span-1">
+        <label for="expiry_date" class="block mb-1"> تاريخ الانتهاء</label>
+        <input
+          id="expiry_date"
+          name="expiry_date"
+          formControlName="expiry_date"
+          placeholder="MM/YYYY"
+        />
+        <div
+          *ngIf="
+            expiry_date.invalid && (expiry_date.dirty || expiry_date.touched)
+          "
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p *ngIf="expiry_date.errors?.['required']">
+            ادخل تاريخ انتهاء البطاقة.
+          </p>
+          <p *ngIf="expiry_date.errors?.['pattern']">ادخل تاريخ صالح.</p>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <button
+          class="bg-teal-500 hover:bg-cyan-500 w-full py-3 rounded-md shadow-lg text-white"
+          [class.ring-teal-500]="clicking"
+          [class.ring-1]="clicking"
+          (mousedown)="handleClickingChange()"
+          (mouseup)="handleClickingChange()"
+          [disabled]="!paymentForm.valid"
+          type="submit"
+        >
+          اتمام
+        </button>
+      </div>
+    </div>
+  </form>
+  <div
+    *ngIf="errorMessage"
+    class="mt-5 bg-white mb-3 rounded shadow py-3 text-center text-rose-800 container"
+  >
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>

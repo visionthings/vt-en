@@ -1,22 +1,43 @@
-<section
-  class="container bg-white rounded-lg shadow mt-10 flex justify-center py-10"
->
-  <table *ngIf="contractData">
+<section class="container bg-white rounded-lg shadow mt-10 py-10">
+  <div class="mb-10">
+    @if (isValid) {
+    <div class="flex flex-col justify-center items-center">
+      <img
+        ngSrc="assets/images/valid.png"
+        alt="Valid icon"
+        width="50"
+        height="50"
+      />
+      <p class="text-2xl text-center">العقد ساري</p>
+    </div>
+
+    } @else {
+    <div class="flex flex-col justify-center items-center">
+      <img
+        ngSrc="assets/images/not-valid.png"
+        alt="Valid icon"
+        width="50"
+        height="50"
+      />
+      <p class="text-2xl text-center">العقد منتهي</p>
+    </div>
+    }
+  </div>
+
+  <table *ngIf="contractData" class="w-full text-center ring-1 ring-blue-700">
     <tbody>
+      <thead class="bg-blue-700 text-white">
+        <tr>
+          <th>رقم العقد</th>
+          <th>اسم الشركة</th>
+          <th>تاريخ العقد</th>
+          <th>تاريخ انتهاء العقد</th>
+        </tr>
+      </thead>
       <tr>
-        <td>رقم العقد</td>
         <td>{{ contractData.contract_number }}</td>
-      </tr>
-      <tr>
-        <td>اسم الشركة</td>
         <td>{{ contractData.name }}</td>
-      </tr>
-      <tr>
-        <td>تاريخ العقد</td>
         <td>{{ contractData.contract_date }}</td>
-      </tr>
-      <tr>
-        <td>تاريخ انتهاء العقد</td>
         <td>
           {{ contractData.expiry_date }}
         </td>
@@ -24,6 +45,36 @@
     </tbody>
   </table>
 
+  <!-- Cameras Table -->
+  <p class="mt-10 text-center text-2xl">عدد الكاميرات وأنواعها</p>
+  <div class="mt-10">
+    <table *ngIf="contractData" class="text-center w-full" id="cameras_table">
+      <tr>
+        <td>عدد الكاميرات الداخلية</td>
+        <td>{{ contractData.indoor_cameras }}</td>
+        <td>نوع جهاز التخزين</td>
+        <td>{{ contractData.storage_device }}</td>
+      </tr>
+      <tr>
+        <td>عدد الكاميرات الخارجية</td>
+        <td>{{ contractData.outdoor_cameras }}</td>
+        <td>سعة جهاز التخزين</td>
+        <td>{{ contractData.period_of_record }}</td>
+      </tr>
+      <tr>
+        <td>مجموع الكاميرات</td>
+        <td>{{ totalCameras }}</td>
+        <td>عدد شاشات العرض</td>
+        <td>{{ contractData.show_screens }}</td>
+      </tr>
+      <tr>
+        <td colspan="2">نوع الكاميرات</td>
+        <td colspan="2">
+          عدد {{ totalCameras }} كاميرا من نوع {{ contractData.camera_type }}
+        </td>
+      </tr>
+    </table>
+  </div>
   <p *ngIf="errorMessage">
     {{ errorMessage }}
   </p>

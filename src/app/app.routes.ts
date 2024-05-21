@@ -25,6 +25,10 @@ import { EmailVerificationComponent } from '../components/pages/email-verificati
 import { EmailVerifiedComponent } from '../components/pages/email-verified/email-verified.component';
 import { CompaniesComponent } from '../components/pages/contract/companies/companies.component';
 import { ContractQueryComponent } from '../components/pages/contract-query/contract-query.component';
+import { CompanyInformationComponent } from '../components/pages/company-information/company-information.component';
+import { VisitPaymentComponent } from '../components/pages/contract/visit-payment/visit-payment.component';
+import { VisitPaymentRedirectComponent } from '../components/pages/contract/visit-payment-redirect/visit-payment-redirect.component';
+import { VisitCompleteComponent } from '../components/pages/contract/visit-complete/visit-complete.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -67,6 +71,12 @@ export const routes: Routes = [
         path: 'visit-request',
         component: VisitRequestComponent,
       },
+      { path: 'visit-payment', component: VisitPaymentComponent },
+      {
+        path: 'visit-payment-redirect',
+        component: VisitPaymentRedirectComponent,
+      },
+      { path: 'visit-complete', component: VisitCompleteComponent },
     ],
   },
   { path: 'contact-us', component: ContactUsComponent },
@@ -75,6 +85,7 @@ export const routes: Routes = [
   { path: 'return-policy', component: ReturnPolicyComponent },
   { path: 'verify', component: VerifyComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'company-information', component: CompanyInformationComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-in-redirect', component: SignInRedirectComponent },
   { path: 'email-verification', component: EmailVerificationComponent },

@@ -1,6 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {
   ReactiveFormsModule,
   Validators,
@@ -34,8 +34,11 @@ export class SignUpComponent {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
   ) {}
+
+  errorMessage: string | null = null;
 
   // Handle button clicking
   clicking: boolean = false;
@@ -112,28 +115,60 @@ export class SignUpComponent {
         next: (res: any) => {
           companyName = res.crName;
           address = res.address.national;
-
-          const dialogRef = this.dialog.open(SignupDialogComponent, {
-            data: {
-              messages: [
-                'بناء على البيانات التي أدخلتها هذه هي بيانات شركتك:',
-                `اسم الشركة: ${companyName}`,
-                `العنوان: ${address.buildingNumber} ${address.streetName} - حي ${address.districtName} - مدينة ${address.city}`,
-                'للتأكيد اضغط استمرار',
-              ],
-              registerationData: registerationData,
-              companyData: {
-                commercial_number:
-                  this.signUpForm.controls['commercial_number'].value,
-                company_name: companyName,
-                company_type: res.businessType.name,
-                building_number: res.address.national.buildingNumber,
-                street: res.address.national.streetName,
-                district: res.address.national.districtName,
-                city: res.address.national.city,
+          if (
+            companyName === null ||
+            address.buildingNumber === null ||
+            address.streetName === null ||
+            address.districtName === null ||
+            address.city === null
+          ) {
+            let user: any = null;
+            this.authService.register(registerationData).subscribe({
+              next: (res: any) => {
+                user = res.user;
+                localStorage.setItem('token', res.token);
+                localStorage.setItem('email_verified', 'no');
+                localStorage.setItem('id', res.user.id);
+                localStorage.setItem('name', res.user.name);
+                localStorage.setItem('email', res.user.email);
+                localStorage.setItem('phone', res.user.phone);
+                localStorage.setItem(
+                  'commercial_number',
+                  this.signUpForm.controls['commercial_number'].value
+                );
+                localStorage.setItem('address', res.user.address);
+                localStorage.setItem('email_verified', res.user.email_verified);
+                this.authService.handleAuth();
+                this.router.navigateByUrl('/company-information');
               },
-            },
-          });
+              error: (error) => {
+                error.error.message === 'The email has already been taken.' &&
+                  (this.errorMessage = `البريد الالكتروني الذي ادخلته مستخدم بالفعل`);
+              },
+            });
+          } else {
+            const dialogRef = this.dialog.open(SignupDialogComponent, {
+              data: {
+                messages: [
+                  'بناء على البيانات التي أدخلتها هذه هي بيانات شركتك:',
+                  `اسم الشركة: ${companyName}`,
+                  `العنوان: ${address.buildingNumber} ${address.streetName} - حي ${address.districtName} - مدينة ${address.city}`,
+                  'للتأكيد اضغط استمرار',
+                ],
+                registerationData: registerationData,
+                companyData: {
+                  commercial_number:
+                    this.signUpForm.controls['commercial_number'].value,
+                  company_name: companyName,
+                  company_type: res.businessType.name,
+                  building_number: res.address.national.buildingNumber,
+                  street: res.address.national.streetName,
+                  district: res.address.national.districtName,
+                  city: res.address.national.city,
+                },
+              },
+            });
+          }
         },
         error: () => {
           const dialogRef = this.dialog.open(SignupErrorDialogComponent, {

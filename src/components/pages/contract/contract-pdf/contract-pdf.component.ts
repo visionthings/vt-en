@@ -30,5 +30,5 @@ export class ContractPdfComponent implements OnChanges {
   }
   contractNumber: any = window?.localStorage?.getItem('contract_number');
   endpoint = environment.url;
-  url = `https://vt.com.sa/contract-query/${this.contractNumber}`;
+  url = `${this.endpoint}/contract-query/${this.contractNumber}`;
 }

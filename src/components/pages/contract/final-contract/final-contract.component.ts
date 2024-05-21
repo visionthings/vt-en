@@ -160,10 +160,10 @@ export class FinalContractComponent implements OnInit {
       invoice_date: this.data.contract_date,
       line_items: [
         {
-          name: 'عقد صيانة كاميرات مراقبة',
-          description: '',
+          name: 'عقد صيانة كاميرات لمدة عام',
+          description: 'عقد صيانة كاميرات مراقبة',
           quantity: 1,
-          price: this.data.price - this.data.discount,
+          price: this.data.price - this.data.price * this.data.discount,
           tax_rate: 'tax_X5GRWKNpRjPfMDqWCJBtAV',
         },
       ],
