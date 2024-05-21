@@ -140,7 +140,7 @@ export class PaymentComponent {
 
   sendPayment() {
     let paymentData = {
-      amount: 100,
+      amount: this.totalPrice,
       currency: 'SAR',
       description: 'Payment for contract',
       callback_url: 'https://vt.com.sa/contract/payment-redirect',
