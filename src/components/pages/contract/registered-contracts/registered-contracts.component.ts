@@ -83,17 +83,19 @@ export class RegisteredContractsComponent implements OnInit {
     let camerasCount = Number(indoor_cameras) + Number(outdoor_cameras);
     if (!isNaN(camerasCount)) {
       if (camerasCount === 0) {
-        this.price = 0;
-      } else if (camerasCount > 0 && camerasCount <= 4) {
-        this.price = 300;
-      } else if (camerasCount > 4 && camerasCount <= 16) {
-        this.price = 750;
-      } else if (camerasCount > 16 && camerasCount <= 32) {
-        this.price = 1300;
-      } else if (camerasCount > 32 && camerasCount <= 64) {
-        this.price = 1800;
-      } else this.price = camerasCount * 40;
-    } else this.price = 0;
+        if (camerasCount === 0) {
+          this.price = 0;
+        } else if (camerasCount > 0 && camerasCount <= 4) {
+          this.price = 499;
+        } else if (camerasCount > 4 && camerasCount <= 16) {
+          this.price = 999;
+        } else if (camerasCount > 16 && camerasCount <= 32) {
+          this.price = 1499;
+        } else if (camerasCount > 32 && camerasCount <= 64) {
+          this.price = 1999;
+        } else this.price = camerasCount * 50;
+      } else this.price = 0;
+    }
   }
 
   renewContract(contractID: any) {
