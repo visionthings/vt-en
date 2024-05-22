@@ -24,6 +24,8 @@ export class ContractQueryComponent implements OnInit {
   ngOnInit(): void {
     this.contractService.getContractDataByNumber(this.id).subscribe({
       next: (res: any) => {
+        console.log(res);
+
         this.contractData = res;
         this.totalCameras =
           Number(res.indoor_cameras) + Number(res.outdoor_cameras);

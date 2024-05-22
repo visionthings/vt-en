@@ -125,9 +125,9 @@ export class RegisteredContractsComponent implements OnInit {
         ).toString()
       );
       localStorage.setItem('discount', '0');
-      localStorage.setItem('price', this.price.toString());
+      localStorage.setItem('price', currentContract.price);
     }
-    this.router.navigateByUrl('/contract/payment');
+    this.router.navigateByUrl('/contract/renew-contract-payment');
   }
 
   // Create new contract

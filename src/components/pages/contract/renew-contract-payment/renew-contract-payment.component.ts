@@ -7,7 +7,7 @@ import { first } from 'rxjs';
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
 
 @Component({
-  selector: 'app-payment',
+  selector: 'app-renew-contract-payment',
   standalone: true,
   imports: [
     CommonModule,
@@ -16,11 +16,11 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     NgxMaskDirective,
   ],
   providers: [provideNgxMask()],
-  templateUrl: './payment.component.html',
-  styleUrl: './payment.component.css',
+  templateUrl: './renew-contract-payment.component.html',
+  styleUrl: './renew-contract-payment.component.css',
 })
 @Injectable({ providedIn: 'root' })
-export class PaymentComponent {
+export class RenewContractPaymentComponent {
   constructor(
     private fb: FormBuilder,
     private payment: PaymentService,
@@ -159,6 +159,7 @@ export class PaymentComponent {
         year: this.paymentForm.value.expiry_date?.slice(-2),
       },
     };
+    console.log(paymentData);
 
     this.payment
       .sendPayment(paymentData)

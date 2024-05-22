@@ -25,7 +25,7 @@ export class VisitPaymentRedirectComponent implements OnInit {
     this.route.queryParamMap.pipe().subscribe({
       next: (res: any) => {
         if (res.params.message === 'APPROVED' && res.params.status === 'paid') {
-          this.message = `عملية الدفع تمت بنجاح وجاري تحويلك الآن لصفحة تحميل العقد`;
+          this.message = `عملية الدفع تمت بنجاح`;
           this.url = '/contract/visit-complete';
           this.img = 'success';
           this.contract

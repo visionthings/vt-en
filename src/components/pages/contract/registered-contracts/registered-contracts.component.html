@@ -27,7 +27,12 @@
             </button>
           </td>
           <td>
-            <button (click)="renewContract(contract.id)">تجديد العقد</button>
+            <button
+              class="bg-blue-700 text-white rounded py-1 px-3 hover:ring-2 hover:ring-blue-200 active:ring-2 active:ring-blue-400"
+              (click)="renewContract(contract.id)"
+            >
+              تجديد العقد
+            </button>
           </td>
         </tr>
         }

@@ -29,6 +29,7 @@ import { CompanyInformationComponent } from '../components/pages/company-informa
 import { VisitPaymentComponent } from '../components/pages/contract/visit-payment/visit-payment.component';
 import { VisitPaymentRedirectComponent } from '../components/pages/contract/visit-payment-redirect/visit-payment-redirect.component';
 import { VisitCompleteComponent } from '../components/pages/contract/visit-complete/visit-complete.component';
+import { RenewContractPaymentComponent } from '../components/pages/contract/renew-contract-payment/renew-contract-payment.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -65,6 +66,10 @@ export const routes: Routes = [
       {
         path: 'registered-contracts',
         component: RegisteredContractsComponent,
+      },
+      {
+        path: 'renew-contract-payment',
+        component: RenewContractPaymentComponent,
       },
       { path: 'companies', component: CompaniesComponent },
       {
