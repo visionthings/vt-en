@@ -10,7 +10,7 @@ import { first } from "rxjs";
 import { InvoiceService } from "../../../../services/invoice.service";
 
 @Component({
-  selector: "app-final-contract",
+  selector: "app-renewed-contract",
   standalone: true,
   imports: [
     CommonModule,
@@ -19,23 +19,25 @@ import { InvoiceService } from "../../../../services/invoice.service";
     QrCodeModule,
     ContractPdfComponent,
   ],
-  templateUrl: "./final-contract.component.html",
-  styleUrl: "./final-contract.component.css",
+  templateUrl: "./renewed-contract.component.html",
+  styleUrl: "./renewed-contract.component.css",
 })
-export class FinalContractComponent implements OnInit {
+export class RenewedContractComponent implements OnInit {
   @ViewChild("contract") contract!: ElementRef;
   constructor(
     private contractService: ContractService,
     private invoiceService: InvoiceService
   ) {}
 
+  isRenewing: boolean = true;
+
   ngOnInit(): void {
     this.contractService
-      .createContract(this.data)
+      .renewContract(this.data)
       .pipe(first())
       .subscribe({
         next: (res) => {
-          console.log(res);
+          this.isRenewing = false;
         },
         error: (err) => {
           console.log(err);

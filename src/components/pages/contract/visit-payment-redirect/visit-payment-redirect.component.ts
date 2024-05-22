@@ -28,19 +28,7 @@ export class VisitPaymentRedirectComponent implements OnInit {
           this.message = `عملية الدفع تمت بنجاح`;
           this.url = '/contract/visit-complete';
           this.img = 'success';
-          this.contract
-            .getContractNumber()
-            .pipe()
-            .subscribe({
-              next: (res: any) => {
-                if (typeof window !== 'undefined') {
-                  localStorage.setItem('contract_number', res);
-                }
-              },
-              error: (err) => {
-                console.log(err);
-              },
-            });
+
           setTimeout(() => {
             this.router.navigateByUrl('/contract/visit-complete');
           }, 3000);

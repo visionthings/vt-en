@@ -148,8 +148,9 @@ export class RenewContractPaymentComponent {
       amount: this.totalPrice * 100,
       currency: 'SAR',
       description: 'Payment for contract',
-      callback_url: 'https://vt.com.sa/contract/payment-redirect',
-      on_completed: 'https://vt.com.sa/contract/final-contract',
+      callback_url:
+        'https://vt.com.sa/contract/renew-contract-payment-redirect',
+      on_completed: 'https://vt.com.sa/contract/renewed-contract',
       source: {
         type: 'creditcard',
         name: this.paymentForm.value.name,
@@ -159,7 +160,6 @@ export class RenewContractPaymentComponent {
         year: this.paymentForm.value.expiry_date?.slice(-2),
       },
     };
-    console.log(paymentData);
 
     this.payment
       .sendPayment(paymentData)

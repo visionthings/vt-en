@@ -30,6 +30,8 @@ import { VisitPaymentComponent } from '../components/pages/contract/visit-paymen
 import { VisitPaymentRedirectComponent } from '../components/pages/contract/visit-payment-redirect/visit-payment-redirect.component';
 import { VisitCompleteComponent } from '../components/pages/contract/visit-complete/visit-complete.component';
 import { RenewContractPaymentComponent } from '../components/pages/contract/renew-contract-payment/renew-contract-payment.component';
+import { RenewContractPaymentRedirectComponent } from '../components/pages/contract/renew-contract-payment-redirect/renew-contract-payment-redirect.component';
+import { RenewedContractComponent } from '../components/pages/contract/renewed-contract/renewed-contract.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -71,6 +73,11 @@ export const routes: Routes = [
         path: 'renew-contract-payment',
         component: RenewContractPaymentComponent,
       },
+      {
+        path: 'renew-contract-payment-redirect',
+        component: RenewContractPaymentRedirectComponent,
+      },
+      { path: 'renewed-contract', component: RenewedContractComponent },
       { path: 'companies', component: CompaniesComponent },
       {
         path: 'visit-request',

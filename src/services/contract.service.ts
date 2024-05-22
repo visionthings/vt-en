@@ -31,6 +31,22 @@ export class ContractService {
     });
   }
 
+  // Renew Contract
+  renewContract(contractData: any) {
+    let token, contractNumber;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+      contractNumber = localStorage.getItem('contract_number');
+    }
+    return this.http.post(
+      `${this.url}/contracts/${contractNumber}`,
+      contractData,
+      {
+        headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+      }
+    );
+  }
+
   // Get contract details by contract number
 
   getContractDataByNumber(contractNumber: any) {

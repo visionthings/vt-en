@@ -126,6 +126,7 @@ export class RegisteredContractsComponent implements OnInit {
       );
       localStorage.setItem('discount', '0');
       localStorage.setItem('price', currentContract.price);
+      localStorage.setItem('contract_number', currentContract.contract_number);
     }
     this.router.navigateByUrl('/contract/renew-contract-payment');
   }
