@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PaymentService } from '../../../../services/payment.service';
-import { GetPromocodesService } from '../../../../services/get-promocodes.service';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { PaymentService } from "../../../../services/payment.service";
+import { GetPromocodesService } from "../../../../services/get-promocodes.service";
 
 @Component({
-  selector: 'app-visit-payment',
+  selector: "app-visit-payment",
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './visit-payment.component.html',
-  styleUrl: './visit-payment.component.css',
+  templateUrl: "./visit-payment.component.html",
+  styleUrl: "./visit-payment.component.css",
 })
 export class VisitPaymentComponent {
   constructor(private fb: FormBuilder, private payment: PaymentService) {}
@@ -23,9 +23,9 @@ export class VisitPaymentComponent {
 
   // Payment form
   paymentForm = this.fb.group({
-    name: ['', Validators.required],
+    name: ["", Validators.required],
     number: [
-      '',
+      "",
       [
         Validators.required,
         Validators.pattern(/^\d+$/),
@@ -33,7 +33,7 @@ export class VisitPaymentComponent {
       ],
     ],
     cvc: [
-      '',
+      "",
       [
         Validators.required,
         Validators.pattern(/^\d+$/),
@@ -42,7 +42,7 @@ export class VisitPaymentComponent {
       ],
     ],
     expiry_date: [
-      '',
+      "",
       [
         Validators.required,
         Validators.pattern(/(0[1-9]|1[1,2])\/(19|20)\d{2}/),
@@ -51,27 +51,27 @@ export class VisitPaymentComponent {
   });
 
   get name() {
-    return this.paymentForm.controls['name'];
+    return this.paymentForm.controls["name"];
   }
   get number() {
-    return this.paymentForm.controls['number'];
+    return this.paymentForm.controls["number"];
   }
   get cvc() {
-    return this.paymentForm.controls['cvc'];
+    return this.paymentForm.controls["cvc"];
   }
   get expiry_date() {
-    return this.paymentForm.controls['expiry_date'];
+    return this.paymentForm.controls["expiry_date"];
   }
 
   sendPayment() {
     let paymentData = {
       amount: 75000,
-      currency: 'SAR',
-      description: 'Payment for contract',
-      callback_url: 'https://vt.com.sa/contract/visit-payment-redirect',
-      on_completed: 'https://vt.com.sa/contract/visit-request-complete',
+      currency: "SAR",
+      description: "Payment for contract",
+      callback_url: "https://vt.com.sa/contract/visit-payment-redirect",
+      on_completed: "https://vt.com.sa/contract/visit-request-complete",
       source: {
-        type: 'creditcard',
+        type: "creditcard",
         name: this.paymentForm.value.name,
         number: this.paymentForm.value.number,
         cvc: this.paymentForm.value.cvc,
@@ -84,9 +84,13 @@ export class VisitPaymentComponent {
       .pipe()
       .subscribe({
         next: (res: any) => {
-          if (typeof window !== 'undefined') {
-            if (res.source.transaction_url) {
-              location.href = res.source.transaction_url;
+          if (res.status == "failed") {
+            this.errorMessage = `${res.status} - ${res.source.message}`;
+          } else {
+            if (typeof window !== "undefined") {
+              if (res.source.transaction_url) {
+                location.href = res.source.transaction_url;
+              }
             }
           }
         },
