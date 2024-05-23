@@ -116,4 +116,9 @@ export class AuthService {
       headers: new HttpHeaders({ Accept: 'application/json' }),
     });
   }
+
+  // Reset Password
+  resetPassword($email: string | null) {
+    return this.http.post(`${this.url}/reset-password`, { email: $email });
+  }
 }

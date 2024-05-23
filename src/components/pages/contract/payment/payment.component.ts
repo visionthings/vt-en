@@ -1,13 +1,13 @@
-import { Component, Injectable } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
-import { PaymentService } from '../../../../services/payment.service';
-import { GetPromocodesService } from '../../../../services/get-promocodes.service';
-import { first } from 'rxjs';
-import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
+import { Component, Injectable } from "@angular/core";
+import { CommonModule, NgOptimizedImage } from "@angular/common";
+import { ReactiveFormsModule, Validators, FormBuilder } from "@angular/forms";
+import { PaymentService } from "../../../../services/payment.service";
+import { GetPromocodesService } from "../../../../services/get-promocodes.service";
+import { first } from "rxjs";
+import { NgxMaskDirective, provideNgxMask } from "ngx-mask";
 
 @Component({
-  selector: 'app-payment',
+  selector: "app-payment",
   standalone: true,
   imports: [
     CommonModule,
@@ -16,10 +16,10 @@ import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
     NgxMaskDirective,
   ],
   providers: [provideNgxMask()],
-  templateUrl: './payment.component.html',
-  styleUrl: './payment.component.css',
+  templateUrl: "./payment.component.html",
+  styleUrl: "./payment.component.css",
 })
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class PaymentComponent {
   constructor(
     private fb: FormBuilder,
@@ -36,7 +36,7 @@ export class PaymentComponent {
 
   // Calculate price
   priceWithVAT: number =
-    typeof window !== 'undefined' ? Number(localStorage.getItem('price')) : 0;
+    typeof window !== "undefined" ? Number(localStorage.getItem("price")) : 0;
 
   vat: number = Number((this.priceWithVAT * 0.15).toFixed(2));
 
@@ -49,10 +49,10 @@ export class PaymentComponent {
   // Discount form
 
   discountForm = this.fb.group({
-    promocode: ['', Validators.required],
+    promocode: ["", Validators.required],
   });
 
-  discountResponse: string = '';
+  discountResponse: string = "";
   startDate: any = null;
   expiryDate: any = null;
   responseMessage: any = null;
@@ -62,7 +62,7 @@ export class PaymentComponent {
       next: (promocodes: any) => {
         const foundPromoCode = promocodes.find(
           (code: any) =>
-            code.promocode === this.discountForm.controls['promocode'].value
+            code.promocode === this.discountForm.controls["promocode"].value
         );
 
         if (foundPromoCode) {
@@ -79,25 +79,25 @@ export class PaymentComponent {
               ).toFixed(2)
             );
 
-            if (typeof window !== 'undefined') {
-              localStorage.setItem('total_price', this.totalPrice.toString());
+            if (typeof window !== "undefined") {
+              localStorage.setItem("total_price", this.totalPrice.toString());
             }
 
-            if (typeof window !== 'undefined') {
-              localStorage.setItem('discount', foundPromoCode?.discount);
+            if (typeof window !== "undefined") {
+              localStorage.setItem("discount", foundPromoCode?.discount);
             }
           } else {
             this.responseMessage = `كوبون الخصم الذي ادخلته منتهى الصلاحية`;
             this.discount = 0;
-            if (typeof window !== 'undefined') {
-              localStorage.setItem('discount', '0');
+            if (typeof window !== "undefined") {
+              localStorage.setItem("discount", "0");
             }
           }
         } else {
           this.responseMessage = `كوبون الخصم الذي ادخلته غير صحيح`;
           this.discount = 0;
-          if (typeof window !== 'undefined') {
-            localStorage.setItem('discount', '0');
+          if (typeof window !== "undefined") {
+            localStorage.setItem("discount", "0");
           }
         }
       },
@@ -109,9 +109,9 @@ export class PaymentComponent {
 
   // Payment form
   paymentForm = this.fb.group({
-    name: ['', Validators.required],
+    name: ["", Validators.required],
     number: [
-      '',
+      "",
       [
         Validators.required,
         Validators.pattern(/^\d+$/),
@@ -119,7 +119,7 @@ export class PaymentComponent {
       ],
     ],
     cvc: [
-      '',
+      "",
       [
         Validators.required,
         Validators.pattern(/^\d+$/),
@@ -127,31 +127,31 @@ export class PaymentComponent {
         Validators.maxLength(3),
       ],
     ],
-    expiry_date: ['', [Validators.required]],
+    expiry_date: ["", [Validators.required]],
   });
 
   get name() {
-    return this.paymentForm.controls['name'];
+    return this.paymentForm.controls["name"];
   }
   get number() {
-    return this.paymentForm.controls['number'];
+    return this.paymentForm.controls["number"];
   }
   get cvc() {
-    return this.paymentForm.controls['cvc'];
+    return this.paymentForm.controls["cvc"];
   }
   get expiry_date() {
-    return this.paymentForm.controls['expiry_date'];
+    return this.paymentForm.controls["expiry_date"];
   }
 
   sendPayment() {
     let paymentData = {
       amount: this.totalPrice * 100,
-      currency: 'SAR',
-      description: 'Payment for contract',
-      callback_url: 'https://vt.com.sa/contract/payment-redirect',
-      on_completed: 'https://vt.com.sa/contract/final-contract',
+      currency: "SAR",
+      description: "Payment for contract",
+      callback_url: "https://vt.com.sa/contract/payment-redirect",
+      on_completed: "https://vt.com.sa/contract/final-contract",
       source: {
-        type: 'creditcard',
+        type: "creditcard",
         name: this.paymentForm.value.name,
         number: this.paymentForm.value.number,
         cvc: this.paymentForm.value.cvc,
@@ -165,9 +165,13 @@ export class PaymentComponent {
       .pipe(first())
       .subscribe({
         next: (res: any) => {
-          if (typeof window !== 'undefined') {
-            if (res.source.transaction_url) {
-              location.href = res.source.transaction_url;
+          if (res.status == "failed") {
+            this.errorMessage = `${res.status} - ${res.source.message}`;
+          } else {
+            if (typeof window !== "undefined") {
+              if (res.source.transaction_url) {
+                location.href = res.source.transaction_url;
+              }
             }
           }
         },
@@ -179,9 +183,9 @@ export class PaymentComponent {
   errorMessage: string | null = null;
 
   paymentGateways = [
-    'assets/images/payment_gateways/visa.png',
-    'assets/images/payment_gateways/MasterCard_Logo.svg.png',
-    'assets/images/payment_gateways/amex.png',
-    'assets/images/payment_gateways/mada.jpg',
+    "assets/images/payment_gateways/visa.png",
+    "assets/images/payment_gateways/MasterCard_Logo.svg.png",
+    "assets/images/payment_gateways/amex.png",
+    "assets/images/payment_gateways/mada.jpg",
   ];
 }

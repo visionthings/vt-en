@@ -32,6 +32,7 @@ import { VisitCompleteComponent } from '../components/pages/contract/visit-compl
 import { RenewContractPaymentComponent } from '../components/pages/contract/renew-contract-payment/renew-contract-payment.component';
 import { RenewContractPaymentRedirectComponent } from '../components/pages/contract/renew-contract-payment-redirect/renew-contract-payment-redirect.component';
 import { RenewedContractComponent } from '../components/pages/contract/renewed-contract/renewed-contract.component';
+import { ResetPasswordComponent } from '../components/pages/reset-password/reset-password.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -102,6 +103,7 @@ export const routes: Routes = [
   { path: 'sign-in-redirect', component: SignInRedirectComponent },
   { path: 'email-verification', component: EmailVerificationComponent },
   { path: 'email-verified/:id', component: EmailVerifiedComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
   {
     path: 'account',
     component: AccountComponent,
