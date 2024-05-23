@@ -16,7 +16,7 @@ export function passwordConfirmValidator(
 ): ValidationErrors | null {
   let password = control.parent?.value.password;
   let password_confirm = control.value;
-  if (password && password_confirm && password !== password_confirm) {
+  if (password !== password_confirm) {
     return { password_mismatch: true };
   } else {
     return null;
