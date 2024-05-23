@@ -121,4 +121,9 @@ export class AuthService {
   resetPassword($email: string | null) {
     return this.http.post(`${this.url}/reset-password`, { email: $email });
   }
+
+  // Create new password
+  createNewPassword(data: any) {
+    return this.http.post(`${this.url}/create-new-password`, data);
+  }
 }

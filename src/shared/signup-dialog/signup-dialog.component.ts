@@ -25,8 +25,10 @@ export class SignupDialogComponent {
   ) {}
 
   errorMessage: string | null = null;
+  isLoading = false;
 
   register() {
+    this.isLoading = true;
     let user: any = null;
     this.authService
       .register(this.data.registerationData)
@@ -50,24 +52,27 @@ export class SignupDialogComponent {
               next: (res) => {
                 this.authService.sendVerificationMail(user).subscribe({
                   next: (res) => {
+                    this.isLoading = false;
+
                     this.dialogRef.close();
 
                     this.router.navigateByUrl('/email-verification');
                   },
                   error: (err) => {
-                    console.log(err);
+                    this.isLoading = false;
                   },
                 });
               },
               error: (err) => {
+                this.isLoading = false;
                 this.errorMessage = 'خطأ فى الاتصال، يرجى المحاولة مرة أخرى';
-                console.log(err);
                 console.log(this.data.companyData);
               },
             });
         },
         error: (error) => {
-          console.log(error);
+          this.isLoading = false;
+
           error.error.message === 'The email has already been taken.' &&
             (this.errorMessage = `البريد الالكتروني الذي ادخلته مستخدم بالفعل`);
         },

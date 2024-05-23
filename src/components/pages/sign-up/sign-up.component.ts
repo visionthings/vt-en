@@ -78,6 +78,7 @@ export class SignUpComponent {
         Validators.maxLength(10),
       ],
     ],
+    agree: [''],
   });
 
   get name() {
@@ -101,80 +102,105 @@ export class SignUpComponent {
   get commercial_number() {
     return this.signUpForm.controls['commercial_number'];
   }
+  get agree() {
+    return this.signUpForm.controls['agree'];
+  }
 
   // Sign Up
 
+  signupLoading = false;
+  showAgreeError = false;
+
   signUp(): void {
+    this.signupLoading = true;
+    this.showAgreeError = false;
+
     this.signUpForm.markAllAsTouched();
-    let companyName, address;
-    let registerationData: any = this.signUpForm.value;
-    registerationData.email_verified = 'no';
-    this.authService
-      .getCompanyData(this.signUpForm.controls['commercial_number'].value)
-      .subscribe({
-        next: (res: any) => {
-          companyName = res.crName;
-          address = res.address.national;
-          if (
-            companyName === null ||
-            address.buildingNumber === null ||
-            address.streetName === null ||
-            address.districtName === null ||
-            address.city === null
-          ) {
-            let user: any = null;
-            this.authService.register(registerationData).subscribe({
-              next: (res: any) => {
-                user = res.user;
-                localStorage.setItem('token', res.token);
-                localStorage.setItem('email_verified', 'no');
-                localStorage.setItem('id', res.user.id);
-                localStorage.setItem('name', res.user.name);
-                localStorage.setItem('email', res.user.email);
-                localStorage.setItem('phone', res.user.phone);
-                localStorage.setItem(
-                  'commercial_number',
-                  this.signUpForm.controls['commercial_number'].value
-                );
-                localStorage.setItem('address', res.user.address);
-                localStorage.setItem('email_verified', res.user.email_verified);
-                this.authService.handleAuth();
-                this.router.navigateByUrl('/company-information');
-              },
-              error: (error) => {
-                error.error.message === 'The email has already been taken.' &&
-                  (this.errorMessage = `البريد الالكتروني الذي ادخلته مستخدم بالفعل`);
-              },
-            });
-          } else {
-            const dialogRef = this.dialog.open(SignupDialogComponent, {
-              data: {
-                messages: [
-                  'بناء على البيانات التي أدخلتها هذه هي بيانات شركتك:',
-                  `اسم الشركة: ${companyName}`,
-                  `العنوان: ${address.buildingNumber} ${address.streetName} - حي ${address.districtName} - مدينة ${address.city}`,
-                  'للتأكيد اضغط استمرار',
-                ],
-                registerationData: registerationData,
-                companyData: {
-                  commercial_number:
-                    this.signUpForm.controls['commercial_number'].value,
-                  company_name: companyName,
-                  company_type: res.businessType.name,
-                  building_number: res.address.national.buildingNumber,
-                  street: res.address.national.streetName,
-                  district: res.address.national.districtName,
-                  city: res.address.national.city,
+    if (this.signUpForm.controls['agree'].value == false) {
+      this.signupLoading = false;
+      this.showAgreeError = true;
+    } else {
+      let companyName, address;
+      let registerationData: any = this.signUpForm.value;
+      registerationData.email_verified = 'no';
+      this.authService
+        .getCompanyData(this.signUpForm.controls['commercial_number'].value)
+        .subscribe({
+          next: (res: any) => {
+            companyName = res.crName;
+            address = res.address.national;
+            if (
+              companyName === null ||
+              address.buildingNumber === null ||
+              address.streetName === null ||
+              address.districtName === null ||
+              address.city === null
+            ) {
+              let user: any = null;
+              this.authService.register(registerationData).subscribe({
+                next: (res: any) => {
+                  this.signupLoading = false;
+
+                  user = res.user;
+                  localStorage.setItem('token', res.token);
+                  localStorage.setItem('email_verified', 'no');
+                  localStorage.setItem('id', res.user.id);
+                  localStorage.setItem('name', res.user.name);
+                  localStorage.setItem('email', res.user.email);
+                  localStorage.setItem('phone', res.user.phone);
+                  localStorage.setItem(
+                    'commercial_number',
+                    this.signUpForm.controls['commercial_number'].value
+                  );
+                  localStorage.setItem('address', res.user.address);
+                  localStorage.setItem(
+                    'email_verified',
+                    res.user.email_verified
+                  );
+                  this.authService.handleAuth();
+                  this.router.navigateByUrl('/company-information');
                 },
-              },
+                error: (error) => {
+                  this.signupLoading = false;
+
+                  error.error.message === 'The email has already been taken.' &&
+                    (this.errorMessage = `البريد الالكتروني الذي ادخلته مستخدم بالفعل`);
+                },
+              });
+            } else {
+              this.signupLoading = false;
+
+              const dialogRef = this.dialog.open(SignupDialogComponent, {
+                data: {
+                  messages: [
+                    'بناء على البيانات التي أدخلتها هذه هي بيانات شركتك:',
+                    `اسم الشركة: ${companyName}`,
+                    `العنوان: ${address.buildingNumber} ${address.streetName} - حي ${address.districtName} - مدينة ${address.city}`,
+                    'للتأكيد اضغط استمرار',
+                  ],
+                  registerationData: registerationData,
+                  companyData: {
+                    commercial_number:
+                      this.signUpForm.controls['commercial_number'].value,
+                    company_name: companyName,
+                    company_type: res.businessType.name,
+                    building_number: res.address.national.buildingNumber,
+                    street: res.address.national.streetName,
+                    district: res.address.national.districtName,
+                    city: res.address.national.city,
+                  },
+                },
+              });
+            }
+          },
+          error: () => {
+            this.signupLoading = false;
+
+            const dialogRef = this.dialog.open(SignupErrorDialogComponent, {
+              data: { messages: ['رقم السجل التجاري غير صحيح.'] },
             });
-          }
-        },
-        error: () => {
-          const dialogRef = this.dialog.open(SignupErrorDialogComponent, {
-            data: { messages: ['رقم السجل التجاري غير صحيح.'] },
-          });
-        },
-      });
+          },
+        });
+    }
   }
 }

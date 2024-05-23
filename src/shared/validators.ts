@@ -5,7 +5,7 @@ export function emailConfirmValidator(
 ): ValidationErrors | null {
   let email = control.parent?.value.email;
   let email_confirm = control.value;
-  if (email && email_confirm && email !== email_confirm) {
+  if (email !== email_confirm) {
     return { email_mismatch: true };
   } else {
     return null;
