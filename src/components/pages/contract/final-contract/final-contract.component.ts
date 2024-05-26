@@ -144,8 +144,8 @@ export class FinalContractComponent implements OnInit {
         {
           medium: "email",
           data: {
-            subject: "فاتورة عقد كاميرات رؤية الأشياء",
-            message: "فاتورة عقد كاميرات رؤية الأشياء",
+            subject: "فاتورة عقد صيانة كاميرات",
+            message: "فاتورة عقد صيانة كاميرات   ",
             recipients: { to: [this.data.email] },
           },
         },
@@ -155,17 +155,26 @@ export class FinalContractComponent implements OnInit {
       },
       currency: "SAR",
       language: "ar",
-      tax_amount_type: "TAX_EXCLUSIVE",
+      project: "VT",
+
       invoice_number: this.data.contract_number,
       invoice_date: this.data.contract_date,
       line_items: [
         {
-          name: "عقد صيانة كاميرات لمدة عام",
-          description: "عقد صيانة كاميرات مراقبة",
+          name: "عقد صيانة كاميرات مراقبة",
+          description: "عقد صيانة لمدة عام ",
           quantity: 1,
-          price: Number(this.data.total_price).toFixed(2),
+          discount: {
+            type: "percent",
+            value: this.data.discount,
+          },
+          price: this.data.price,
+          tax_rate: "tax_X5GRWKNpRjPfMDqWCJBtAV",
         },
       ],
+      status: "PAID",
+      tax_amount_type: "TAX_INCLUSIVE",
+      paid_through_account: "acc_JZrYxV5GsFDWMkfe6QK2HM",
     },
   ];
 }
