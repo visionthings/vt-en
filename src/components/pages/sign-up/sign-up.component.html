@@ -199,10 +199,23 @@
           </p>
         </div>
       </div>
-      <div
-        class="g-recaptcha"
-        data-sitekey="6LdG4egpAAAAAJ3SGSIirUiuo6xekatxoiFOWp4Q"
-      ></div>
+
+      <!-- reCAPTCHA V 2.0 -->
+      <div>
+        <re-captcha
+          siteKey="6LdG4egpAAAAAJ3SGSIirUiuo6xekatxoiFOWp4Q"
+          formControlName="recaptchaReactive"
+        ></re-captcha>
+
+        @if (recaptchaReactive.hasError('required')) {
+        <div
+          *ngIf="showAgreeError"
+          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
+        >
+          <p>هذا الحقل إلزامي.</p>
+        </div>
+        }
+      </div>
 
       <!-- Submit Button -->
       <div class="md:col-span-2">

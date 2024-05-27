@@ -15,6 +15,7 @@ import {
 import { MatDialog } from '@angular/material/dialog';
 import { SignupDialogComponent } from '../../../shared/signup-dialog/signup-dialog.component';
 import { SignupErrorDialogComponent } from '../../../shared/signup-error-dialog/signup-error-dialog.component';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 
 @Component({
   selector: 'app-sign-up',
@@ -25,6 +26,8 @@ import { SignupErrorDialogComponent } from '../../../shared/signup-error-dialog/
     ReactiveFormsModule,
     SignupDialogComponent,
     SignupErrorDialogComponent,
+    RecaptchaModule,
+    RecaptchaFormsModule,
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
@@ -79,6 +82,7 @@ export class SignUpComponent {
       ],
     ],
     agree: [''],
+    recaptchaReactive: ['', Validators.required],
   });
 
   get name() {
@@ -103,6 +107,9 @@ export class SignUpComponent {
     return this.signUpForm.controls['commercial_number'];
   }
   get agree() {
+    return this.signUpForm.controls['agree'];
+  }
+  get recaptchaReactive() {
     return this.signUpForm.controls['agree'];
   }
 
