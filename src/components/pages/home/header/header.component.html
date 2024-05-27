@@ -7,22 +7,20 @@
     priority
   />
   <div id="header_right" class="relative z-10">
-    <div class="px-10 py-10 text-2xl xl:text-6xl xl:pt-20 z-20">
-      <h1 class="text-2xl xl:text-6xl leading-relaxed text-center">اصدر</h1>
-      <h1 class="text-2xl xl:text-6xl leading-relaxed text-center">
-        عقد صيانة كاميرات
-      </h1>
-      <p
-        class="text-2xl xl:text-5xl leading-relaxed text-center text-teal-500 py-5"
-      >
-        خلال دقيقتين
-      </p>
+    <div
+      class="px-10 py-10 text-2xl 2xl:text-6xl text-center leading-relaxed xl:pt-20 z-20"
+    >
+      <h1>اصدر</h1>
+      <h1>عقد صيانة كاميرات</h1>
+      <p class="text-teal-500">خلال دقيقتين</p>
       <div class="flex justify-center pt-5 text-2xl">
-        <app-green-button
-          text="اصدر عقدك الآن خلال دقيقتين "
-          rightIcon="assets/images/our_services/button_contract_icon.png"
-          route="/contract/create-new-contract"
-        ></app-green-button>
+        <a routerLink="/contract/create-new-contract">
+          <button
+            class="bg-teal-500 px-5 py-3 rounded hover:ring-2 hover:ring-teal-200 active:ring-2 active:ring-teal-300"
+          >
+            اصدر عقدك الآن خلال دقيقتين
+          </button></a
+        >
       </div>
       <p class="text-sm text-center mt-5">
         عقد معتمد من شركات صيانة الأجهزة الأمنية المرخصة من قبل الهيئة
