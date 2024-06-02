@@ -1,30 +1,30 @@
 <section class="grid grid-cols-1 lg:grid-cols-2 gap-5 pb-10">
   <!-- Payment form -->
   <div>
-    <h3 class="text-3xl mb-5">الدفع</h3>
+    <h3 class="text-3xl mb-5">Payment</h3>
     <p class="text-xl mb-10">
-      يرجى إدخال البيانات التالية لاتمام عملية التعاقد
+      Please fulfill the required data to complete your contract
     </p>
 
     <form [formGroup]="paymentForm" (ngSubmit)="sendPayment()">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div class="md:col-span-2">
-          <label for="name" class="block mb-1">اسم حامل البطاقة </label>
+          <label for="name" class="block mb-1"> Card's holder name </label>
           <input
             id="name"
             name="name"
             formControlName="name"
-            placeholder="اسم حامل البطاقة"
+            placeholder="Card's holder name"
           />
           <div
             *ngIf="name.invalid && (name.dirty || name.touched)"
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="name.errors?.['required']">ادخل اسم حامل البطاقة.</p>
+            <p *ngIf="name.errors?.['required']">Required.</p>
           </div>
         </div>
         <div class="md:col-span-2">
-          <label for="number" class="block mb-1"> رقم بطاقة الدفع</label>
+          <label for="number" class="block mb-1"> Card Number</label>
           <input
             id="number"
             name="number"
@@ -35,11 +35,9 @@
             *ngIf="number.invalid && (number.dirty || number.touched)"
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="number.errors?.['required']">ادخل رقم البطاقة.</p>
-            <p *ngIf="number.errors?.['pattern']">ادخل رقم بطاقة صالح.</p>
-            <p *ngIf="number.errors?.['minlength']">
-              ادخل رقم بطاقة مكون من 14 خانة على الأقل.
-            </p>
+            <p *ngIf="number.errors?.['required']">Required.</p>
+            <p *ngIf="number.errors?.['pattern']">Not Valid.</p>
+            <p *ngIf="number.errors?.['minlength']">Not Valid.</p>
           </div>
         </div>
         <div class="col-span-2">
@@ -61,20 +59,14 @@
             *ngIf="cvc.invalid && (cvc.dirty || cvc.touched)"
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="cvc.errors?.['required']">
-              ادخل الرقم المكون من ثلاثة أرقام على ظهر البطاقة.
-            </p>
-            <p *ngIf="cvc.errors?.['pattern']">ادخل رقم صالح.</p>
-            <p *ngIf="cvc.errors?.['minlength']">
-              الرقم يجب أن يكون مكون من ثلاثة خانات.
-            </p>
-            <p *ngIf="cvc.errors?.['maxlength']">
-              الرقم يجب أن يكون مكون من ثلاثة خانات.
-            </p>
+            <p *ngIf="cvc.errors?.['required']">Required.</p>
+            <p *ngIf="cvc.errors?.['pattern']">Not Valid.</p>
+            <p *ngIf="cvc.errors?.['minlength']">Not Valid.</p>
+            <p *ngIf="cvc.errors?.['maxlength']">Not Valid.</p>
           </div>
         </div>
         <div class="md:col-span-1">
-          <label for="expiry_date" class="block mb-1"> تاريخ الانتهاء</label>
+          <label for="expiry_date" class="block mb-1"> Expiry Date</label>
           <input
             id="expiry_date"
             name="expiry_date"
@@ -88,9 +80,7 @@
             "
             class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
           >
-            <p *ngIf="expiry_date.errors?.['required']">
-              ادخل تاريخ انتهاء البطاقة.
-            </p>
+            <p *ngIf="expiry_date.errors?.['required']">Required.</p>
           </div>
         </div>
         <div class="md:col-span-2">
@@ -103,40 +93,34 @@
             [disabled]="!paymentForm.valid"
             type="submit"
           >
-            اتمام
+            Continue
           </button>
         </div>
       </div>
     </form>
-    <div
-      *ngIf="errorMessage"
-      class="mt-5 bg-white mb-3 rounded shadow py-3 text-center text-rose-800 container"
-    >
-      <p>{{ errorMessage }}</p>
-    </div>
   </div>
 
   <!-- Price details -->
   <div class="container bg-blue-50 py-5">
-    <h3 class="text-3xl mb-5">السعر</h3>
+    <h3 class="text-3xl mb-5">Price</h3>
     <div class="flex justify-between text-blue-800 mb-3">
-      <div class="py-3"><p>السعر</p></div>
+      <div class="py-3"><p>Price</p></div>
       <div class="bg-blue-100 rounded shadow w-fit py-3">
         <div class="container">
-          <p>{{ price }} ر.س</p>
+          <p>{{ price }} SAR</p>
         </div>
       </div>
     </div>
     <div class="flex justify-between text-blue-800 mb-3">
-      <div class="py-3"><p>ضريبة القيمة المضافة (15%)</p></div>
+      <div class="py-3"><p>VAT (15%)</p></div>
       <div class="bg-blue-100 rounded shadow w-fit py-3">
         <div class="container">
-          <p>{{ vat }} ر.س</p>
+          <p>{{ vat }} SAR</p>
         </div>
       </div>
     </div>
     <div class="flex justify-between text-blue-800 mb-3">
-      <div class="py-3"><p>الخصم</p></div>
+      <div class="py-3"><p>Discount</p></div>
       <div class="bg-blue-100 rounded shadow w-fit py-3">
         <div class="container">
           <p>{{ discount }} %</p>
@@ -146,17 +130,17 @@
     <div
       class="flex justify-between bg-white mb-3 rounded shadow py-3 text-blue-800 container"
     >
-      <p>إجمالي التكلفة</p>
-      <p>{{ totalPrice }} ر.س</p>
+      <p>Total Price</p>
+      <p>{{ totalPrice }} SAR</p>
     </div>
     <div class="text-center text-blue-800 my-5">
-      <p>هل لديك كود خصم؟</p>
+      <p>Do you've a promocode?</p>
     </div>
     <form [formGroup]="discountForm" (ngSubmit)="getDiscount()">
       <input
         type="text"
         name="promo_code"
-        placeholder="ادخل كود الخصم"
+        placeholder="Promocode"
         class="mb-3"
         formControlName="promocode"
       />
@@ -165,7 +149,7 @@
         [disabled]="!discountForm.valid"
         type="submit"
       >
-        تطبيق الكود
+        Apply
       </button>
       <div
         *ngIf="responseMessage"
@@ -176,3 +160,7 @@
     </form>
   </div>
 </section>
+
+@if (errorMessage) {
+<app-error-message [message]="errorMessage"></app-error-message>
+}

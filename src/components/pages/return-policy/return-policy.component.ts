@@ -13,22 +13,22 @@ export class ReturnPolicyComponent {
     {
       id: 1,
       icon: 'assets/images/return_policy/1.png',
-      title: `تعليمات الكاميرات المباعة`,
+      title: `Instructions for sold cameras`,
       points: [
-        `يجب أن تكون الكاميرات المراقبة التي ترغب في استبدالها أو استرجاعها في حالتها الأصلية وغير مستخدمة أو معيبة أو مخالفة للمواصفات القياسية السعودية أو للمعلومات التي تم تزويدك بها عند الشراء.`,
-        `يجب أن تقوم بإرجاع الكاميرات المراقبة مع جميع ملحقاتها والعبوة الأصلية والفاتورة ووثيقة الضمان إن وجدت.`,
-        `يجب أن تقوم بإرجاع الكاميرات المراقبة خلال 7 أيام من تاريخ استلامها، ما لم يتم تحديد مدة أطول في وصف المنتج أو في سياسة الموقع.`,
+        `The surveillance cameras that you wish to exchange or return must be in their original condition and not used, defective, or in violation of Saudi standard specifications or the information that was provided to you upon purchase.`,
+        `You must return the surveillance cameras with all their accessories, the original packaging, the invoice, and the warranty document, if any.`,
+        `You must return the surveillance cameras within 7 days from the date of receipt, unless a longer period is specified in the product description or site policy.`,
       ],
     },
     {
       id: 2,
       icon: 'assets/images/return_policy/2.png',
-      title: `تعليمات الكاميرات المباعة`,
+      title: `Instructions for sold cameras`,
       points: [
-        `يمكنك اختيار استبدال الكاميرات المراقبة بمنتجات أخرى متوفرة في موقعنا بنفس القيمة أو أعلى، وفي هذه الحالة سيتم خصم الفرق من رصيدك أو طلبه منك عند التسليم.`,
-        `يمكنك اختيار استرجاع الكاميرات المراقبة واسترداد المبلغ الذي دفعته عن طريق نفس وسيلة الدفع التي استخدمتها عند الشراء، أو عن طريق تحويل بنكي إلى حسابك، أو عن طريق إضافة رصيد إلى حسابك في موقعنا.`,
-        `سيتم استرداد المبلغ خلال 14 يومًا من تاريخ استلامنا للكاميرات المراقبة المرتجعة، ما لم يتم تحديد مدة أقصر في وصف المنتج أو في سياسة الموقع.`,
-        `سيتم خصم رسوم الشحن والتوصيل من المبلغ المسترد، إلا إذا كان سبب الاسترجاع هو خطأ من جانبنا أو عيب في المنتج أو مخالفة للمواصفات. لا يمكن استبدال أو استرجاع الكاميرات المراقبة التي تم تخصيصها أو تعديلها حسب طلبك، أو التي تم فتحها أو تركيبها أو تشغيلها بطريقة غير صحيحة أو تسببت في تلفها.`,
+        `You can choose to replace the surveillance cameras with other products available on our website of the same or higher value, in which case the difference will be deducted from your balance or requested from you upon delivery.`,
+        `You can choose to retrieve the surveillance cameras and recover the amount you paid via the same payment method you used when purchasing, or via a bank transfer to your account, or by adding a balance to your account on our website.`,
+        `The refund will be issued within 14 days from the date we receive the returned surveillance cameras, unless a shorter period is specified in the product description or site policy.`,
+        `Shipping and handling fees will be deducted from the refund amount, unless the reason for the return is an error on our part, a product defect, or a violation of specifications. Surveillance cameras that have been customized or modified to your request, or that have been opened, installed or operated incorrectly or have been damaged cannot be exchanged or refunded.`,
       ],
     },
   ];

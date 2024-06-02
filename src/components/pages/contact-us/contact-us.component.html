@@ -4,7 +4,7 @@
       class="md:col-span-3 bg-white rounded-lg py-5 md:pb-0 shadow flex flex-col justify-between"
     >
       <div class="container">
-        <h2 class="text-4xl leading-relaxed" i18n>اتصل بنا</h2>
+        <h2 class="text-4xl leading-relaxed">Contact Us</h2>
         <div class="flex mb-2">
           <div class="p-1">
             <img
@@ -15,8 +15,9 @@
             />
           </div>
           <div class="container">
-            <p i18n>
-              المملكة العربية السعودية - جدة - حي الزهراء - الرمز البريدي:23522
+            <p>
+              Kingdom of Saudi Arabia - Jeddah - Al Zahraa District - Postal
+              Code: 23522
             </p>
           </div>
         </div>
@@ -30,7 +31,7 @@
             />
           </div>
           <div class="container">
-            <p>00967775124874</p>
+            <p>00966535679174</p>
           </div>
         </div>
       </div>
@@ -43,61 +44,56 @@
       </div>
     </div>
     <div class="md:col-span-9 bg-white rounded-lg pt-5 shadow container">
-      <h3 class="text-3xl leading-relaxed" i18n>تواصل معنا</h3>
-      <p i18n>
-        يمكنك الاتصال بنا وترك الشكاوى والاقتراحات أو الاستفسار الذي تريده، وسوف
-        نتصل بك في أقرب وقت ممكن
+      <h3 class="text-3xl leading-relaxed">Contact Us</h3>
+      <p>
+        You can contact us and leave complaints, suggestions or inquiries you
+        want, and we will We will contact you as soon as possible
       </p>
       <div class="py-10">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
           <div class="grid grid-cols-2 gap-5">
             <div>
               <label for="name" class="block mb-2 text-blue-800" i18n
-                >الاسم</label
+                >Name</label
               >
               <input
                 id="name"
                 name="name"
                 formControlName="name"
                 i18n-placeholder
-                placeholder="اكتب اسمك هنا"
+                placeholder="Your name here"
               />
               <div
                 *ngIf="name.invalid && (name.dirty || name.touched)"
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
-                <p *ngIf="name.errors?.['required']" i18n>الاسم مطلوب.</p>
-                <p *ngIf="name.errors?.['minlength']" i18n>الاسم قصير جدا.</p>
+                <p *ngIf="name.errors?.['required']">Name is required.</p>
+                <p *ngIf="name.errors?.['minlength']">Too short.</p>
               </div>
             </div>
             <div>
               <label for="phone" class="block mb-2 text-blue-800" i18n
-                >الجوال</label
+                >Phone</label
               >
               <input
                 id="phone"
                 name="phone"
                 formControlName="phone"
                 i18n-placeholder
-                placeholder="الجوال"
+                placeholder="Phone"
               />
               <div
                 *ngIf="phone.invalid && (phone.dirty || phone.touched)"
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
-                <p *ngIf="phone.errors?.['required']" i18n>رقم الجوال مطلوب.</p>
-                <p *ngIf="phone.errors?.['minlength']" i18n>
-                  رقم الجوال يجب أن يكون من 10 أرقام على الأقل.
-                </p>
-                <p *ngIf="phone.errors?.['pattern']" i18n>
-                  ادخل رقم جوال سعودي صالح.
-                </p>
+                <p *ngIf="phone.errors?.['required']">Phone is required</p>
+                <p *ngIf="phone.errors?.['minlength']">Phone is not valid</p>
+                <p *ngIf="phone.errors?.['pattern']">Phone is not valid</p>
               </div>
             </div>
             <div>
-              <label for="email" class="block mb-2 text-blue-800" i18n
-                >البريد الالكتروني</label
-              >
+              <label for="email" class="block mb-2 text-blue-800">Email</label>
+
               <input
                 id="email"
                 name="email"
@@ -110,37 +106,33 @@
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
                 <p *ngIf="email.errors?.['required']" i18n>
-                  البريد الإلكتروني مطلوب.
+                  Email is required.
                 </p>
-                <p *ngIf="email.errors?.['email']" i18n>
-                  ادخل بريد الكتروني صالح.
-                </p>
+                <p *ngIf="email.errors?.['email']" i18n>Email is not valid.</p>
               </div>
             </div>
             <div>
               <label for="subject" class="block mb-2 text-blue-800" i18n
-                >الموضوع</label
+                >Subject</label
               >
               <input
                 id="subject"
                 name="subject"
                 formControlName="subject"
                 i18n-placeholder
-                placeholder="الموضوع"
+                placeholder="Subject"
               />
               <div
                 *ngIf="subject.invalid && (subject.dirty || subject.touched)"
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
-                <p *ngIf="subject.errors?.['required']" i18n>الموضوع مطلوب.</p>
-                <p *ngIf="subject.errors?.['minlength']" i18n>
-                  اسم الموضوع قصير جداً.
-                </p>
+                <p *ngIf="subject.errors?.['required']">Subject is required.</p>
+                <p *ngIf="subject.errors?.['minlength']">Too short.</p>
               </div>
             </div>
             <div class="col-span-2">
               <label for="message" class="block mb-2 text-blue-800" i18n
-                >الرسالة</label
+                >Message</label
               >
               <textarea
                 rows="6"
@@ -148,21 +140,29 @@
                 name="message"
                 formControlName="message"
                 i18n-placeholder
-                placeholder="اكتب رسالتك هنا"
+                placeholder="Message here..."
               ></textarea>
               <div
                 *ngIf="message.invalid && (message.dirty || message.touched)"
                 class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
               >
-                <p *ngIf="message.errors?.['required']" i18n>الرسالة مطلوبة.</p>
-                <p *ngIf="message.errors?.['minlength']" i18n>
-                  الرسالة قصيرة جداً.
+                <p *ngIf="message.errors?.['required']">Message is required.</p>
+                <p *ngIf="message.errors?.['minlength']">
+                  Message is too short.
                 </p>
               </div>
             </div>
+
+            <!-- reCAPTCHA V 2.0 -->
+            <div>
+              <re-captcha
+                siteKey="6LdG4egpAAAAAJ3SGSIirUiuo6xekatxoiFOWp4Q"
+                formControlName="recaptchaReactive"
+              ></re-captcha>
+            </div>
+
             <div class="col-span-2 flex justify-center">
               <button
-                i18n
                 class="bg-teal-500 hover:bg-cyan-500 px-20 py-3 rounded-md shadow-lg text-white"
                 [class.ring-teal-500]="clicking"
                 [class.ring-1]="clicking"
@@ -171,7 +171,7 @@
                 [disabled]="!contactForm.valid"
                 type="submit"
               >
-                ارسال
+                Send Message
               </button>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import { PaymentService } from "../../../../services/payment.service";
 import { GetPromocodesService } from "../../../../services/get-promocodes.service";
@@ -7,7 +7,7 @@ import { GetPromocodesService } from "../../../../services/get-promocodes.servic
 @Component({
   selector: "app-visit-payment",
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, NgOptimizedImage],
   templateUrl: "./visit-payment.component.html",
   styleUrl: "./visit-payment.component.css",
 })
@@ -100,4 +100,11 @@ export class VisitPaymentComponent {
       });
   }
   errorMessage: string | null = null;
+
+  paymentGateways = [
+    "assets/images/payment_gateways/visa.png",
+    "assets/images/payment_gateways/MasterCard_Logo.svg.png",
+    "assets/images/payment_gateways/amex.png",
+    "assets/images/payment_gateways/mada.jpg",
+  ];
 }

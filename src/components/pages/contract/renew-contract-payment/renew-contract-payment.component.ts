@@ -1,10 +1,12 @@
-import { Component, Injectable } from "@angular/core";
+import { Component, Injectable, OnInit } from "@angular/core";
 import { CommonModule, NgOptimizedImage } from "@angular/common";
 import { ReactiveFormsModule, Validators, FormBuilder } from "@angular/forms";
 import { PaymentService } from "../../../../services/payment.service";
 import { GetPromocodesService } from "../../../../services/get-promocodes.service";
 import { first } from "rxjs";
 import { NgxMaskDirective, provideNgxMask } from "ngx-mask";
+import { ContractService } from "../../../../services/contract.service";
+import { ErrorMessageComponent } from "../../../../shared/error-message/error-message.component";
 
 @Component({
   selector: "app-renew-contract-payment",
@@ -14,19 +16,40 @@ import { NgxMaskDirective, provideNgxMask } from "ngx-mask";
     ReactiveFormsModule,
     NgOptimizedImage,
     NgxMaskDirective,
+    ErrorMessageComponent,
   ],
   providers: [provideNgxMask()],
   templateUrl: "./renew-contract-payment.component.html",
   styleUrl: "./renew-contract-payment.component.css",
 })
 @Injectable({ providedIn: "root" })
-export class RenewContractPaymentComponent {
+export class RenewContractPaymentComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private payment: PaymentService,
-    private getPromocodes: GetPromocodesService
+    private getPromocodes: GetPromocodesService,
+    private contractService: ContractService
   ) {}
+  isLoading = true;
 
+  ngOnInit(): void {
+    let contract_number, expired_contract_number;
+    if (typeof window !== "undefined") {
+      contract_number = localStorage.getItem("contract_number");
+      expired_contract_number = localStorage.getItem("expired_contract_number");
+    }
+    this.contractService.getContractDataByNumber(contract_number).subscribe({
+      next: (res: any) => {
+        this.isLoading = false;
+        this.contract = res;
+        this.price = Number(this.contract.price).toFixed(2);
+        this.vat = Number(this.contract.vat).toFixed(2);
+        this.discount = Number(this.contract.discount).toFixed(2);
+        this.totalPrice = Number(this.contract.total_price).toFixed(2);
+      },
+    });
+  }
+  contract: any = null;
   // Handle button clicking
   clicking: boolean = false;
 
@@ -35,16 +58,14 @@ export class RenewContractPaymentComponent {
   }
 
   // Calculate price
-  priceWithVAT: number =
-    typeof window !== "undefined" ? Number(localStorage.getItem("price")) : 0;
 
-  vat: number = Number((this.priceWithVAT * 0.15).toFixed(2));
+  vat: any = 0;
 
-  price = this.priceWithVAT - this.vat;
+  price: any = 0;
 
-  discount: number = 0;
+  discount: any = 0;
 
-  totalPrice: number = Number((this.priceWithVAT - this.discount).toFixed(2));
+  totalPrice: any = 0;
 
   // Discount form
 
@@ -70,31 +91,32 @@ export class RenewContractPaymentComponent {
           this.expiryDate = Date.parse(foundPromoCode.expiry_date);
           const currentDate = new Date();
           if (currentDate < this.expiryDate) {
-            this.responseMessage = `تهانينا، لقد حصلت على خصم بقيمة ${foundPromoCode.discount}%`;
+            this.responseMessage = `Congratulations! You've got ${foundPromoCode.discount}% discount.`;
             this.discount = foundPromoCode?.discount;
-            this.totalPrice = Number(
-              (
-                this.priceWithVAT -
-                (this.priceWithVAT * this.discount) / 100
-              ).toFixed(2)
-            );
-
-            if (typeof window !== "undefined") {
-              localStorage.setItem("total_price", this.totalPrice.toString());
-            }
-
-            if (typeof window !== "undefined") {
-              localStorage.setItem("discount", foundPromoCode?.discount);
-            }
+            this.contractService
+              .applyDiscount({
+                contract_number: this.contract.id,
+                discount: foundPromoCode?.discount,
+              })
+              .subscribe({
+                next: (res: any) => {
+                  this.discount = Number(res.discount).toFixed(2);
+                  this.vat = Number(res.vat).toFixed(2);
+                  this.totalPrice = Number(res.total_price).toFixed(2);
+                },
+                error: (error) => {
+                  this.errorMessage = error.error.message;
+                },
+              });
           } else {
-            this.responseMessage = `كوبون الخصم الذي ادخلته منتهى الصلاحية`;
+            this.responseMessage = "Promocode is expired.";
             this.discount = 0;
             if (typeof window !== "undefined") {
               localStorage.setItem("discount", "0");
             }
           }
         } else {
-          this.responseMessage = `كوبون الخصم الذي ادخلته غير صحيح`;
+          this.responseMessage = "Promocode is NOT Valid.";
           this.discount = 0;
           if (typeof window !== "undefined") {
             localStorage.setItem("discount", "0");

@@ -2,7 +2,6 @@ import { CanActivateFn } from '@angular/router';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { inject } from '@angular/core';
-import { first } from 'rxjs';
 
 export const authGuard: CanActivateFn = () => {
   const auth = inject(AuthService);
@@ -10,7 +9,7 @@ export const authGuard: CanActivateFn = () => {
 
   if (typeof window !== 'undefined') {
     if (localStorage.getItem('token')) {
-      if (localStorage.getItem('email_verified') === 'yes') {
+      if (localStorage.getItem('email_verified_at')) {
         return true;
       } else {
         router.navigateByUrl('/email-verification');

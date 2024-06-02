@@ -18,11 +18,11 @@ export class AccountComponent {
   }[] = [
     {
       id: 1,
-      title: `المعلومات الشخصية`,
+      title: `Personal Information`,
       path: 'personal-information',
     },
-    { id: 2, title: `تغيير كلمة المرور`, path: 'change-password' },
-    { id: 3, title: `تسجيل الخروج`, path: 'sign-out' },
+    { id: 2, title: `Change Password`, path: 'change-password' },
+    { id: 3, title: `Sign Out`, path: 'sign-out' },
   ];
 
   navigateToService(servicePath: string) {

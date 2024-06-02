@@ -23,15 +23,29 @@ export class AuthService {
 
   url = environment.url;
   register(data: any) {
-    return this.http.post<User>(`${this.url}/register`, data);
+    return this.http.post<User>(`${this.url}/register`, data, {
+      headers: new HttpHeaders({ 'Accept-Language': 'en' }),
+    });
   }
 
   sendVerificationMail(data: any) {
-    return this.http.post<User>(`${this.url}/email-verification`, data);
+    let token;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+    }
+    return this.http.post<User>(`${this.url}/send-verification-email`, data, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+    });
   }
 
-  verifyEmail(id: any) {
-    return this.http.get(`${this.url}/verify-email/${id}`);
+  verifyEmail(id: any, token: any) {
+    let authToken;
+    if (typeof window !== 'undefined') {
+      authToken = localStorage.getItem('token');
+    }
+    return this.http.get(`${this.url}/verify-email/${id}/${token}`, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${authToken}` }),
+    });
   }
 
   public isAuthenticated = new BehaviorSubject(false);

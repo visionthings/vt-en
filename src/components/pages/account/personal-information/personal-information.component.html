@@ -1,26 +1,26 @@
 <section class="container xl:max-w-none xl:px-20 pb-10">
-  <h3 class="text-3xl mb-5">تحديث معلومات الملف الشخصي</h3>
+  <h3 class="text-3xl mb-5">Update Personal Information</h3>
 
   <form [formGroup]="editProfileForm" (ngSubmit)="editProfile()">
     <div class="container grid grid-cols-1 md:grid-cols-2 gap-10">
       <div class="md:col-span-2">
-        <label for="name" class="block mb-1">اسم المستخدم ثلاثي</label>
+        <label for="name" class="block mb-1">Full Name</label>
         <input
           id="name"
           name="name"
-          placeholder="اسم المستخدم ثلاثي باللغة العربية"
+          placeholder="Full name in Arabic"
           formControlName="name"
         />
         <div
           *ngIf="name.invalid && (name.dirty || name.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="name.errors?.['required']">حقل الاسم مطلوب.</p>
-          <p *ngIf="name.errors?.['pattern']">ادخل الاسم بأحرف عربية فقط.</p>
+          <p *ngIf="name.errors?.['required']">Name is required.</p>
+          <p *ngIf="name.errors?.['pattern']">Name must be in Arabic only.</p>
         </div>
       </div>
       <div>
-        <label for="email" class="block mb-1">البريد الالكتروني</label>
+        <label for="email" class="block mb-1">Email</label>
         <input
           id="email"
           name="email"
@@ -31,28 +31,26 @@
           *ngIf="email.invalid && (email.dirty || email.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="email.errors?.['required']">البريد الإلكتروني مطلوب.</p>
-          <p *ngIf="email.errors?.['email']">ادخل بريد الكتروني صالح.</p>
+          <p *ngIf="email.errors?.['required']">Email is required.</p>
+          <p *ngIf="email.errors?.['email']">Email is not valid.</p>
         </div>
       </div>
 
       <div>
-        <label for="phone" class="block mb-1">الجوال</label>
+        <label for="phone" class="block mb-1">Phone</label>
         <input
           id="phone"
           name="phone"
-          placeholder="رقم الجوال"
+          placeholder="Phone"
           formControlName="phone"
         />
         <div
           *ngIf="phone.invalid && (phone.dirty || phone.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="phone.errors?.['required']">رقم الجوال مطلوب.</p>
-          <p *ngIf="phone.errors?.['minlength']">
-            رقم الجوال يجب أن يكون من 10 أرقام على الأقل.
-          </p>
-          <p *ngIf="phone.errors?.['pattern']">ادخل رقم جوال سعودي صالح.</p>
+          <p *ngIf="phone.errors?.['required']">Phone is required.</p>
+          <p *ngIf="phone.errors?.['minlength']">Phone is not valid.</p>
+          <p *ngIf="phone.errors?.['pattern']">Phone is not valid.</p>
         </div>
       </div>
 
@@ -79,7 +77,7 @@
             [disabled]="!editProfileForm.valid"
             type="submit"
           >
-            تعديل بيانات الحساب
+            Update
           </button>
         </div>
       </div>

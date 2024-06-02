@@ -9,6 +9,6 @@ export class ContactUsService {
   constructor(private http: HttpClient) {}
   url = environment.url;
   sendMessage(data: {}) {
-    return this.http.post<{}>(`${this.url}/contact-messages`, data);
+    return this.http.post<{}>(`${this.url}/messages`, data);
   }
 }

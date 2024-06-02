@@ -5,11 +5,18 @@ import { AuthService } from '../../../services/auth.service';
 import { first } from 'rxjs';
 import { passwordConfirmValidator } from '../../../shared/validators';
 import { Router } from '@angular/router';
+import { ErrorMessageComponent } from '../../../shared/error-message/error-message.component';
+import { SuccessMessageComponent } from '../../../shared/success-message/success-message.component';
 
 @Component({
   selector: 'app-reset-password',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    ErrorMessageComponent,
+    SuccessMessageComponent,
+  ],
   templateUrl: './reset-password.component.html',
   styleUrl: './reset-password.component.css',
 })
@@ -53,8 +60,7 @@ export class ResetPasswordComponent {
         error: (err) => {
           this.isEmailBtnLoading = false;
 
-          this.errorMessage =
-            'البريد الإلكتروني غير مسجل لدينا، من فضلك تحقق من صحة البريد الإلكتروني وأعد المحاولة.';
+          this.errorMessage = err.error.message;
         },
       });
   }
@@ -89,16 +95,13 @@ export class ResetPasswordComponent {
       .pipe(first())
       .subscribe({
         next: (res) => {
-          this.successMessage =
-            'تم إنشاء كلمة مرور جديدة بنجاح، جاري تحويلك لصفحة تسجيل الدخول.';
-
+          this.successMessage = 'Password has been updated successfully.';
           setTimeout(() => {
             this.router.navigateByUrl('/sign-in');
           }, 5000);
         },
-        error: (err) => {
-          this.errorMessage =
-            'الرمز الذي أدخلته غير صالح، يرجى التأكد من الرمز وإعادة المحاولة';
+        error: (error) => {
+          this.errorMessage = error.error.message;
         },
       });
   }

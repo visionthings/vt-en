@@ -1,33 +1,35 @@
 <section>
   <div id="header"></div>
-  <h3 class="text-center text-3xl mb-10">انشاء حساب جديد</h3>
+  <h3 class="text-center text-3xl mb-10">Create New Account</h3>
   <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
     <div class="container grid grid-cols-1 md:grid-cols-2 gap-10">
       <div>
-        <label for="name" class="block mb-1">اسم المستخدم ثلاثي</label>
+        <label for="name" class="block mb-1">Full Name</label>
         <input
           id="name"
           name="name"
-          placeholder="الاسم ثلاثي باللغة العربية"
+          placeholder="Full name"
           formControlName="name"
         />
         <div
           *ngIf="name.invalid && (name.dirty || name.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="name.errors?.['required']">حقل الاسم مطلوب.</p>
-          <p *ngIf="name.errors?.['pattern']">ادخل الاسم بأحرف عربية فقط.</p>
+          <p *ngIf="name.errors?.['required']">Required.</p>
+          <p *ngIf="name.errors?.['pattern']">
+            Name must be in Arabic letters.
+          </p>
         </div>
       </div>
       <div>
-        <label for="phone">رقم الجوال</label>
+        <label for="phone"> Phone </label>
         <div class="relative">
           <input
             id="phone"
             type="text"
             name="phone"
             formControlName="phone"
-            placeholder="أدخل رقم الجوال "
+            placeholder="Phone"
           />
           <div
             class="phone-icon px-5 rounded-l flex justify-center items-center text-lg"
@@ -39,13 +41,13 @@
           *ngIf="phone.invalid && (phone.dirty || phone.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="phone.errors?.['required']">رقم الجوال مطلوب.</p>
+          <p *ngIf="phone.errors?.['required']">Required.</p>
 
-          <p *ngIf="phone.errors?.['pattern']">رقم الجوال غير صالح.</p>
+          <p *ngIf="phone.errors?.['pattern']">Not Valid.</p>
         </div>
       </div>
       <div>
-        <label for="email" class="block mb-1">البريد الالكتروني</label>
+        <label for="email" class="block mb-1"> Email</label>
         <input
           id="email"
           name="email"
@@ -56,14 +58,12 @@
           *ngIf="email.invalid && (email.dirty || email.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="email.errors?.['required']">البريد الإلكتروني مطلوب.</p>
-          <p *ngIf="email.errors?.['email']">ادخل بريد الكتروني صالح.</p>
+          <p *ngIf="email.errors?.['required']">Required.</p>
+          <p *ngIf="email.errors?.['email']">Not Valid.</p>
         </div>
       </div>
       <div>
-        <label for="email_confirm" class="block mb-1"
-          >تأكيد البريد الالكتروني</label
-        >
+        <label for="email_confirm" class="block mb-1"> Confirm Email</label>
         <input
           id="email_confirm"
           name="email_confirm"
@@ -78,15 +78,13 @@
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
           <p *ngIf="email_confirm.hasError('email_mismatch')">
-            البريد الالكتروني غير متطابق
+            Email mismatch.
           </p>
-          <p *ngIf="email_confirm.hasError('required')">
-            ادخل البريد الإلكتروني مرة أخرى للتأكيد
-          </p>
+          <p *ngIf="email_confirm.hasError('required')">Required.</p>
         </div>
       </div>
       <div>
-        <label for="password" class="block mb-1">كلمة المرور</label>
+        <label for="password" class="block mb-1"> Password.</label>
         <input
           id="password"
           name="password"
@@ -98,16 +96,16 @@
           *ngIf="password.invalid && (password.dirty || password.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="password.errors?.['required']">كلمة المرور مطلوبة .</p>
-          <p *ngIf="password.errors?.['minlength']">ادخل كلمة مرور قوية</p>
+          <p *ngIf="password.errors?.['required']">Required .</p>
+          <p *ngIf="password.errors?.['minlength']">Enter strong password.</p>
         </div>
       </div>
       <div>
-        <label for="password_confirm" class="block mb-1"
-          >تأكيد كلمة المرور</label
+        <label for="password_confirm" class="block mb-1">
+          Password Confirm</label
         >
         <input
-          id="password"
+          id="password_confirm"
           name="password_confirm"
           type="password"
           placeholder="******"
@@ -121,16 +119,16 @@
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
           <p *ngIf="password_confirm.errors?.['required']">
-            ادخل كلمة المرور مرة أخرى للتأكيد
+            Confirm your password
           </p>
           <p *ngIf="password_confirm.errors?.['password_mismatch']">
-            كلمة المرور غير متطابقة
+            Password mismatch
           </p>
         </div>
       </div>
       <div class="md:col-span-2">
-        <label for="commercial_number" class="block mb-1"
-          >رقم السجل التجاري</label
+        <label for="commercial_number" class="block mb-1">
+          Commercial Number</label
         >
         <input
           id="commercial_number"
@@ -145,17 +143,11 @@
           "
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="commercial_number.errors?.['required']">
-            رقم السجل التجاري مطلوب.
-          </p>
-          <p *ngIf="commercial_number.errors?.['pattern']">ادخل أرقام فقط.</p>
+          <p *ngIf="commercial_number.errors?.['required']">Required.</p>
+          <p *ngIf="commercial_number.errors?.['pattern']">Numbers only.</p>
 
-          <p *ngIf="commercial_number.errors?.['minlength']">
-            رقم السجل التجاري يجب أن يكون مكون من 10 أرقام.
-          </p>
-          <p *ngIf="commercial_number.errors?.['maxlength']">
-            رقم السجل التجاري يجب أن يكون مكون من 10 أرقام.
-          </p>
+          <p *ngIf="commercial_number.errors?.['minlength']">Not Valid.</p>
+          <p *ngIf="commercial_number.errors?.['maxlength']">Not Valid.</p>
         </div>
       </div>
 
@@ -169,23 +161,26 @@
             formControlName="agree"
           />
           <label for="agree">
-            أوافق على اتفاقية
+            I Agree to
             <a
               routerLink="/terms-and-conditions"
               class="text-teal-500 underline underline-offset-4"
-              >الشروط والأحكام</a
+            >
+              Terms & Conditions</a
             >
             و
             <a
               routerLink="/privacy-policy"
               class="text-teal-500 underline underline-offset-4"
-              >سياسة الخصوصية</a
+            >
+              Privacy Policy</a
             >
             و
             <a
               routerLink="/return-policy"
               class="text-teal-500 underline underline-offset-4"
-              >سياسة الاستبدال والاسترجاع</a
+            >
+              Return Policy</a
             >
           </label>
         </div>
@@ -194,8 +189,8 @@
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
           <p>
-            يجب الموافقة أولاً على اتفاقية الشروط والأحكام وسياسة الخصوصية
-            وسياسة الاستبدال والاسترجاع.
+            You must first agree to the Terms and Conditions Agreement and
+            Privacy Policy And exchange and return policy.
           </p>
         </div>
       </div>
@@ -206,15 +201,6 @@
           siteKey="6LdG4egpAAAAAJ3SGSIirUiuo6xekatxoiFOWp4Q"
           formControlName="recaptchaReactive"
         ></re-captcha>
-
-        @if (recaptchaReactive.hasError('required')) {
-        <div
-          *ngIf="showAgreeError"
-          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
-        >
-          <p>هذا الحقل إلزامي.</p>
-        </div>
-        }
       </div>
 
       <!-- Submit Button -->
@@ -247,15 +233,14 @@
                 fill="currentColor"
               />
             </svg>
-            } @else {إنشاء حساب جديد}
+            } @else { Create New Account}
           </button>
         </div>
 
         <p class="py-5 text-center">
-          لديك حساب بالفعل؟
-          <a routerLink="/sign-in" class="text-blue-800 underline">
-            سجل دخولك الآن
-          </a>
+          Already have an account?
+          <a routerLink="/sign-in" class="text-blue-800 underline"> Login </a>
+          now
         </p>
       </div>
     </div>

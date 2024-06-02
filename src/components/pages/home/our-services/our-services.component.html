@@ -8,7 +8,7 @@
         width="50"
         height="50"
       />
-      <h3 class="text-3xl text-center text-black mx-3">خدماتنا</h3>
+      <h3 class="text-3xl text-center text-black mx-3">Our Services</h3>
     </div>
 
     <!-- Content -->
@@ -25,31 +25,51 @@
         </div>
         <div class="flex flex-col justify-center">
           <div class="container">
-            <h4 class="text-xl leading-relaxed">عقد صيانة كاميرات</h4>
+            <h4 class="text-xl leading-relaxed">
+              Cameras Maintenance Contract
+            </h4>
             <p class="mb-3">
-              تقوم شركة رؤية الأشياء بتوصيل وتمديد شبكات الكاميرات الأمنية كما
-              تمكنكم من التعاقد إلكترونيا على التركيب والتمديد وحجز موعد
-              للمعاينة السريعة.
+              Vision Things Company connects and extends security camera
+              networks as well It enables you to contract electronically for
+              installation and extension and book an appointment For quick
+              preview.
             </p>
-            <app-green-button
-              text="تعاقد الآن"
-              rightIcon="assets/images/our_services/button_contract_icon.png"
-              route="/contract/create-new-contract"
-            ></app-green-button>
+            <a routerLink="/contract/create-new-contract">
+              <app-green-button>
+                <div class="flex gap-3">
+                  <img
+                    ngSrc="assets/images/our_services/button_contract_icon.png"
+                    alt="Contract Icon"
+                    width="20"
+                    height="20"
+                  />
+                  <p>Contract Now</p>
+                </div>
+              </app-green-button></a
+            >
           </div>
         </div>
         <div class="flex flex-col justify-center">
           <div class="container">
-            <h4 class="text-xl leading-relaxed">تجديد عقد صيانة الكاميرات</h4>
+            <h4 class="text-xl leading-relaxed">Renew Contract</h4>
             <p class="mb-3">
-              اذا كان لديك تعاقد معنا وترغب بتجديده، توفر شركة رؤية الأشياء
-              امكانية تجديد العقد الكترونياً.
+              If you have a contract with us and would like to renew it, Vision
+              Things Company provides Possibility of renewing the contract
+              electronically.
             </p>
-            <app-green-button
-              text="جدد عقدك الآن"
-              rightIcon="assets/images/our_services/button_contract_icon.png"
-              route="/contract/registered-contracts"
-            ></app-green-button>
+            <a routerLink="/contract/registered-contracts">
+              <app-green-button>
+                <div class="flex gap-3">
+                  <img
+                    ngSrc="assets/images/our_services/button_contract_icon.png"
+                    alt="Contract Icon"
+                    width="20"
+                    height="20"
+                  />
+                  <p>Renew Your Contract Now</p>
+                </div></app-green-button
+              ></a
+            >
           </div>
         </div>
         <div class="flex justify-center animate-bounce-slow">
@@ -65,8 +85,9 @@
       <!-- Middle text -->
       <div class="container">
         <p class="text-center py-20 md:px-20">
-          تقدم شركة رؤية الأشياء العديد من الخدمات والحلول الأمنية لتأمين منزلك
-          وعملك باستخدام افضل واحدث كاميرات المراقبة والأنظمة الأمنية
+          Vision Things Company offers many security services and solutions to
+          secure your home And your work uses the best and latest surveillance
+          cameras and security systems
         </p>
       </div>
 
@@ -99,7 +120,9 @@
 
       <!-- Know more button -->
       <div class="flex justify-center pt-10">
-        <app-green-button text="اعرف أكثر" route="/about-us"></app-green-button>
+        <a routerLink="/about-us">
+          <app-green-button> Know More</app-green-button></a
+        >
       </div>
     </div>
   </div>

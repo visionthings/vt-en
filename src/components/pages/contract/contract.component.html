@@ -4,7 +4,7 @@
       class="md:col-span-3 bg-white rounded-lg pt-5 shadow hidden md:flex flex-col justify-between"
     >
       <div class="container mb-20">
-        <h2 class="text-4xl leading-relaxed mb-2">خدماتي</h2>
+        <h2 class="text-4xl leading-relaxed mb-2">My Services</h2>
         @for (service of services; track service.id) {
         <a [routerLink]="service.path" routerLinkActive="active">
           <p class="mb-1">{{ service.title }}</p>
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="bg-white rounded-lg py-5 shadow container md:hidden">
-      <h2 class="text-4xl text-center leading-relaxed mb-2">خدماتي</h2>
+      <h2 class="text-4xl text-center leading-relaxed mb-2">Services</h2>
       <form>
         <select
           #servicesOption

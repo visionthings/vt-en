@@ -26,22 +26,22 @@ export class NavbarComponent implements OnInit {
   navItems: { id: number; title: string; path: string }[] = [
     {
       id: 1,
-      title: `الرئيسية`,
+      title: `Home`,
       path: 'home',
     },
     {
       id: 2,
-      title: `عن الشركة`,
+      title: `About Us`,
       path: '/about-us',
     },
     {
       id: 3,
-      title: `عقد الكاميرات`,
+      title: `Cameras Contract`,
       path: '/contract',
     },
     {
       id: 4,
-      title: `اتصل بنا`,
+      title: `Contact Us`,
       path: '/contact-us',
     },
   ];
@@ -55,7 +55,7 @@ export class NavbarComponent implements OnInit {
 
   changeLanguage() {
     if (typeof window !== 'undefined') {
-      location.href = `https://en.vt.com.sa${this.router.url}`;
+      location.href = `https://vt.com.sa/home`;
     }
   }
 

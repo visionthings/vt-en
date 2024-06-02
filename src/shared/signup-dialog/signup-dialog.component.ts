@@ -37,14 +37,13 @@ export class SignupDialogComponent {
         next: (res: any) => {
           user = res.user;
           localStorage.setItem('token', res.token);
-          localStorage.setItem('email_verified', 'no');
           localStorage.setItem('id', res.user.id);
           localStorage.setItem('name', res.user.name);
           localStorage.setItem('email', res.user.email);
           localStorage.setItem('phone', res.user.phone);
           localStorage.setItem('commercial_number', res.user.commercial_number);
           localStorage.setItem('address', res.user.address);
-          localStorage.setItem('email_verified', res.user.email_verified);
+          localStorage.setItem('email_verified_at', res.user.email_verified_at);
           this.authService.handleAuth();
           this.authService
             .addCompanyToUser(this.data.companyData, res.user.id)
@@ -65,16 +64,20 @@ export class SignupDialogComponent {
               },
               error: (err) => {
                 this.isLoading = false;
-                this.errorMessage = 'خطأ فى الاتصال، يرجى المحاولة مرة أخرى';
+                this.errorMessage = 'Connection Error! Please try again later.';
                 console.log(this.data.companyData);
               },
             });
         },
         error: (error) => {
           this.isLoading = false;
-
-          error.error.message === 'The email has already been taken.' &&
-            (this.errorMessage = `البريد الالكتروني الذي ادخلته مستخدم بالفعل`);
+          if (error.error.errors['email']) {
+            this.errorMessage = 'Email is already in use.';
+          } else if (error.error.errors['phone']) {
+            this.errorMessage = 'Phone is already in use.';
+          } else {
+            this.errorMessage = error.error.message;
+          }
         },
       });
   }

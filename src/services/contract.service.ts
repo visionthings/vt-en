@@ -9,17 +9,6 @@ export class ContractService {
   constructor(private http: HttpClient) {}
   url = environment.url;
 
-  // Get contract number
-  getContractNumber() {
-    let token;
-    if (typeof window !== 'undefined') {
-      token = localStorage.getItem('token');
-    }
-    return this.http.get(`${this.url}/contracts/number`, {
-      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
-    });
-  }
-
   // Create new contract
   createContract(contractData: any) {
     let token;
@@ -32,19 +21,20 @@ export class ContractService {
   }
 
   // Renew Contract
-  renewContract(contractData: any) {
-    let token, contractNumber;
+  renewContract() {
+    let token, contract_number, expired_contract_number;
     if (typeof window !== 'undefined') {
       token = localStorage.getItem('token');
-      contractNumber = localStorage.getItem('contract_number');
+      contract_number = localStorage.getItem('contract_number');
+      expired_contract_number = localStorage.getItem('expired_contract_number');
     }
-    return this.http.post(
-      `${this.url}/contracts/${contractNumber}`,
-      contractData,
-      {
-        headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
-      }
-    );
+    let data = {
+      contract_number: contract_number,
+      expired_contract_number: expired_contract_number,
+    };
+    return this.http.post(`${this.url}/contracts/renew-contract`, data, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+    });
   }
 
   // Get contract details by contract number
@@ -55,6 +45,32 @@ export class ContractService {
       token = localStorage.getItem('token');
     }
     return this.http.get(`${this.url}/contracts/search/${contractNumber}`, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+    });
+  }
+
+  // Get cameras price list
+  getCamerasPriceList() {
+    return this.http.get(`${this.url}/camera-prices`);
+  }
+
+  // Apply Discount
+  applyDiscount(data: any) {
+    let token;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+    }
+    return this.http.post(`${this.url}/contracts/apply-discount`, data, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
+    });
+  }
+
+  applyPayment(data: any) {
+    let token;
+    if (typeof window !== 'undefined') {
+      token = localStorage.getItem('token');
+    }
+    return this.http.post(`${this.url}/contracts/apply-payment`, data, {
       headers: new HttpHeaders({ Authorization: `Bearer ${token}` }),
     });
   }

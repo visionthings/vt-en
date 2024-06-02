@@ -1,6 +1,6 @@
 <section class="container py-10">
   <div class="bg-white py-10 rounded-lg shadow container">
-    <p class="text-lg font-bold mb-10">بيانات شركتك</p>
+    <p class="text-lg font-bold mb-10">Company Information</p>
 
     <!-- Company Information Form -->
     <form
@@ -10,13 +10,13 @@
     >
       <!-- Company Name -->
       <div>
-        <label for="company_name">اسم الشركة</label>
+        <label for="company_name"> Company Name</label>
         <input
           type="text"
           id="company_name"
           formControlName="company_name"
           name="company_name"
-          placeholder="اسم شركتك"
+          placeholder="Company Name"
         />
 
         <div
@@ -25,19 +25,21 @@
           "
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="company_name.errors?.['required']">هذا الحقل مطلوب.</p>
+          <p *ngIf="company_name.errors?.['required']">
+            Company name is required.
+          </p>
         </div>
       </div>
 
       <!-- Company Type -->
       <div>
-        <label for="company_type">نوع الشركة</label>
+        <label for="company_type"> Company Type</label>
         <input
           type="text"
           id="company_type"
           formControlName="company_type"
           name="company_type"
-          placeholder="نوع شركتك مثال: ذات مسئولية محدودة"
+          placeholder="Enter your company type"
         />
 
         <div
@@ -46,19 +48,21 @@
           "
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="company_type.errors?.['required']">هذا الحقل مطلوب.</p>
+          <p *ngIf="company_type.errors?.['required']">
+            This field is required.
+          </p>
         </div>
       </div>
 
       <!-- Building Number -->
       <div>
-        <label for="building_number">رقم المبنى</label>
+        <label for="building_number"> Building Number</label>
         <input
           type="text"
           id="building_number"
           formControlName="building_number"
           name="building_number"
-          placeholder="رقم المبنى"
+          placeholder="Building Number"
         />
 
         <div
@@ -68,64 +72,66 @@
           "
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="building_number.errors?.['required']">هذا الحقل مطلوب.</p>
+          <p *ngIf="building_number.errors?.['required']">
+            This field is required.
+          </p>
         </div>
       </div>
 
       <!-- Street -->
       <div>
-        <label for="street">اسم الشارع</label>
+        <label for="street">Street name</label>
         <input
           type="text"
           id="street"
           formControlName="street"
           name="street"
-          placeholder="اسم الشارع"
+          placeholder="Street name"
         />
 
         <div
           *ngIf="street.invalid && (street.dirty || street.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="street.errors?.['required']">هذا الحقل مطلوب.</p>
+          <p *ngIf="street.errors?.['required']">This field is required.</p>
         </div>
       </div>
 
       <!-- District -->
       <div>
-        <label for="district"> الحي</label>
+        <label for="district"> District</label>
         <input
           type="text"
           id="district"
           formControlName="district"
           name="district"
-          placeholder="الحي"
+          placeholder="District"
         />
 
         <div
           *ngIf="district.invalid && (district.dirty || district.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="district.errors?.['required']">هذا الحقل مطلوب.</p>
+          <p *ngIf="district.errors?.['required']">This field is required.</p>
         </div>
       </div>
 
       <!-- City -->
       <div>
-        <label for="city"> المدينة</label>
+        <label for="city"> City</label>
         <input
           type="text"
           id="city"
           formControlName="city"
           name="city"
-          placeholder=" المدينة"
+          placeholder=" City"
         />
 
         <div
           *ngIf="city.invalid && (city.dirty || city.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="city.errors?.['required']">هذا الحقل مطلوب.</p>
+          <p *ngIf="city.errors?.['required']">This field is required.</p>
         </div>
       </div>
 
@@ -136,7 +142,7 @@
           class="bg-teal-500 text-white rounded-lg py-2 px-10"
           [disabled]="companyInformationForm.invalid"
         >
-          ارسال
+          Submit
         </button>
       </div>
     </form>

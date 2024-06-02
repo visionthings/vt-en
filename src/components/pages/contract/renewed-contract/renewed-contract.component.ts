@@ -1,6 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from "@angular/core";
 import { CommonModule, NgOptimizedImage } from "@angular/common";
-import { GreenButtonComponent } from "../../../custom/green-button/green-button.component";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { QrCodeModule } from "ng-qrcode";
@@ -8,6 +7,8 @@ import { ContractPdfComponent } from "../contract-pdf/contract-pdf.component";
 import { ContractService } from "../../../../services/contract.service";
 import { first } from "rxjs";
 import { InvoiceService } from "../../../../services/invoice.service";
+import { GreenButtonComponent } from "../../../../shared/green-button/green-button.component";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-renewed-contract",
@@ -15,9 +16,9 @@ import { InvoiceService } from "../../../../services/invoice.service";
   imports: [
     CommonModule,
     NgOptimizedImage,
-    GreenButtonComponent,
     QrCodeModule,
     ContractPdfComponent,
+    GreenButtonComponent,
   ],
   templateUrl: "./renewed-contract.component.html",
   styleUrl: "./renewed-contract.component.css",
@@ -26,105 +27,86 @@ export class RenewedContractComponent implements OnInit {
   @ViewChild("contract") contract!: ElementRef;
   constructor(
     private contractService: ContractService,
-    private invoiceService: InvoiceService
+    private invoiceService: InvoiceService,
+    private router: Router
   ) {}
 
-  isRenewing: boolean = true;
+  contract_number: any = null;
+  isLoading = true;
+  contractData: any = null;
 
   ngOnInit(): void {
+    if (typeof window !== "undefined") {
+      this.contract_number = localStorage.getItem("contract_number");
+    }
     this.contractService
-      .renewContract(this.data)
-      .pipe(first())
+      .getContractDataByNumber(this.contract_number)
       .subscribe({
         next: (res) => {
-          this.isRenewing = false;
+          this.contractData = res;
         },
-        error: (err) => {
-          console.log(err);
-        },
-      });
+        complete: () => {
+          this.isLoading = false;
+          let invoiceData = [
+            {
+              channels: [
+                {
+                  medium: "email",
+                  data: {
+                    subject: "فاتورة عقد صيانة كاميرات",
+                    message: "فاتورة عقد صيانة كاميرات   ",
+                    recipients: { to: [this.contractData.email] },
+                  },
+                },
+              ],
+              contact: {
+                name: this.contractData.name,
+              },
+              currency: "SAR",
+              language: "ar",
+              project: "VT",
 
-    this.invoiceService
-      .sendInvoice(this.invoiceData)
-      .pipe(first())
-      .subscribe({
-        next: (res) => {
-          console.log(res);
-        },
-        error: (err) => {
-          console.log(err);
+              invoice_number: this.contractData.id,
+              invoice_date: this.contractData.contract_date,
+              line_items: [
+                {
+                  name: "عقد صيانة كاميرات مراقبة",
+                  description: "عقد صيانة لمدة عام ",
+                  quantity: 1,
+                  discount: {
+                    type: "percent",
+                    value: this.contractData.discount,
+                  },
+                  price: this.contractData.price,
+                  tax_rate: "tax_X5GRWKNpRjPfMDqWCJBtAV",
+                },
+              ],
+              status: "PAID",
+              tax_amount_type: "TAX_INCLUSIVE",
+              paid_through_account: "acc_JZrYxV5GsFDWMkfe6QK2HM",
+            },
+          ];
+          if (this.contractData.is_paid == 1) {
+            this.invoiceService
+              .sendInvoice(invoiceData)
+              .pipe(first())
+              .subscribe({
+                next: (res) => {
+                  console.log(res);
+                },
+                error: (err) => {
+                  console.log(err);
+                },
+              });
+          } else {
+            this.router.navigateByUrl("/contract/create-new-contract");
+          }
         },
       });
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("contract_number");
+    }
   }
-
-  // Contract Data
-  date = new Date();
-
-  currentDate = `${this.date.getFullYear()}-${
-    this.date.getMonth() + 1
-  }-${this.date.getDate()}`;
-
-  newExpiryYear = new Date();
-  expiryYear: any = this.newExpiryYear.setFullYear(
-    this.newExpiryYear.getFullYear() + 1
-  );
-
-  expiryDate = `${this.date.getDate()} - ${
-    this.date.getMonth() + 1
-  } - ${this.newExpiryYear.getFullYear()} `;
-
-  data: any = {
-    user_id:
-      typeof window !== "undefined" && window?.localStorage?.getItem("id"),
-    name:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("company_name"),
-    phone:
-      typeof window !== "undefined" && window?.localStorage?.getItem("phone"),
-    email:
-      typeof window !== "undefined" && window?.localStorage?.getItem("email"),
-    commercial_number:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("commercial_number"),
-    address:
-      typeof window !== "undefined" && window?.localStorage?.getItem("address"),
-
-    indoor_cameras:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("indoor_cameras"),
-    outdoor_cameras:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("outdoor_cameras"),
-    storage_device:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("storage_device"),
-    period_of_record:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("period_of_record"),
-    show_screens:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("show_screens"),
-    camera_type:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("camera_type"),
-    total_cameras:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("total_cameras"),
-    contract_date: this.currentDate,
-    expiry_date: this.expiryDate,
-    contract_number:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("contract_number"),
-    price:
-      typeof window !== "undefined" && window?.localStorage?.getItem("price"),
-    vat: typeof window !== "undefined" && window?.localStorage?.getItem("vat"),
-    total_price:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("total_price"),
-    discount:
-      typeof window !== "undefined" &&
-      window?.localStorage?.getItem("discount"),
-  };
 
   generateContract() {
     let DATA: any = document.getElementById("contract");
@@ -138,36 +120,4 @@ export class RenewedContractComponent implements OnInit {
       PDF.save("Vision_Things_Contract.pdf");
     });
   }
-
-  // Invoice data
-  invoiceData = [
-    {
-      channels: [
-        {
-          medium: "email",
-          data: {
-            subject: "فاتورة عقد كاميرات رؤية الأشياء",
-            message: "فاتورة عقد كاميرات رؤية الأشياء",
-            recipients: { to: [this.data.email] },
-          },
-        },
-      ],
-      contact: {
-        name: this.data.name,
-      },
-      currency: "SAR",
-      language: "ar",
-      tax_amount_type: "TAX_EXCLUSIVE",
-      invoice_number: this.data.contract_number,
-      invoice_date: this.data.contract_date,
-      line_items: [
-        {
-          name: "عقد صيانة كاميرات لمدة عام",
-          description: "عقد صيانة كاميرات مراقبة",
-          quantity: 1,
-          price: Number(this.data.total_price).toFixed(2),
-        },
-      ],
-    },
-  ];
 }

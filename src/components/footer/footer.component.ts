@@ -16,57 +16,57 @@ export class FooterComponent {
   footerColumns: any[] = [
     {
       id: 1,
-      title: `روابط سريعة`,
+      title: 'Quick Links',
       items: [
         {
           id: 1,
-          title: `الرئيسية`,
+          title: `Home`,
           path: '/',
         },
         {
           id: 2,
-          title: `عن الشركة`,
+          title: `About Us`,
           path: '/about-us',
         },
         {
           id: 3,
-          title: `عقد الكاميرات`,
+          title: `Cameras Contract`,
           path: '/contract',
         },
         {
           id: 4,
-          title: `اتصل بنا`,
+          title: 'Contact Us',
           path: '/contact-us',
         },
       ],
     },
     {
       id: 2,
-      title: `الأحكام والشروط`,
+      title: `Terms & Conditions`,
       items: [
         {
           id: 1,
-          title: `الأحكام والشروط`,
+          title: `Terms & Conditions`,
           path: '/terms-and-conditions',
         },
-        { id: 2, title: `سياسة الخصوصية`, path: '/privacy-policy' },
+        { id: 2, title: 'Privacy Policy', path: '/privacy-policy' },
         {
           id: 3,
-          title: `سياسة الاستبدال والاسترجاع`,
+          title: 'Return Policy',
           path: '/return-policy',
         },
       ],
     },
     {
       id: 3,
-      title: `العنوان`,
+      title: 'Address',
       items: [
         {
           id: 1,
-          title: `المملكة العربية السعودية - جدة - حي الزهراء`,
+          title: 'Al Zahraa District, Jeddah, Saudi Arabia',
           path: null,
         },
-        { id: 2, title: `الرمز البريدي: 23522`, path: null },
+        { id: 2, title: 'Postal Code: 23522', path: null },
       ],
     },
   ];

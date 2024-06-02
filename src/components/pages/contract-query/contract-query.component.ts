@@ -21,11 +21,11 @@ export class ContractQueryComponent implements OnInit {
   errorMessage: undefined | string = undefined;
   isValid: boolean | undefined = undefined;
   totalCameras = 0;
+  isLoading = true;
   ngOnInit(): void {
     this.contractService.getContractDataByNumber(this.id).subscribe({
       next: (res: any) => {
-        console.log(res);
-
+        this.isLoading = false;
         this.contractData = res;
         this.totalCameras =
           Number(res.indoor_cameras) + Number(res.outdoor_cameras);
@@ -34,8 +34,10 @@ export class ContractQueryComponent implements OnInit {
         const expiry_month = expiry_date.slice(4, 7);
         const expiry_year = expiry_date.slice(9, 13);
 
-        if (new Date(expiry_year, expiry_month - 1, expiry_day) > new Date()) {
+        if (new Date(expiry_year, expiry_month - 1, expiry_day) < new Date()) {
           this.isValid = true;
+        } else {
+          this.isValid = false;
         }
       },
       error: (err) => {

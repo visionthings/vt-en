@@ -27,14 +27,13 @@ export class EmailVerificationComponent {
       };
       this.authService.sendVerificationMail(user).subscribe({
         next: (res) => {
-          this.message = 'تم إعادة إرسال رمز التفعيل بنجاح.';
+          this.message = 'Email sent successfully';
           setTimeout(() => {
             this.message = null;
           }, 5000);
         },
         error: (err) => {
-          this.message =
-            'تعذر إعادة إرسال رمز التفعيل، يرجى المحاولة مرة أخرى، إذا استمرت المشكلة يرجى الاتصال بنا.';
+          this.message = 'Failed to send.';
         },
       });
     }

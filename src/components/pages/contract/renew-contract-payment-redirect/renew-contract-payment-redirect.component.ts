@@ -27,15 +27,18 @@ export class RenewContractPaymentRedirectComponent implements OnInit {
     this.route.queryParamMap.pipe(first()).subscribe({
       next: (res: any) => {
         if (res.params.message === "APPROVED" && res.params.status === "paid") {
-          this.message = `عملية الدفع تمت بنجاح وجاري تحويلك الآن لصفحة تحميل العقد`;
+          this.message = "Payment done successfully";
           this.url = "/contract/renewed-contract";
           this.img = "success";
-
-          setTimeout(() => {
-            this.router.navigateByUrl("/contract/renewed-contract");
-          }, 3000);
+          this.contract.renewContract().subscribe({
+            next: () => {
+              setTimeout(() => {
+                this.router.navigateByUrl("/contract/renewed-contract");
+              }, 3000);
+            },
+          });
         } else {
-          this.message = `تعذر اتمام عملية السداد، جاري تحويلك لصفحة الدفع مرة أخرى`;
+          this.message = "Payment Failed!";
           this.url = "/contract/renew-contract-payment";
           this.img = "failed";
           setTimeout(() => {

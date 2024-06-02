@@ -1,57 +1,54 @@
-import { Component, Injectable, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { RouterLink, Router } from '@angular/router';
-import { first } from 'rxjs';
-import { ContractService } from '../../../../services/contract.service';
+import { Component, Injectable, OnInit } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { ActivatedRoute } from "@angular/router";
+import { RouterLink, Router } from "@angular/router";
+import { first } from "rxjs";
+import { ContractService } from "../../../../services/contract.service";
 
 @Component({
-  selector: 'app-payment-redirect',
+  selector: "app-payment-redirect",
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './payment-redirect.component.html',
-  styleUrl: './payment-redirect.component.css',
+  templateUrl: "./payment-redirect.component.html",
+  styleUrl: "./payment-redirect.component.css",
 })
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class PaymentRedirectComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private contract: ContractService
+    private contractService: ContractService
   ) {}
 
-  message = '';
-  url = '';
-  img = '';
+  message = "";
+  url = "";
+  img = "";
   ngOnInit(): void {
     this.route.queryParamMap.pipe(first()).subscribe({
       next: (res: any) => {
-        if (res.params.message === 'APPROVED' && res.params.status === 'paid') {
-          this.message = `عملية الدفع تمت بنجاح وجاري تحويلك الآن لصفحة تحميل العقد`;
-          this.url = '/contract/final-contract';
-          this.img = 'success';
-          this.contract
-            .getContractNumber()
-            .pipe(first())
+        if (res.params.message === "APPROVED" && res.params.status === "paid") {
+          this.message = "Payment done successfully";
+          this.url = "/contract/final-contract";
+          this.img = "success";
+          let contract_number;
+          if (typeof window !== "undefined") {
+            contract_number = localStorage.getItem("contract_number");
+          }
+          this.contractService
+            .applyPayment({ contract_number: contract_number })
             .subscribe({
-              next: (res: any) => {
-                if (typeof window !== 'undefined') {
-                  localStorage.setItem('contract_number', res);
-                }
-              },
-              error: (err) => {
-                console.log(err);
+              next: () => {
+                setTimeout(() => {
+                  this.router.navigateByUrl("/contract/final-contract");
+                }, 3000);
               },
             });
-          setTimeout(() => {
-            this.router.navigateByUrl('/contract/final-contract');
-          }, 3000);
         } else {
-          this.message = `تعذر اتمام عملية السداد، جاري تحويلك لصفحة الدفع مرة أخرى`;
-          this.url = '/contract/payment';
-          this.img = 'failed';
+          this.message = "Payment Failed";
+          this.url = "/contract/payment";
+          this.img = "failed";
           setTimeout(() => {
-            this.router.navigateByUrl('/contract/payment');
+            this.router.navigateByUrl("/contract/payment");
           }, 3000);
         }
       },

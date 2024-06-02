@@ -18,19 +18,27 @@ export class EmailVerifiedComponent implements OnInit {
     private auth: AuthService
   ) {}
 
-  id = this.route.snapshot.paramMap.get('id');
   message = '';
 
   ngOnInit(): void {
+    let id, token;
+    this.route.queryParamMap.pipe(first()).subscribe({
+      next: (res: any) => {
+        (id = res.params.id), (token = res.params.token);
+      },
+    });
+
     this.auth
-      .verifyEmail(this.id)
+      .verifyEmail(id, token)
       .pipe(first())
       .subscribe({
         next: (res: any) => {
-          this.message =
-            'تم تفعيل حسابك بنجاح، وجاري تحويلك الآن لصفحة إنشاء العقد.';
+          this.message = 'Your account has been activated successfully.';
           if (typeof window !== 'undefined') {
-            window?.localStorage?.setItem('email_verified', res.email_verified);
+            window?.localStorage?.setItem(
+              'email_verified_at',
+              res.email_verified_at
+            );
           }
 
           setTimeout(() => {
@@ -38,7 +46,7 @@ export class EmailVerifiedComponent implements OnInit {
           }, 5000);
         },
         error: (err) => {
-          this.message = 'تعذر تفعيل الحساب، يرجى المحاولة مرة أخرى';
+          this.message = 'Failed to activate account.';
         },
       });
   }

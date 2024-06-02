@@ -110,7 +110,7 @@ export class SignUpComponent {
     return this.signUpForm.controls['agree'];
   }
   get recaptchaReactive() {
-    return this.signUpForm.controls['agree'];
+    return this.signUpForm.controls['recaptchaReactive'];
   }
 
   // Sign Up
@@ -150,7 +150,10 @@ export class SignUpComponent {
 
                   user = res.user;
                   localStorage.setItem('token', res.token);
-                  localStorage.setItem('email_verified', 'no');
+                  localStorage.setItem(
+                    'email_verified_at',
+                    res.user.email_verified_at
+                  );
                   localStorage.setItem('id', res.user.id);
                   localStorage.setItem('name', res.user.name);
                   localStorage.setItem('email', res.user.email);
@@ -160,18 +163,14 @@ export class SignUpComponent {
                     this.signUpForm.controls['commercial_number'].value
                   );
                   localStorage.setItem('address', res.user.address);
-                  localStorage.setItem(
-                    'email_verified',
-                    res.user.email_verified
-                  );
+
                   this.authService.handleAuth();
                   this.router.navigateByUrl('/company-information');
                 },
                 error: (error) => {
                   this.signupLoading = false;
 
-                  error.error.message === 'The email has already been taken.' &&
-                    (this.errorMessage = `البريد الالكتروني الذي ادخلته مستخدم بالفعل`);
+                  this.errorMessage = error.error.message;
                 },
               });
             } else {

@@ -11,6 +11,7 @@ import {
   MatDialogClose,
 } from '@angular/material/dialog';
 import { Subscription, first } from 'rxjs';
+import { RecaptchaFormsModule, RecaptchaModule } from 'ng-recaptcha';
 
 export interface DialogData {
   message: string;
@@ -19,7 +20,13 @@ export interface DialogData {
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    NgOptimizedImage,
+    ReactiveFormsModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
+  ],
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.css',
 })
@@ -54,6 +61,7 @@ export class ContactUsComponent implements OnDestroy {
     email: ['', [Validators.required, Validators.email]],
     subject: ['', [Validators.required, Validators.minLength(3)]],
     message: ['', [Validators.required, Validators.minLength(3)]],
+    recaptchaReactive: ['', Validators.required],
   });
 
   get name() {
@@ -71,7 +79,9 @@ export class ContactUsComponent implements OnDestroy {
   get message() {
     return this.contactForm.controls['message'];
   }
-
+  get recaptchaReactive() {
+    return this.contactForm.controls['recaptchaReactive'];
+  }
   openDialog(message: string) {
     this.dialog.open(DialogDataExampleDialog, {
       data: {

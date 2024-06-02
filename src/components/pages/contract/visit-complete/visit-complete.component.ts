@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { AuthService } from '../../../../services/auth.service';
-import { VisitRequestService } from '../../../../services/visit-request.service';
+import { Component, OnInit } from "@angular/core";
+import { CommonModule, NgOptimizedImage } from "@angular/common";
+import { AuthService } from "../../../../services/auth.service";
+import { VisitRequestService } from "../../../../services/visit-request.service";
 
 @Component({
-  selector: 'app-visit-complete',
+  selector: "app-visit-complete",
   standalone: true,
   imports: [CommonModule, NgOptimizedImage],
-  templateUrl: './visit-complete.component.html',
-  styleUrl: './visit-complete.component.css',
+  templateUrl: "./visit-complete.component.html",
+  styleUrl: "./visit-complete.component.css",
 })
 export class VisitCompleteComponent implements OnInit {
   constructor(
@@ -24,7 +24,7 @@ export class VisitCompleteComponent implements OnInit {
   }
 
   // Send visit request
-  userID = typeof window !== 'undefined' && localStorage.getItem('id');
+  userID = typeof window !== "undefined" && localStorage.getItem("id");
   userData: any = null;
   responseMessage: string | null = null;
 
@@ -43,9 +43,9 @@ export class VisitCompleteComponent implements OnInit {
           .subscribe({
             next: (res: any) => {
               console.log(res);
-              this.responseMessage = `تم تقديم طلب زيارة برقم ${
+              this.responseMessage = `Visit request sent successfully with a number ${
                 res.id + 10000
-              }، وسيتم الاتصال بك في خلال 24 ساعة.`;
+              } and we will contact you soon.`;
             },
             error: (err) => {
               console.log(err);

@@ -1,10 +1,10 @@
 <section>
   <div id="header"></div>
-  <h3 class="text-center text-3xl mb-10">تسجيل الدخول</h3>
+  <h3 class="text-center text-3xl mb-10">Sign In</h3>
   <form [formGroup]="signInForm" (ngSubmit)="signIn()">
     <div class="container grid grid-cols-1 gap-10">
       <div>
-        <label for="email" class="block mb-1">البريد الالكتروني</label>
+        <label for="email" class="block mb-1"> Email</label>
         <input
           id="email"
           name="email"
@@ -15,12 +15,12 @@
           *ngIf="email.invalid && (email.dirty || email.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="email.errors?.['required']">البريد الإلكتروني مطلوب.</p>
-          <p *ngIf="email.errors?.['email']">ادخل بريد الكتروني صالح.</p>
+          <p *ngIf="email.errors?.['required']">Email is required.</p>
+          <p *ngIf="email.errors?.['email']">Email is not valid.</p>
         </div>
       </div>
       <div>
-        <label for="password" class="block mb-1">كلمة المرور</label>
+        <label for="password" class="block mb-1"> Password</label>
         <input
           id="password"
           name="password"
@@ -32,25 +32,15 @@
           *ngIf="password.invalid && (password.dirty || password.touched)"
           class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded"
         >
-          <p *ngIf="password.errors?.['required']">كلمة المرور مطلوبة .</p>
-          <p *ngIf="password.errors?.['minlength']">
-            ادخل كلمة مرور قوية مكونة من 6 أرقام على الأقل
-          </p>
-        </div>
-      </div>
-      <div>
-        <div
-          *ngIf="errorMessage"
-          class="w-100 py-2 container bg-pink-300 text-rose-700 mt-1 rounded col-span-2"
-        >
-          <p class="text-center">{{ errorMessage }}</p>
+          <p *ngIf="password.errors?.['required']">Password is required.</p>
+          <p *ngIf="password.errors?.['minlength']">Enter strong password.</p>
         </div>
       </div>
       <div>
         <div>
           <a routerLink="/reset-password">
             <p class="mb-5 text-center text-blue-800 underline">
-              نسيت كلمة السر؟
+              Forgot Password?
             </p>
           </a>
         </div>
@@ -64,17 +54,21 @@
             [disabled]="!signInForm.valid"
             type="submit"
           >
-            تسجيل الدخول
+            Sign In
           </button>
         </div>
 
         <p class="py-5 text-center">
-          ليس لديك حساب؟
-          <a routerLink="/sign-up" class="text-blue-800 underline"
-            >انشئ حساب الآن</a
-          >
+          Don't have an account?
+          <a routerLink="/sign-up" class="text-blue-800 underline">
+            Create Account Now
+          </a>
         </p>
       </div>
     </div>
   </form>
 </section>
+
+@if(errorMessage) {
+<app-error-message [message]="errorMessage"></app-error-message>
+}

@@ -3,11 +3,17 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
 import { AuthService, User } from '../../../services/auth.service';
+import { ErrorMessageComponent } from '../../../shared/error-message/error-message.component';
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [CommonModule, RouterModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    ErrorMessageComponent,
+  ],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css',
 })
@@ -50,17 +56,13 @@ export class SignInComponent {
         localStorage.setItem('id', res.user.id);
         localStorage.setItem('name', res.user.name);
         localStorage.setItem('email', res.user.email);
-        localStorage.setItem('password', res.user.password);
-        localStorage.setItem('phone', res.user.phone);
-        localStorage.setItem('commercial_number', res.user.commercial_number);
-        localStorage.setItem('address', res.user.address);
-        localStorage.setItem('email_verified', res.user.email_verified);
+        localStorage.setItem('email_verified_at', res.user.email_verified_at);
 
         this.authService.handleAuth();
-        this.router.navigateByUrl('/sign-in-redirect');
+        this.router.navigateByUrl('/home');
       },
       error: (error) => {
-        this.errorMessage = `البريد الالكتروني أو كلمة المرور غير صحيحة، برجاء التحقق من صحة البيانات والمحاولة مرة أخرى.`;
+        this.errorMessage = error.error.message;
       },
     });
   }

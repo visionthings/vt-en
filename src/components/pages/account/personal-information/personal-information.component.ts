@@ -68,11 +68,11 @@ export class PersonalInformationComponent {
         localStorage.setItem('commercial_number', res.commercial_number);
         localStorage.setItem('address', res.address);
 
-        this.responseMessage = `تم تعديل البيانات بنجاح`;
+        this.responseMessage = 'Updated successfully';
       },
       error: (error) => {
         console.log(this.editProfileForm.value);
-        this.errorMessage = `تعذر الاتصال بقاعدة البيانات، يرجى التحقق من اتصالك بالانترنت والمحاولة مرة أخرى.`;
+        this.errorMessage = 'Connection Error. Please try again later.';
       },
     });
   }
