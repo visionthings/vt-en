@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MAT_DIALOG_DATA,
@@ -16,7 +16,7 @@ import { first } from 'rxjs';
   templateUrl: './signup-dialog.component.html',
   styleUrl: './signup-dialog.component.css',
 })
-export class SignupDialogComponent {
+export class SignupDialogComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<SignupDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -26,6 +26,7 @@ export class SignupDialogComponent {
 
   errorMessage: string | null = null;
   isLoading = false;
+  showData: boolean = false;
 
   register() {
     this.isLoading = true;
@@ -83,5 +84,11 @@ export class SignupDialogComponent {
   }
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.showData = true;
+    }, 15000);
   }
 }

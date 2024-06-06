@@ -14,35 +14,35 @@ export class AboutCompanyComponent {
   statistics_first_row: { id: number; title: string; image_url: string }[] = [
     {
       id: 1,
-      title: 'More than 10 years of experience',
-      image_url: 'assets/images/about_company/1.png',
+      title: 'Certified Contract',
+      image_url: 'assets/images/about_company/approved-contract.png',
     },
     {
       id: 2,
-      title: 'More than 5 partners',
-      image_url: 'assets/images/about_company/2.png',
+      title: 'Online Contracting',
+      image_url: 'assets/images/about_company/online-contract.png',
     },
     {
       id: 3,
-      title: 'More than 3 hospitality',
-      image_url: 'assets/images/about_company/3.png',
+      title: 'Online Maintenance Requests',
+      image_url: 'assets/images/about_company/maintenance-online.png',
     },
   ];
   statistics_second_row: { id: number; title: string; image_url: string }[] = [
     {
       id: 1,
-      title: 'More than 2 branches',
-      image_url: 'assets/images/about_company/4.png',
+      title: 'Online Contract Renewal',
+      image_url: 'assets/images/about_company/renewal-online.png',
     },
     {
       id: 2,
-      title: 'More than 100 happy client',
-      image_url: 'assets/images/about_company/5.png',
+      title: 'Certified Platform',
+      image_url: 'assets/images/about_company/approved.png',
     },
     {
       id: 3,
-      title: 'More than 50 projects',
-      image_url: 'assets/images/about_company/6.png',
+      title: 'ُEncrypted Payment Data',
+      image_url: 'assets/images/about_company/encrypted.png',
     },
   ];
 }
