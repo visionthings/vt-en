@@ -55,7 +55,7 @@ export class NavbarComponent implements OnInit {
 
   changeLanguage() {
     if (typeof window !== 'undefined') {
-      location.href = `https://vt.com.sa/home`;
+      location.href = `https://vt.com.sa/home/${this.router.url}`;
     }
   }
 
