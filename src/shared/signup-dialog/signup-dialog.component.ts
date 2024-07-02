@@ -56,7 +56,7 @@ export class SignupDialogComponent implements OnInit {
 
                     this.dialogRef.close();
 
-                    this.router.navigateByUrl('/email-verification');
+                    this.router.navigateByUrl('/contract/create-new-contract');
                   },
                   error: (err) => {
                     this.isLoading = false;
@@ -89,6 +89,6 @@ export class SignupDialogComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.showData = true;
-    }, 15000);
+    }, 7000);
   }
 }

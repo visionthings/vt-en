@@ -9,12 +9,7 @@ export const authGuard: CanActivateFn = () => {
 
   if (typeof window !== 'undefined') {
     if (localStorage.getItem('token')) {
-      if (localStorage.getItem('email_verified_at')) {
-        return true;
-      } else {
-        router.navigateByUrl('/email-verification');
-        return false;
-      }
+      return true;
     } else {
       router.navigateByUrl('/sign-up');
       return false;
